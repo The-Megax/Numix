@@ -1263,7 +1263,7 @@ GtkModelButton.button:selected {
 
 .notebook.header {
     border-width: 0;
-    background-color: shade(@theme_base_color, 0.85);
+    background-color: @theme_base_color; /* Megax fix. */
 }
 
 .notebook.header.frame {

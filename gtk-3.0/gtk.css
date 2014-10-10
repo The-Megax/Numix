@@ -1,7 +1,7 @@
 /* default color scheme */
 @define-color bg_color #dedede;
 @define-color fg_color #555555;
-@define-color base_color #f9f9f9;
+@define-color base_color #f2f1f0; /* Megax fix. */
 @define-color text_color #333333;
 @define-color selected_bg_color #d64937;
 @define-color selected_fg_color #f9f9f9;
@@ -45,12 +45,16 @@
 @define-color titlebar_fg_color @dark_fg_color;
 @define-color menubar_bg_color @dark_bg_color;
 @define-color menubar_fg_color @dark_fg_color;
-@define-color toolbar_bg_color @theme_bg_color;
-@define-color toolbar_fg_color @theme_fg_color;
+@define-color toolbar_bg_color @dark_bg_color; /* Megax fix. */
+@define-color toolbar_fg_color @dark_fg_color; /* Megax fix. */
 @define-color menu_bg_color @dark_bg_color;
 @define-color menu_fg_color @dark_fg_color;
 @define-color panel_bg_color @dark_bg_color;
 @define-color panel_fg_color @dark_fg_color;
+
+/* Megax fix. */
+@define-color border shade(@theme_bg_color, 0.7);
+@define-color notebook_bg shade(@theme_bg_color, 1.1);
 
 /* osd */
 @define-color osd_base @dark_bg_color;
@@ -76,10 +80,12 @@
 
 @import url("gtk-widgets.css");
 @import url("gtk-widgets-assets.css");
+@import url("apps/cinnamon-applications.css"); /* Megax fix. */
 @import url("apps/gnome-applications.css");
 @import url("apps/granite-widgets.css");
 @import url("apps/unity.css");
 @import url("apps/xfce.css");
 @import url("apps/nemo.css");
+@import url("apps/rhythmbox.css"); /* Megax fix. */
 @import url("apps/synaptic.css");
 @import url("apps/lightdm-gtk-greeter.css");
