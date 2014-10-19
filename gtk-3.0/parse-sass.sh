@@ -1,5 +1,5 @@
 #!/bin/bash
-bundle exec sass --update --sourcemap=none .
+bundle exec sass --update --style expanded --sourcemap=none .
 
 if [ ! -e gen ]; then
   mkdir gen
