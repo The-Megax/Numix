@@ -1,8 +1,2 @@
 #!/bin/bash
-bundle exec sass --update --style expanded --sourcemap=none .
-
-if [ ! -e gen ]; then
-  mkdir gen
-fi
-
-mv scss/widgets.css gen/widgets.css
+bundle exec sass --update --style expanded scss/widgets.scss:gen/widgets.css --sourcemap=none
