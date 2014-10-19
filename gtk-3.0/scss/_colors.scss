@@ -48,12 +48,16 @@
 @define-color titlebar_fg_color @dark_fg_color;
 @define-color menubar_bg_color @dark_bg_color;
 @define-color menubar_fg_color @dark_fg_color;
-@define-color toolbar_bg_color @theme_bg_color;
-@define-color toolbar_fg_color @theme_fg_color;
+@define-color toolbar_bg_color @dark_bg_color; /* Megax fix. */
+@define-color toolbar_fg_color @dark_fg_color; /* Megax fix. */
 @define-color menu_bg_color @dark_bg_color;
 @define-color menu_fg_color @dark_fg_color;
 @define-color panel_bg_color @dark_bg_color;
 @define-color panel_fg_color @dark_fg_color;
+
+/* Megax fix. */
+@define-color border shade(@theme_bg_color, 0.7);
+@define-color notebook_bg shade(@theme_bg_color, 1.1);
 
 /* osd */
 @define-color osd_base @dark_bg_color;

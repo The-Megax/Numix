@@ -45,6 +45,13 @@
 }
 
 .toolbar {
+    @include toolbar($toolbar_bg_color, $toolbar_fg_color);
+
+    border-style: none;
+}
+
+/* Megax fix. */
+RBButtonBar.toolbar {
     @include toolbar($bg_color, $fg_color);
 
     border-style: none;
