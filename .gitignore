@@ -3,4 +3,4 @@
 # Ignore SASS files
 .sass-cache
 gen
-.lock
+*.lock
