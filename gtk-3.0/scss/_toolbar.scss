@@ -57,6 +57,13 @@ RBButtonBar.toolbar {
     border-style: none;
 }
 
+/* Megax fix. */
+NemoStatusBar.toolbar {
+    @include toolbar($bg_color, $fg_color);
+
+    border-style: none;
+}
+
 .header-bar {
     @include toolbar($titlebar_bg_color, $titlebar_fg_color);
 
