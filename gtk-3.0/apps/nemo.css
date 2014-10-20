@@ -83,7 +83,7 @@ NemoPathbarButton:active {
 
 NemoPathbarButton:hover {
     border-color: shade(@toolbar_bg_color, 0.7);
-    background-color: shade(@toolbar_bg_color, 1.10);
+    background-color: shade(@toolbar_bg_color, 1.30); /* Megax fix. */
     background-image: none;
 }
 
