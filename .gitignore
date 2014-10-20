@@ -1,6 +1,6 @@
 # Ignore Backup Copies from Text Editor
 *~
+
 # Ignore SASS files
 .sass-cache
-gen
-*.lock
+dist

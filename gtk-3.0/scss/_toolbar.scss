@@ -97,7 +97,7 @@ NemoStatusBar.toolbar {
         padding: $spacing;
         border: none;
         background: none;
-        color: mix($titlebar_fg_color, $titlebar_bg_color, 90%);
+        color: mix($titlebar_fg_color, $titlebar_bg_color, 0.90);
 
         &:hover, &:hover:focus {
             background: none;
@@ -112,7 +112,7 @@ NemoStatusBar.toolbar {
 
         &:backdrop {
             background-image: none;
-            color: mix($titlebar_fg_color, $titlebar_bg_color, 60%);
+            color: mix($titlebar_fg_color, $titlebar_bg_color, 0.60);
             icon-shadow: none;
         }
     }
