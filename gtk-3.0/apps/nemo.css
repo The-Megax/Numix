@@ -120,6 +120,7 @@ NemoStatusBar.toolbar .separator:insensitive {
 /***********************
  * pathbar breadcrumbs *
  ***********************/
+/* < 2.4.0 */
 NemoPathbarButton {
     border-color: shade(@toolbar_bg_color, 0.8);
     background-color: shade(@toolbar_bg_color, 1.08);
