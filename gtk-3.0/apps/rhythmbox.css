@@ -25,13 +25,15 @@ RBButtonBar.toolbar .button {
     color: @theme_fg_color;
 }
 
-RBButtonBar.toolbar .button:hover {
+RBButtonBar.toolbar .button:hover,
+RBButtonBar.toolbar .button:checked:hover {
     border-color: shade(@theme_bg_color, 0.7);
     background-color: shade(@theme_bg_color, 1.10);
     background-image: none;
 }
 
-RBButtonBar.toolbar .button:active {
+RBButtonBar.toolbar .button:active,
+RBButtonBar.toolbar .button:checked {
     border-color: shade(@theme_bg_color, 0.8);
     background-color: shade(@theme_bg_color, 0.95);
     background-image: none;
@@ -44,6 +46,15 @@ RBButtonBar.toolbar .button:active:hover {
 RBButtonBar.toolbar .button:focus,
 RBButtonBar.toolbar .button:hover:focus,
 RBButtonBar.toolbar .button:active:focus,
-RBButtonBar.toolbar .button:active:hover:focus {
+RBButtonBar.toolbar .button:active:hover:focus,
+RBButtonBar.toolbar .button:checked:focus,
+RBButtonBar.toolbar .button:checked:hover:focus {
     border-color: shade(@theme_bg_color, 0.7);
+}
+
+RBButtonBar.toolbar .button:active *:insensitive,
+RBButtonBar.toolbar .button:checked *:insensitive {
+     border-color: shade(@toolbar_bg_color, 0.75);
+     background-color: shade(@toolbar_bg_color, 0.80);
+     background-image: none;
 }

@@ -86,13 +86,15 @@ NemoStatusBar.toolbar .button {
     color: @theme_fg_color;
 }
 
-NemoStatusBar.toolbar .button:hover {
+NemoStatusBar.toolbar .button:hover,
+NemoStatusBar.toolbar .button:checked:hover {
     border-color: shade(@theme_bg_color, 0.7);
     background-color: shade(@theme_bg_color, 1.10);
     background-image: none;
 }
 
-NemoStatusBar.toolbar .button:active {
+NemoStatusBar.toolbar .button:active,
+NemoStatusBar.toolbar .button:checked {
     border-color: shade(@theme_bg_color, 0.8);
     background-color: shade(@theme_bg_color, 0.95);
     background-image: none;
@@ -105,8 +107,17 @@ NemoStatusBar.toolbar .button:active:hover {
 NemoStatusBar.toolbar .button:focus,
 NemoStatusBar.toolbar .button:hover:focus,
 NemoStatusBar.toolbar .button:active:focus,
-NemoStatusBar.toolbar .button:active:hover:focus {
+NemoStatusBar.toolbar .button:active:hover:focus,
+NemoStatusBar.toolbar .button:checked:focus,
+NemoStatusBar.toolbar .button:checked:hover:focus {
     border-color: shade(@theme_bg_color, 0.7);
+}
+
+NemoStatusBar.toolbar .button:active *:insensitive,
+NemoStatusBar.toolbar .button:checked *:insensitive {
+     border-color: shade(@toolbar_bg_color, 0.75);
+     background-color: shade(@toolbar_bg_color, 0.80);
+     background-image: none;
 }
 
 NemoStatusBar.toolbar .separator,
