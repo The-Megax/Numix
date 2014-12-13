@@ -60,9 +60,8 @@
 @define-color notebook_bg shade(@theme_bg_color, 1.1);
 
 /* osd */
-@define-color osd_base #{"" + $osd_base};
-@define-color osd_fg #{"" + $osd_fg};
 @define-color osd_bg #{"" + $osd_bg};
+@define-color osd_fg #{"" + $osd_fg};
 
 /* lightdm greeter colors */
 @define-color lightdm_bg_color #{"" + $lightdm_bg_color};
