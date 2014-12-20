@@ -35,7 +35,7 @@ $modules: () !default;
 }
 
 @function border_active($color) {
-	@return shade($color, ($contrast - .10));
+	@return shade($color, ($contrast - .1));
 }
 
 @function border_insensitive($color) {

@@ -1,7 +1,3 @@
-@import "functions";
-@import "global";
-
-
 /**********
  ! Calendar
 ***********/
@@ -22,6 +18,12 @@
 		}
 
 		&.highlight { color: $selected_bg_color; }
+	}
+
+	/* gnome-calendar */
+	.calendar-view {
+		background-color: $base_color;
+		color: $text_color;
 	}
 }
 

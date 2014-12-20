@@ -1,7 +1,3 @@
-@import "functions";
-@import "global";
-
-
 /***************
  ! Generic views
 ****************/
@@ -16,7 +12,7 @@
             color: mix($text_color, $base_color, 0.5);
         }
 
-        &:selected, &:selected:focus { @extend %selected_items; }
+        &:selected, &:selected:focus { @extend %selected; }
     }
 
     .cell {
@@ -138,7 +134,7 @@
 
 @include exports("separator") {
     .view.separator, .separator {
-        color: shade($bg_color, ($contrast + .10));
+        color: shade($bg_color, ($contrast + .1));
         border: 1px solid currentColor;
     }
 }

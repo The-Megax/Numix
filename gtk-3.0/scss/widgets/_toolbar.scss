@@ -1,6 +1,5 @@
-@import "functions";
-@import "global";
 @import "button";
+
 
 /*********
  ! Toolbar
@@ -42,7 +41,7 @@
     }
 
     GtkSeparatorToolItem, .separator, .separator:insensitive {
-        color: border_normal($bg);
+        color: shade($bg, ($contrast + .1));
         border-color: currentColor;
 
         -GtkWidget-window-dragging: true;
