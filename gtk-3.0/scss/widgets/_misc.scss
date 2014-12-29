@@ -2,9 +2,11 @@
 ! Dimmed label *
 ****************/
 
-.dim-label {
-	opacity: 0.5;
-	text-shadow: none;
+@include exports("dimlabel") {
+	.dim-label {
+		opacity: 0.5;
+		text-shadow: none;
+	}
 }
 
 
@@ -30,7 +32,7 @@
 ************/
 
 @include exports("dialogs") {
-	GtkMessageDialog, .prompt {
+	GtkMessageDialog, .message-dialog, .prompt {
 		-GtkDialog-content-area-border: 0;
 		-GtkDialog-action-area-border: 0;
 		-GtkDialog-button-spacing: 0;
@@ -162,4 +164,55 @@
 
 		.toolbar { background-color: transparent; }
 	}
+}
+
+/***************
+ ! Font-viewer *
+****************/
+
+@include exports("fontviewer") {
+	SushiFontWidget {
+		padding: $spacing ($spacing * 2);
+	}
+}
+
+
+/*************
+ ! Gucharmap *
+**************/
+
+@include exports("charmap") {
+	GucharmapChartable {
+		background-color: $base_color;
+		color: $text_color;
+
+		&:focus, &:hover, &:active, &:selected { @extend %selected; }
+	}
+}
+
+
+/*************
+ ! Evolution *
+**************/
+
+@include exports("evolution") {
+	EPreviewPane .entry {
+		background-color: $base_color;
+		color: $text_color;
+	}
+}
+
+
+/*******************
+ ! Gnome Bluetooth *
+********************/
+
+@include exports("gnome-bluetooth") {
+	GtkEntry.entry.pin-entry {
+		font: regular 50;
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+
+	GtkLabel.pin-label { font: regular 50; }
 }
