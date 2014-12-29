@@ -52,6 +52,11 @@ $osd_fg: $dark_fg_color;
 $lightdm_bg_color: $dark_bg_color;
 $lightdm_fg_color: $dark_fg_color;
 
+/* Megax fix. */
+$border: shade($bg_color, 0.7);
+$notebook_bg: shade($bg_color, 1.1);
+$cluebar_color: shade(mix($bg_color, $base_color, 0.5), 0.95);
+
 // widget styles
 $roundness: 2px;
 $spacing: 5px;

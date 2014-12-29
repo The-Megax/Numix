@@ -56,8 +56,9 @@
 @define-color panel_fg_color @dark_fg_color;
 
 /* Megax fix. */
-@define-color border shade(@theme_bg_color, 0.7);
-@define-color notebook_bg shade(@theme_bg_color, 1.1);
+@define-color border #{"" + $border};
+@define-color notebook_bg #{"" + $notebook_bg};
+@define-color cluebar_color #{"" + $cluebar_color};
 
 /* osd */
 @define-color osd_bg #{"" + $osd_bg};
