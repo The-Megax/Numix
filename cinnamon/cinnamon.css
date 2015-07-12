@@ -420,136 +420,6 @@ StScrollBar StButton#vhandle:hover {
     color: #dcdcdc;
 }
 
-#LookingGlassDialog > #Toolbar
-{
-    border-image: none;
-    background-color: #333;
-    border: 1px solid #484848;
-    border-radius: 2px;
-    padding: 0.5em;
-}
-
-#LookingGlassDialog .labels {
-    spacing: 4px;
-}
-
-#LookingGlassDialog .notebook-tab {
-    border: 1px solid rgba(0,0,0,0);
-    padding: 2px;
-}
-
-#LookingGlassDialog .notebook-tab:hover {
-    background-color: #d64937;
-    border: 1px solid #d64937;
-    border-radius: 2px;
-    color: #dcdcdc;
-}
-
-#LookingGlassDialog .notebook-tab:selected {
-    background-color: #2d2d2d;
-    border-radius: 2px;
-    border: 1px solid #484848;
-    color: #dcdcdc;
-    padding: 2px;
-}
-
-#LookingGlassDialog .lg-inspector-title {
-    font-weight: bold;
-    padding-bottom: 8px;
-}
-
-.lg-dialog StLabel {
-    color: #dcdcdc;
-    padding-top: 6px;
-}
-
-.lg-dialog StEntry {
-    padding: 4px 12px;
-    border-radius: 2px;
-    color: #dcdcdc;
-    border: 1px solid #484848;
-    background-color: #333;
-    border-radius: 2px;
-    selected-color: #dcdcdc;
-    caret-color: #dcdcdc;
-    caret-size: 1px;
-    width: 250px;
-    height: 16px; 
-    transition-duration: 300;
-    selection-background-color: #d64937;
-}
-
-.lg-obj-inspector-title {
-    spacing: 4px;
-}
-
-.lg-obj-inspector-button {
-    border: 1px solid #484848;
-    border-radius: 2px;
-    color: #dcdcdc;
-    padding: 4px;
-}
-
-.lg-obj-inspector-button:hover {
-    border: 1px solid #484848;
-    border-radius: 2px;
-    color: #d64937;
-}
-
-.lg-dialog .cinnamon-link {
-    color: #ccc;
-    padding-top: 6px;
-}
-
-.lg-dialog .cinnamon-link:hover
-{
-    color: #d64937;
-}
-
-#LookingGlassDialog StBoxLayout#EvalBox
-{
-    padding: 4px;
-    spacing: 4px;
-}
-
-#LookingGlassDialog StBoxLayout#ResultsArea
-{
-    spacing: 4px;
-}
-
-#lookingGlassExtensions {
-    padding: 4px;
-}
-
-.lg-extension-list {
-    padding: 4px;
-    spacing: 6px;
-}
-
-.lg-extension {
-    padding: 4px;
-}
-
-.lg-extension-name {
-    font-weight: bold;
-}
-
-.lg-extension-meta {
-    spacing: 6px;
-}
-
-#LookingGlassPropertyInspector{
-    background-color: #2d2d2d;
-    border-radius: 2px;
-    border: 1px solid #484848;
-    transition-duration: 300;
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    color: #dcdcdc;
-}
-
 /* ===================================================================
  * Date applet 
  * ===================================================================*/
@@ -742,61 +612,6 @@ StScrollBar StButton#vhandle:hover {
 
 .notification-icon-button > StIcon {
     icon-size: 16px;
-}
-
-.hotplug-transient-box {
-    spacing: 6px;
-    padding: 2px 72px 2px 12px;
-}
-
-.hotplug-notification-item {
-    padding: 2px 10px;
-    border-radius: 18px;
-    font-size: 10.5pt;
-}
-
-.hotplug-notification-item:focus {
-    padding: 1px 71px 1px 11px;
-}
-
-.hotplug-notification-item-icon {
-    icon-size: 24px;
-    padding: 2px 5px;
-}
-
-.hotplug-resident-box {
-    spacing: 8px;
-}
-
-.hotplug-resident-mount {
-    spacing: 8px;
-    border-radius: 0px;
-    color: #ccc;
-}
-
-.hotplug-resident-mount:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
-}
-
-.hotplug-resident-mount-label {
-    color: inherit;
-    padding-left: 6px;
-}
-
-.hotplug-resident-mount-icon {
-    icon-size: 24px;
-    padding-left: 6px;
-}
-
-.hotplug-resident-eject-icon {
-    icon-size: 16px;
-}
-
-.hotplug-resident-eject-button {
-    padding: 7px;
-    border-radius: 0px;
-    color: #ccc;
 }
 
 #notification StEntry {
@@ -1724,6 +1539,11 @@ StScrollBar StButton#vhandle:hover {
 #workspaceSwitcher {
     spacing: 0px;
     padding: 3px;
+}
+
+.workspace-switcher-box {
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 .workspace-button {
