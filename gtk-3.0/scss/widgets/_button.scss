@@ -141,13 +141,13 @@
 
     &, &.flat {
         &:focus, &:hover {
-            /* Megax fix. 
+            /* Megax fix. */
             @if $bg == $toolbar_bg_color {
                 @include linear-gradient(shade($bg, 1.3));
             } @else {
                 @include linear-gradient(shade($bg, 1.1));
-            }*/
-            @include linear-gradient(shade($button_bg, 1.2));
+            }
+
             @include border(rgba(0, 0, 0, .2 + $border_strength));
 
             box-shadow: 0 1px 2px -1px alpha($dark_shadow, .32 + $shadow_strength);
