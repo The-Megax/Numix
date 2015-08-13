@@ -3,58 +3,84 @@
 ************/
 
 @include exports("scrollbar") {
-	.scrollbar {
-		border: none;
-		padding: 0;
+    * {
+        -GtkRange-slider-width: 8;
+        -GtkRange-stepper-spacing: 0;
+        -GtkRange-trough-border: 2;
+        -GtkRange-trough-under-steppers: 1;
+        -GtkScrollbar-has-backward-stepper: false;
+        -GtkScrollbar-has-forward-stepper: false;
+        -GtkScrollbar-min-slider-length: 80;
+        -GtkScrolledWindow-scrollbar-spacing: 0;
+        -GtkScrolledWindow-scrollbars-within-bevel: 1;
+    }
 
-		&.button {
-			&, &:active, &:active:hover {
-				border-width: 0;
-				border-radius: 0;
-				background-color: transparent;
-				background-image: none;
-				color: shade($bg_color, 0.6);
-			}
-		}
+    .scrollbar {
+        border: 0;
+        padding: 0;
 
-		&.slider, &.slider.vertical {
-			border: 1px solid mix(shade($bg_color, 0.87), $fg_color, 0.21);
-			border-radius: 0;
-			background-color: mix($bg_color, $fg_color, 0.21);
+        &.button {
+            &, &:active, &:active:hover {
+                border-width: 0;
+                border-radius: 0;
+                background-color: transparent;
+                background-image: none;
+                color: alpha($fg_color, .5);
+            }
+        }
 
-			&:hover {
-				border-color: mix(shade($bg_color, 0.87), $fg_color, 0.31);
-				background-color: mix($bg_color, $fg_color, 0.31);
-			}
+        &.slider, &.slider.vertical {
+            border: 0;
+            border-radius: $roundness;
+            background-color: shade($bg_color, .5);
 
-			&:active {
-				border-color: shade($selected_bg_color, 0.9);
-				background-color: $selected_bg_color;
-			}
+            &:hover { background-color: shade($bg_color, .3); }
 
-			&.fine-tune:prelight:active {
-				border-width: 2px;
-				border-color: transparent;
-			}
-		}
-	}
+            &:active { background-color: $selected_bg_color; }
 
-	.scrollbars-junction,
-	.scrollbar.trough {
-		border: none;
-		border-radius: 0;
-		background-color: $bg_color;
-		background-image: none;
-	}
+            &.fine-tune:prelight:active { border: 2px solid transparent; }
+        }
 
-	/* overlay scrollbar */
-	OsThumb, OsScrollbar {
-		color: shade($bg_color, 0.7);
+        // overlay scrolling indicator
+        &.overlay-indicator {
+            &:not(.dragging):not(.hovering) {
+                opacity: .5;
 
-		&:selected { background-color: $selected_bg_color; }
+                -GtkRange-slider-width: 4px;
 
-		&:active { background-color: $selected_bg_color; }
+                .slider {
+                    margin: 0;
+                    background-color: $fg_color;
+                    background-clip: padding-box;
+                }
 
-		&:insensitive { background-color: shade($bg_color, 0.9); }
-	}
+                .trough {
+                    border-style: none;
+                    background-color: transparent;
+                }
+            }
+
+            &.dragging, &.hovering { opacity: .7; }
+        }
+    }
+
+    .scrollbars-junction,
+    .scrollbars-junction.frame,
+    .scrollbar.trough {
+        border: 0;
+        border-radius: 0;
+        background-color: $bg_color;
+        background-image: none;
+    }
+
+    // ubuntu overlay scrollbars
+    OsThumb, OsScrollbar {
+        color: shade($bg_color, .7);
+
+        &:selected { background-color: $selected_bg_color; }
+
+        &:active { background-color: $selected_bg_color; }
+
+        &:insensitive { background-color: shade($bg_color, .9); }
+    }
 }

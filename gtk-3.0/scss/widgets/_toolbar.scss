@@ -9,7 +9,7 @@
     @include linear-gradient($bg);
     @include border($bg);
 
-    padding: $spacing;
+    padding: $spacing * 2;
     color: $fg;
 
     &:insensitive {
@@ -35,9 +35,9 @@
     GtkComboBox, .button {
         padding: $spacing - 1px;
 
-        &.text-button { padding:  $spacing; }
+        &.text-button { padding: $spacing; }
 
-        &.image-button { padding: $spacing ($spacing - 1px) ($spacing - 1px) $spacing; }
+        &.image-button { padding: ($spacing + 1px) ($spacing - 1px) ($spacing + 1px) $spacing; }
     }
 
     GtkSeparatorToolItem, .separator, .separator:insensitive {
@@ -69,12 +69,17 @@
         @include toolbar($bg_color, $fg_color);
 
         border-style: none;
+
+        &.inline-toolbar {
+            background-image: none;
+            background-color: transparent;
+        }
     }
 
     .header-bar {
         @include toolbar($titlebar_bg_color, $titlebar_fg_color);
 
-        border-width: 0 0 1px 0;
+        border-width: 0 0 1px;
         border-style: solid;
     }
 
@@ -92,7 +97,7 @@
         }
 
         &.default-decoration {
-            border: none;
+            border: 0;
             box-shadow: none;
         }
 
@@ -102,7 +107,7 @@
 
         .titlebutton {
             padding: $spacing;
-            border: none;
+            border: 0;
             background-image: none;
             background-color: transparent;
             color: mix($titlebar_fg_color, $titlebar_bg_color, .1);
