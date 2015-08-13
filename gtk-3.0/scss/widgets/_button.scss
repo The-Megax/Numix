@@ -120,10 +120,16 @@
 }
 
 @mixin button($bg, $fg) {
-    $border_strength: if(lightness($bg) > 50, 0, .1);
-    $shadow_strength: if(lightness($bg) > 50, 0, .1);
+    $border_strength: .1; /* Megax fix. */
+    $shadow_strength: .1; /* Megax fix. */
+    $button_bg: 0; /* Megax fix. */
 
-    $button_bg: if(hue($bg) == 0deg, shade($bg, 1.2), $bg);
+    /* Megax fix. */
+    @if $bg == $toolbar_bg_color {
+        $button_bg: shade($bg, 1.1);
+    } @else {
+        $button_bg: if(hue($bg) == 0deg, shade($bg, 1.2), $bg);
+    }
 
     @extend %button;
     @include linear-gradient($button_bg);
@@ -141,13 +147,7 @@
 
     &, &.flat {
         &:focus, &:hover {
-            /* Megax fix. */
-            @if $bg == $toolbar_bg_color {
-                @include linear-gradient(shade($bg, 1.3));
-            } @else {
-                @include linear-gradient(shade($bg, 1.1));
-            }
-
+            @include linear-gradient(shade($button_bg, 1.2));
             @include border(rgba(0, 0, 0, .2 + $border_strength));
 
             box-shadow: 0 1px 2px -1px alpha($dark_shadow, .32 + $shadow_strength);
