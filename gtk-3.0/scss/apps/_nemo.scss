@@ -14,34 +14,6 @@
         &:active, &:prelight, &:selected { text-shadow: none; }
     }
 
-    /* Megax fix. */
-    /*NemoTrashBar.info, NemoXContentBar.info,*/ NemoSearchBar.info/*, NemoQueryEditor.info*/ {
-        background-image: -gtk-gradient (linear, left top, left bottom,
-                                         from (shade($cluebar_color, 1.02)),
-                                         to (shade($cluebar_color, 0.98)));
-        background-color: $cluebar_color;
-        border-bottom-color: shade($cluebar_color, 0.92);
-        border-radius: 0;
-        border-style: solid;
-        border-width: 0px 0px 1px 0px;
-
-        box-shadow: inset -1px 0px shade($cluebar_color, 1.02),
-                    inset 1px 0px shade($cluebar_color, 1.02),
-                    inset 0 1px shade($cluebar_color, 1.04),
-                    inset 0 -1px shade($cluebar_color, 1.01);
-
-        &:backdrop {
-            background-image: -gtk-gradient (linear, left top, left bottom,
-                                             from (shade($cluebar_color, 1.01)),
-                                             to (shade($cluebar_color, 0.99)));
-
-            box-shadow: inset -1px 0px shade($cluebar_color, 1.01),
-                        inset 1px 0px shade($cluebar_color, 1.01),
-                        inset 0 1px shade($cluebar_color, 1.02),
-                        inset 0 -1px shade($cluebar_color, 1.0);
-        }
-    }
-
     NemoPathbarButton {
         @include button($toolbar_bg_color, $toolbar_fg_color);
 

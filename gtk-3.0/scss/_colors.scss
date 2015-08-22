@@ -16,14 +16,14 @@
 @define-color dark_fg_color #{"" + $dark_fg_color};
 
 /* colormap actually used by the theme, to be overridden in other css files */
-@define-color theme_bg_color @bg_color;
-@define-color theme_fg_color @fg_color;
-@define-color theme_base_color @base_color;
-@define-color theme_text_color @text_color;
-@define-color theme_selected_bg_color @selected_bg_color;
-@define-color theme_selected_fg_color @selected_fg_color;
-@define-color theme_tooltip_bg_color @tooltip_bg_color;
-@define-color theme_tooltip_fg_color @tooltip_fg_color;
+@define-color theme_bg_color #{"" + $bg_color};
+@define-color theme_fg_color #{"" + $fg_color};
+@define-color theme_base_color #{"" + $base_color};
+@define-color theme_text_color #{"" + $text_color};
+@define-color theme_selected_bg_color #{"" + $selected_bg_color};
+@define-color theme_selected_fg_color #{"" + $selected_fg_color};
+@define-color theme_tooltip_bg_color #{"" + $tooltip_bg_color};
+@define-color theme_tooltip_fg_color #{"" + $tooltip_fg_color};
 
 /* shadow effects */
 @define-color light_shadow #{"" + $light_shadow};
@@ -54,11 +54,6 @@
 @define-color menu_fg_color @dark_fg_color;
 @define-color panel_bg_color @dark_bg_color;
 @define-color panel_fg_color @dark_fg_color;
-
-/* Megax fix. */
-@define-color border #{"" + $border};
-@define-color notebook_bg #{"" + $notebook_bg};
-@define-color cluebar_color #{"" + $cluebar_color};
 
 /* osd */
 @define-color osd_bg #{"" + $osd_bg};
