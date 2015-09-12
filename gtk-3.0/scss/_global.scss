@@ -1,20 +1,21 @@
+/* Megax fix. */
 // scss-lint:disable ColorVariable
 
 @import "functions";
 
 // default color scheme
-$bg_color: if($variant == "dark", #444, #eee);
-$fg_color: if($variant == "dark", #ddd, #555);
-$base_color: if($variant == "dark", #333, #fff);
-$text_color: if($variant == "dark", #eee, #333);
-$selected_bg_color: #f0544c;
-$selected_fg_color: #fff;
-$tooltip_bg_color: #444;
-$tooltip_fg_color: #eee;
+$bg_color: if($variant == "dark", #444, #dedede); /* Megax fix. */
+$fg_color: if($variant == "dark", #ddd, #555555); /* Megax fix. */
+$base_color: if($variant == "dark", #333, #f2f1f0); /* Megax fix. */
+$text_color: if($variant == "dark", #eee, #333333); /* Megax fix. */
+$selected_bg_color: #d64937; /* Megax fix. */
+$selected_fg_color: #f9f9f9; /* Megax fix. */
+$tooltip_bg_color: #2d2d2d; /* Megax fix. */
+$tooltip_fg_color: #dcdcdc; /* Megax fix. */
 
 // dark colors
-$dark_bg_color: #444;
-$dark_fg_color: #eee;
+$dark_bg_color: #2d2d2d; /* Megax fix. */
+$dark_fg_color: #dcdcdc; /* Megax fix. */
 
 // shadows
 $dark_shadow: #000;
@@ -38,8 +39,8 @@ $success_color: #4caf50;
 $warning_color: #ef6c00;
 $error_color: #f44336;
 
-$toolbar_bg_color: $bg_color;
-$toolbar_fg_color: $fg_color;
+$toolbar_bg_color: $dark_bg_color;
+$toolbar_fg_color: $dark_fg_color;
 
 $titlebar_bg_color: $dark_bg_color;
 $titlebar_fg_color: $dark_fg_color;
@@ -47,8 +48,8 @@ $titlebar_fg_color: $dark_fg_color;
 $menu_bg_color: $dark_bg_color;
 $menu_fg_color: $dark_fg_color;
 
-$menubar_bg_color: $bg_color;
-$menubar_fg_color: $fg_color;
+$menubar_bg_color: $dark_bg_color; /* Megax fix. */
+$menubar_fg_color: $dark_fg_color; /* Megax fix. */
 
 $panel_bg_color: $dark_bg_color;
 $panel_fg_color: $dark_fg_color;

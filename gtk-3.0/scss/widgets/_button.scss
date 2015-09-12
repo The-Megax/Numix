@@ -120,10 +120,16 @@
 }
 
 @mixin button($bg, $fg) {
-    $border_strength: if(lightness($bg) > 50, 0, .1);
-    $shadow_strength: if(lightness($bg) > 50, 0, .1);
+    $border_strength: .1; /* Megax fix. */
+    $shadow_strength: .1; /* Megax fix. */
+    $button_bg: 0; /* Megax fix. */
 
-    $button_bg: if(hue($bg) == 0deg, shade($bg, 1.2), $bg);
+    /* Megax fix. */
+    @if $bg == $toolbar_bg_color {
+        $button_bg: shade($bg, 1.1);
+    } @else {
+        $button_bg: if(hue($bg) == 0deg, shade($bg, 1.2), $bg);
+    }
 
     @extend %button;
     @include linear-gradient($button_bg);

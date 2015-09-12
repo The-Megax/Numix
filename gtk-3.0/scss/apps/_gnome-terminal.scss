@@ -1,0 +1,46 @@
+/* Megax fix. */
+
+/******************
+ ! Gnome-terminal *
+*******************/
+
+@include exports("gnome-terminal") {
+    VteTerminal {
+        background-color: $osd_bg;
+        color: $osd_fg;
+    }
+
+    TerminalWindow GtkNotebook.notebook {
+        border-right-width: 0;
+        border-bottom-width: 0;
+        border-left-width: 0;
+    }
+
+    TerminalWindow .scrollbars-junction,
+    TerminalWindow .scrollbar {
+        &.trough {
+            background-color: $osd_bg;
+        }
+
+        &.button {
+            &:active, &:active:hover {
+                color: shade($osd_bg, .6);
+            }
+        }
+
+        &.slider {
+            border-color: mix(shade($osd_bg, .87), $osd_fg, .21);
+            background-color: mix($osd_bg, $osd_fg, .21);
+
+            &:hover, &.vertical:hover {
+                border-color: mix(shade($osd_bg, .87), $osd_fg, .31);
+                background-color: mix($osd_bg, $osd_fg, .31);
+            }
+
+            &:active, &.vertical:active {
+                border-color: shade($selected_bg_color, .9);
+                background-color: $selected_bg_color;
+            }
+        }
+    }
+}
