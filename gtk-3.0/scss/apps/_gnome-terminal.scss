@@ -1,46 +1,56 @@
-/* Megax fix. */
-
-/******************
- ! Gnome-terminal *
-*******************/
+/**********************
+ ! Genome Terminal *
+***********************/
 
 @include exports("gnome-terminal") {
     VteTerminal {
-        background-color: $osd_bg;
-        color: $osd_fg;
+	background-color: $osd_base;
+	color: $osd_fg;
     }
-
-    TerminalWindow GtkNotebook.notebook {
-        border-right-width: 0;
-        border-bottom-width: 0;
-        border-left-width: 0;
-    }
-
-    TerminalWindow .scrollbars-junction,
-    TerminalWindow .scrollbar {
-        &.trough {
-            background-color: $osd_bg;
-        }
-
-        &.button {
-            &:active, &:active:hover {
-                color: shade($osd_bg, .6);
-            }
-        }
-
-        &.slider {
-            border-color: mix(shade($osd_bg, .87), $osd_fg, .21);
-            background-color: mix($osd_bg, $osd_fg, .21);
-
-            &:hover, &.vertical:hover {
-                border-color: mix(shade($osd_bg, .87), $osd_fg, .31);
-                background-color: mix($osd_bg, $osd_fg, .31);
-            }
-
-            &:active, &.vertical:active {
-                border-color: shade($selected_bg_color, .9);
-                background-color: $selected_bg_color;
-            }
-        }
+    TerminalWindow {
+	.scrollbars-junction {
+		background-color: $osd_base;
+	}
+	.scrollbar {
+		&.trough {
+			background-color: $osd_base;
+		}
+		&.button {
+			color: shade($osd_base, 0.6);
+			&:active {
+				color: shade($osd_base, 0.6);
+				&:hover {
+					color: shade($osd_base, 0.6);
+				}
+			}
+		}
+		&.slider {
+			border-color: mix(shade($osd_base, 0.87), $osd_fg, 0.21);
+			background-color: mix($osd_base, $osd_fg, 0.21);
+			&:hover {
+				border-color: mix(shade($osd_base, 0.87), $osd_fg, 0.31);
+				background-color: mix($osd_base, $osd_fg, 0.31);
+			}
+			&.vertical {
+				&:hover {
+					border-color: mix(shade($osd_base, 0.87), $osd_fg, 0.31);
+					background-color: mix($osd_base, $osd_fg, 0.31);
+				}
+				&:active {
+					border-color: shade($selected_bg_color, 0.9);
+					background-color: $selected_bg_color;
+				}
+			}
+			&:active {
+				border-color: shade($selected_bg_color, 0.9);
+				background-color: $selected_bg_color;
+			}
+		}
+	}
+	GtkNotebook.notebook {
+		border-right-width: 0;
+		border-bottom-width: 0;
+		border-left-width: 0;
+	}
     }
 }
