@@ -53,7 +53,7 @@ $menubar_fg_color: $dark_fg_color;
 $panel_bg_color: $dark_bg_color;
 $panel_fg_color: $dark_fg_color;
 
-$border_color: #484848;
+$border_color: shade($dark_bg_color, 1.5);
 $transparent: rgba(0, 0, 0, 0);
 
 // widget styles

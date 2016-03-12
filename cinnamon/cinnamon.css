@@ -66,7 +66,7 @@ stage {
   height: 6px;
   -slider-height: 4px;
   -slider-background-color: #2d2d2d;
-  -slider-border-color: #484848;
+  -slider-border-color: #444444;
   -slider-active-background-color: #d64937;
   -slider-active-border-color: #d64937;
   -slider-border-width: 0px;
@@ -79,7 +79,7 @@ stage {
 #Tooltip {
   padding: 4px 6px;
   background-color: #2d2d2d;
-  border: 1px solid #484848;
+  border: 1px solid #444444;
   color: #dcdcdc;
   font-size: 9pt;
   font-weight: normal;
@@ -156,19 +156,19 @@ StScrollView StScrollBar {
 
 StScrollBar StBin#trough {
   background-color: #2d2d2d;
-  border: 1px solid #484848;
+  border: 1px solid #444444;
   border-radius: 2px;
 }
 
 StScrollBar StButton#vhandle {
   background-color: #2d2d2d;
-  border: 1px solid #484848;
+  border: 1px solid #444444;
   border-radius: 2px;
 }
 
 StScrollBar StButton#hhandle {
   background-color: #2d2d2d;
-  border: 1px solid #484848;
+  border: 1px solid #444444;
   border-radius: 2px;
 }
 
@@ -193,7 +193,7 @@ StScrollBar StButton#vhandle:hover {
   min-width: 15em;
   -slider-height: 4px;
   -slider-background-color: #2d2d2d;
-  -slider-border-color: #484848;
+  -slider-border-color: #444444;
   -slider-active-background-color: #d64937;
   -slider-active-border-color: #d64937;
   -slider-border-width: 1px;
@@ -503,7 +503,7 @@ StScrollBar StButton#vhandle:hover {
 
 .window-close:hover {
   background-color: #2d2d2d;
-  border: 1px solid #484848;
+  border: 1px solid #444444;
   border-radius: 35px;
   background-image: url("control-assets/close-hover.png");
   transition-duration: 100;
@@ -525,7 +525,7 @@ StScrollBar StButton#vhandle:hover {
 #LookingGlassDialog {
   background-color: #2d2d2d;
   border-radius: 2px;
-  border: 1px solid #484848;
+  border: 1px solid #444444;
   transition-duration: 300;
   padding-left: 8px;
   padding-right: 8px;
@@ -544,7 +544,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .calendar-month-label {
-  color: #e2e2e2;
+  color: #dedede;
   padding-bottom: 8px;
   padding-top: 8px;
   font-weight: bold;
@@ -577,7 +577,7 @@ StScrollBar StButton#vhandle:hover {
 .datemenu-date-label {
   padding: .4em 1.75em;
   font-size: 9pt;
-  color: #e2e2e2;
+  color: #dedede;
   font-weight: bold;
   text-align: center;
 }
@@ -590,20 +590,20 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .calendar-day-heading {
-  color: #e2e2e2;
+  color: #dedede;
   padding-top: 1em;
   padding-bottom: 1em;
 }
 
 .calendar-week-number {
   padding-left: 0px;
-  color: #e2e2e2;
+  color: #dedede;
 }
 
 /* Hack used in lieu of border-collapse - see calendar.js */
 .calendar-day {
   border: 1px solid #2d2d2d;
-  color: #e2e2e2;
+  color: #dedede;
   border-top-width: 0;
   border-left-width: 0;
   border-radius: 0px;
@@ -619,12 +619,12 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .calendar-work-day {
-  border-color: #444;
+  border-color: #444444;
 }
 
 .calendar-nonwork-day {
-  background-color: rgba(128, 128, 128, 0.1);
-  border-color: #555;
+  background-color: rgba(45, 45, 45, 0.1);
+  border-color: #fff;
 }
 
 .calendar-today {
@@ -632,12 +632,12 @@ StScrollBar StButton#vhandle:hover {
   background-gradient-start: rgba(255, 255, 255, 0.4);
   background-gradient-end: rgba(255, 255, 255, 0.4);
   box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+  color: #fff;
   font-weight: bold;
 }
 
 .calendar-other-month-day {
-  color: #e2e2e2;
+  color: #dedede;
 }
 
 .calendar-day-with-events {
@@ -651,7 +651,7 @@ StScrollBar StButton#vhandle:hover {
 #notification {
   font-size: 10pt;
   border-radius: 2px;
-  border: 1px solid #484848;
+  border: 1px solid #444444;
   background-color: #2d2d2d;
   padding: 8px 8px 8px 8px;
   spacing-rows: 10px;
@@ -728,7 +728,7 @@ StScrollBar StButton#vhandle:hover {
   padding: 4px 12px;
   border-radius: 2px;
   color: #dcdcdc;
-  border: 1px solid #484848;
+  border: 1px solid #444444;
   background-color: #2d2d2d;
   selected-color: #dcdcdc;
   caret-color: #dcdcdc;
@@ -743,7 +743,7 @@ StScrollBar StButton#vhandle:hover {
   padding: 4px 12px;
   border-radius: 2px;
   color: #dcdcdc;
-  border: 1px solid #484848;
+  border: 1px solid #444444;
   background-color: #2d2d2d;
   selected-color: #dcdcdc;
   caret-color: #dcdcdc;
@@ -764,7 +764,7 @@ StScrollBar StButton#vhandle:hover {
 
 .switcher-list {
   background-color: #2d2d2d;
-  border: 1px solid #484848;
+  border: 1px solid #444444;
   border-radius: 2px;
   padding: 20px;
   font-size: 9pt;
@@ -777,7 +777,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .thumbnail-scroll-gradient-left {
-  background-color: rgba(51, 51, 51, 0.5);
+  background-color: rgba(45, 45, 45, 0.5);
   border-radius: 24px;
   border-radius-topright: 0px;
   border-radius-bottomright: 0px;
@@ -785,7 +785,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .thumbnail-scroll-gradient-right {
-  background-color: rgba(51, 51, 51, 0.5);
+  background-color: rgba(45, 45, 45, 0.5);
   border-radius: 24px;
   border-radius-topleft: 0px;
   border-radius-bottomleft: 0px;
@@ -844,7 +844,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .switcher-preview-backdrop {
-  background-color: rgba(25, 25, 25, 0.65);
+  background-color: rgba(45, 45, 45, 0.7);
 }
 
 /* ===================================================================
@@ -854,7 +854,7 @@ StScrollBar StButton#vhandle:hover {
   font-size: 10pt;
   background-color: #2d2d2d;
   color: #dcdcdc;
-  border: 1px solid #484848;
+  border: 1px solid #444444;
   border-radius: 2px;
   padding: 22px;
 }
@@ -867,8 +867,8 @@ StScrollBar StButton#vhandle:hover {
 .modal-dialog-button {
   font-size: 10pt;
   color: #dcdcdc;
-  background-color: #3d3d3d;
-  border: 1px solid #535353;
+  background-color: #2d2d2d;
+  border: 1px solid #444444;
   border-radius: 2px;
   margin-left: 10px;
   margin-right: 10px;
@@ -878,7 +878,7 @@ StScrollBar StButton#vhandle:hover {
 .modal-dialog-button:focus {
   font-size: 10pt;
   color: #dcdcdc;
-  background-color: #3d3d3d;
+  background-color: #2d2d2d;
   border: 1px solid #d64937;
   border-radius: 2px;
   margin-left: 10px;
@@ -922,7 +922,7 @@ StScrollBar StButton#vhandle:hover {
   padding: 4px 12px;
   border-radius: 2px;
   color: #dcdcdc;
-  border: 1px solid #484848;
+  border: 1px solid #444444;
   background-color: #2d2d2d;
   selected-color: #dcdcdc;
   caret-color: #dcdcdc;
@@ -964,7 +964,7 @@ StScrollBar StButton#vhandle:hover {
 .end-session-dialog-subject {
   font-size: 12pt;
   font-weight: bold;
-  color: #666666;
+  color: #555555;
   padding-top: 10px;
   padding-left: 17px;
   padding-bottom: 30px;
@@ -987,7 +987,7 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .end-session-dialog-logout-icon {
-  border: 2px solid #8b8b8b;
+  border: 2px solid #444444;
   border-radius: 0px;
   width: 32px;
   height: 32px;
@@ -1041,7 +1041,7 @@ StScrollBar StButton#vhandle:hover {
 
 .end-session-dialog-app-list-item-description {
   font-size: 8pt;
-  color: #444444;
+  color: #555555;
 }
 
 /* CinnamonMountOperation Dialogs */
@@ -1062,7 +1062,7 @@ StScrollBar StButton#vhandle:hover {
 .mount-question-dialog-subject {
   font-size: 12pt;
   font-weight: bold;
-  color: #666666;
+  color: #555555;
   padding-top: 10px;
   padding-left: 17px;
   padding-bottom: 6px;
@@ -1148,7 +1148,7 @@ StScrollBar StButton#vhandle:hover {
 .polkit-dialog-headline {
   font-size: 9pt;
   font-weight: bold;
-  color: #666666;
+  color: #555555;
 }
 
 .polkit-dialog-description {
@@ -1238,7 +1238,7 @@ StScrollBar StButton#vhandle:hover {
  * ===================================================================*/
 #keyboard {
   background-color: #2d2d2d;
-  border-top: 1px solid #484848;
+  border-top: 1px solid #444444;
 }
 
 .keyboard-layout {
@@ -1253,8 +1253,8 @@ StScrollBar StButton#vhandle:hover {
 .keyboard-key {
   min-height: 30px;
   min-width: 30px;
-  background-color: #3d3d3d;
-  border: 1px solid #535353;
+  background-color: #2d2d2d;
+  border: 1px solid #444444;
   border-radius: 2px;
   font-size: 14pt;
   font-weight: bold;
@@ -1263,8 +1263,8 @@ StScrollBar StButton#vhandle:hover {
 
 .keyboard-key:grayed {
   color: #888;
-  background-color: #3d3d3d;
-  border: 1px solid #535353;
+  background-color: #2d2d2d;
+  border: 1px solid #444444;
   border-radius: 2px;
 }
 
@@ -1287,7 +1287,7 @@ StScrollBar StButton#vhandle:hover {
   -arrow-border-radius: 0px;
   -arrow-background-color: #2d2d2d;
   -arrow-border-width: 1px;
-  -arrow-border-color: #484848;
+  -arrow-border-color: #444444;
   -arrow-border-radius: 2px;
   -arrow-base: 21px;
   -arrow-rise: 9px;
@@ -1329,7 +1329,7 @@ StScrollBar StButton#vhandle:hover {
 .menu-places-box {
   margin: auto;
   padding: 8px;
-  border: 0px solid #666;
+  border: 0px solid #444444;
 }
 
 .menu-places-button {
@@ -1424,8 +1424,8 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .menu-category-button-button:hover {
-  background-color: #3d3d3d;
-  border: 1px solid #535353;
+  background-color: #2d2d2d;
+  border: 1px solid #444444;
   border-radius: 2px;
 }
 
@@ -1453,7 +1453,7 @@ StScrollBar StButton#vhandle:hover {
   padding: 4px 12px;
   border-radius: 2px;
   color: #dcdcdc;
-  border: 1px solid #484848;
+  border: 1px solid #444444;
   background-color: #2d2d2d;
   border-radius: 2px;
   selected-color: #dcdcdc;
@@ -1468,7 +1468,7 @@ StScrollBar StButton#vhandle:hover {
 #menu-search-entry:focus,
 #menu-search-entry:hover {
   color: #dcdcdc;
-  border: 1px solid #484848;
+  border: 1px solid #444444;
   background-color: #2d2d2d;
   border-radius: 2px;
 }
@@ -1568,14 +1568,14 @@ StScrollBar StButton#vhandle:hover {
   border: 1px solid #666;
   background-gradient-direction: vertical;
   background-gradient-start: #222;
-  background-gradient-end: #4d4d4d;
+  background-gradient-end: #2d2d2d;
 }
 
 .workspace-graph .workspace:active {
   border: 1px solid #ccc;
   background-gradient-direction: vertical;
   background-gradient-start: #111;
-  background-gradient-end: #3d3d3d;
+  background-gradient-end: rgba(45, 45, 45, 0.8);
 }
 
 .workspace-graph .workspace .windows {
@@ -1818,7 +1818,7 @@ StScrollBar StButton#vhandle:hover {
  * ===================================================================*/
 .user-icon {
   background-color: #2d2d2d;
-  border: 1px solid #484848;
+  border: 1px solid #444444;
   border-radius: 2px;
   padding: 0.4em;
 }
