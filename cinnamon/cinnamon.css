@@ -1431,34 +1431,26 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .window-list-item-box {
-    border: 0px solid rgba(255,255,255,0.1);
-    border-top: 0px;
-    border-bottom: 0px;
+    color: white;
     background-gradient-direction: vertical;
     background-gradient-end: rgba(0,0,0,0.1);
     background-gradient-start: rgba(0,0,0,0.25);
-    color: white;
-    transition-duration: 200;
+    transition-duration: 100;
 }
 
 .window-list-item-box:active,
 .window-list-item-box:checked,
-.window-list-item-box:focus { 
-    border: 0px solid rgba(255,255,255,0.4);
-    border-top: 0px;
-    border-bottom: 0px;
-    color: white;
+.window-list-item-box:focus {
+
 }
 
-.window-list-item-box:hover { 
-    color: white;
+.window-list-item-box:hover {
     background-gradient-direction: vertical;
     background-gradient-end: rgba(255,255,255,0.3);
     background-gradient-start: rgba(255,255,255,0.2);
 }
 
 .window-list-item-demands-attention {
-    background-gradient-direction: vertical;
     background-gradient-start: rgba(162,184,202,0.9);
     background-gradient-end: rgba(117,145,169,0.9);
 }
