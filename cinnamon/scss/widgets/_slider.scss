@@ -1,0 +1,15 @@
+/*********
+ ! Slider
+ *********/
+
+.slider {
+    height: 18px;
+    min-width: 15em;
+    -slider-height: 4px;
+    -slider-background-color: $dark_bg_color;
+    -slider-border-color: $border_color;
+    -slider-active-background-color: $selected_bg_color;
+    -slider-active-border-color: $selected_bg_color;
+    -slider-border-width: 1px;
+    -slider-handle-radius: 6px;
+}

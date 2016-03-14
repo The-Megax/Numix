@@ -1,0 +1,35 @@
+/**************
+ ! Window list
+ **************/
+
+.window-list-box {
+    spacing: 0px;
+    padding-top: 1px;
+}
+
+.window-list-item-label {
+    font-weight: normal;
+    width: 15em;
+    min-width: 5px;
+}
+
+.window-list-item-box {
+    color: $white;
+    background-gradient-direction: vertical;
+    background-gradient-end: alpha($black, 0.1);
+    background-gradient-start: alpha($black, 0.25);
+    transition-duration: 100;
+
+    &:active, &:checked, &:focus { }
+
+    &:hover {
+        background-gradient-direction: vertical;
+        background-gradient-end: alpha($white, 0.3);
+        background-gradient-start: alpha($white, 0.2);
+    }
+}
+
+.window-list-item-demands-attention {
+    background-gradient-start: $warning_color;
+    background-gradient-end: alpha($warning_color, 0.9);
+}

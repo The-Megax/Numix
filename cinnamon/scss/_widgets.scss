@@ -5,16 +5,16 @@
 @import "widgets/base";
 @import "widgets/sound";
 @import "widgets/tooltips";
+@import "widgets/slider";
+@import "widgets/window-list";
+@import "widgets/user-applet";
+@import "widgets/popup-menus";
 
 
-/*@import "base/tools";
-@import "base/colors";
-@import "base/font";
+/*
 
 // Main modules
-@import "main-modules/tooltips";
 @import "main-modules/widget-modules/1-widgets-INDEX";
-@import "main-modules/popup-menus";
 @import "main-modules/panel";
 @import "main-modules/expo-&-scale";
 @import "main-modules/desklet-modules/1-desklets-INDEX";

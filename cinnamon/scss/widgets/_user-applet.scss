@@ -1,0 +1,16 @@
+/**************
+ ! User applet
+ **************/
+
+.user-icon {
+    background-color: $dark_bg_color;
+    border: 1px solid $border_color;
+    border-radius: 2px;
+    padding: 0.4em;
+}
+
+.user-label {
+    color: $dark_fg_color;
+    font-size: 16px;
+    margin: 6px;
+}
