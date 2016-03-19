@@ -3,8 +3,9 @@
 @import "font";
 
 @import "widgets/base";
-@import "widgets/sound";
+@import "widgets/scrollbars";
 @import "widgets/tooltips";
+@import "widgets/sound";
 @import "widgets/slider";
 @import "widgets/window-list";
 @import "widgets/user-applet";
@@ -13,4 +14,5 @@
 @import "widgets/calendar";
 @import "widgets/lgd";
 @import "widgets/notification";
+@import "widgets/alt-tab";
 @import "widgets/checkboxes-&-radiobuttons";

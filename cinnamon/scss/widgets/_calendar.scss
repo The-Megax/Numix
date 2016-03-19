@@ -11,7 +11,7 @@
 }
 
 .calendar {
-    padding: .4em 1.8em;
+    padding: .4em 1.75em;
     spacing-rows: 0px;
     spacing-columns: 0px;
 }
@@ -47,9 +47,7 @@
 
 .calendar-day {/* ! */}
 
-
 .calendar-day-top {/* ! */}
-
 
 .calendar-day-left {/* ! */}
 
@@ -95,6 +93,6 @@
     font-size: 9pt;
     font-weight: normal;
     @include size(1.2em, 1.6em);
-    padding-top: .4em;
-    padding-right: .4em;
+    padding-top: .7em;
+    padding-right: .6em;
 }

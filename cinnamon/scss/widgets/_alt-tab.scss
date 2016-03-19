@@ -1,0 +1,59 @@
+/**********
+ ! Alt Tab
+ **********/
+
+#altTabPopup {
+    padding: 0px;
+    spacing: 4px;
+
+    // Thumbnails box in "icons & thumbnails" mode
+    .switcher-list:last-child {
+        //border-image: url("background-assets/popup.svg") 7;
+        color: $dark-fg-color;
+        padding: 0px;
+        font-size: 10pt;
+        font-weight: bold;
+
+        .item-box {
+            padding: 10px;
+
+            &:selected {
+                border-image: none;
+                color: $dark-fg-color;
+            }
+
+            StLabel { padding-top: .8em; }
+        }
+    }
+
+    // Icons box in classical alt-tab mode
+    .switcher-list:first-child:last-child,
+    .switcher-list:first-child {
+        //border-image: url("background-assets/popup.svg") 7;
+        color: $dark-fg-color;
+        padding: 2px;
+        font-size: 10pt;
+        font-weight: bold;
+
+        .item-box {
+            padding: 10px;
+
+            &:selected {
+                border-image: url("background-assets/hover.svg") 7;
+                color: $dark-fg-color;
+            }
+
+            StLabel { padding-top: .4em; }
+        }
+    }
+
+    .switcher-list-item-container {
+        spacing: 0px;
+    }
+
+    .thumbnail {
+        width: 256px;
+    }
+
+    .alt-tab-app {}
+}

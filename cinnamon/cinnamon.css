@@ -19,6 +19,38 @@ stage {
   text-decoration: underline;
 }
 
+/*************
+ ! Scrollbars
+ *************/
+StScrollView.vfade {
+  -st-vfade-offset: 0;
+}
+StScrollView.hfade {
+  -st-hfade-offset: 0;
+}
+
+StScrollBar {
+  padding: 3px;
+  padding-right: 6px;
+  min-width: 8px;
+  min-height: 16px;
+}
+StScrollBar StBin#trough {
+  background-color: transparent;
+}
+StScrollBar StButton#vhandle,
+StScrollBar StButton#hhandle {
+  border-image: url("control-assets/scroll-handle.svg") 3;
+}
+StScrollBar StButton#vhandle:hover,
+StScrollBar StButton#hhandle:hover,
+StScrollBar StButton#vhandle:active,
+StScrollBar StButton#hhandle:active,
+StScrollBar StButton#vhandle:focus,
+StScrollBar StButton#hhandle:focus {
+  border-image: url("control-assets/scroll-handle-hover.svg") 3;
+}
+
 /**************
  ! Sound Applet
  **************/
@@ -443,7 +475,7 @@ stage {
 }
 
 .calendar {
-  padding: .4em 1.8em;
+  padding: .4em 1.75em;
   spacing-rows: 0px;
   spacing-columns: 0px;
 }
@@ -535,84 +567,10 @@ stage {
   font-weight: normal;
   width: 1.2em;
   height: 1.6em;
-  padding-top: .4em;
-  padding-right: .4em;
+  padding-top: .7em;
+  padding-right: .6em;
 }
 
-/*.datemenu-date-label {
-    padding: .4em 1.75em;
-    font-size: $font-size;
-    color: $bg_color;
-    font-weight: bold;
-    text-align: center;
-}
-
-.calendar-day-base {
-    text-align: center;
-    width: 2.4em;
-    max-height: 2.4em;
-    padding: 5px 0px 5px 0px;
-
-    &:active { }
-}
-
-.calendar-day-heading {
-    color: $bg_color;
-    padding-top: 1em;
-    padding-bottom: 1em;
-}
-
-.calendar-week-number {
-    padding-left: 0px;
-    color: $bg_color;
-}*/
-/* Hack used in lieu of border-collapse - see calendar.js */
-/*.calendar-day {
-    border: 1px solid $dark_bg_color;
-    color: $bg_color;
-    border-top-width: 0;
-    border-left-width: 0;
-    border-radius: 0px;
-    width: 32px;
-}
-
-.calendar-day-top {
-    border-top-width: 1px;
-}
-
-.calendar-day-left {
-    border-left-width: 1px;
-}*/
-/*.calendar-work-day {
-    border-color: $border_color;
-}
-
-.calendar-nonwork-day {
-    background-color: alpha($dark_bg_color, 0.1);
-    border-color: $white;
-}
-
-.calendar-today {
-    background-gradient-direction: vertical;
-    background-gradient-start: alpha($white, 0.4);
-    background-gradient-end: alpha($white, 0.4);
-    box-shadow:inset 0px 0px 0px 1px alpha($white, 0.2);
-    color: $white;
-    font-weight: bold;
-}
-
-.calendar-other-month-day {
-    color: $bg_color;
-}
-
-.calendar-day-with-events {
-    font-weight: bold;
-    color: $white;
-}
-
-.calendar-month-label, .calendar-day-base {
-    font-size: 7.5pt;
-}*/
 /****************
  ! Looking Glass
  ****************/
@@ -733,6 +691,56 @@ stage {
   padding-bottom: .8em;
 }
 
+/**********
+ ! Alt Tab
+ **********/
+#altTabPopup {
+  padding: 0px;
+  spacing: 4px;
+}
+#altTabPopup .switcher-list:last-child {
+  color: #dcdcdc;
+  padding: 0px;
+  font-size: 10pt;
+  font-weight: bold;
+}
+#altTabPopup .switcher-list:last-child .item-box {
+  padding: 10px;
+}
+#altTabPopup .switcher-list:last-child .item-box:selected {
+  border-image: none;
+  color: #dcdcdc;
+}
+#altTabPopup .switcher-list:last-child .item-box StLabel {
+  padding-top: .8em;
+}
+#altTabPopup .switcher-list:first-child:last-child,
+#altTabPopup .switcher-list:first-child {
+  color: #dcdcdc;
+  padding: 2px;
+  font-size: 10pt;
+  font-weight: bold;
+}
+#altTabPopup .switcher-list:first-child:last-child .item-box,
+#altTabPopup .switcher-list:first-child .item-box {
+  padding: 10px;
+}
+#altTabPopup .switcher-list:first-child:last-child .item-box:selected,
+#altTabPopup .switcher-list:first-child .item-box:selected {
+  border-image: url("background-assets/hover.svg") 7;
+  color: #dcdcdc;
+}
+#altTabPopup .switcher-list:first-child:last-child .item-box StLabel,
+#altTabPopup .switcher-list:first-child .item-box StLabel {
+  padding-top: .4em;
+}
+#altTabPopup .switcher-list-item-container {
+  spacing: 0px;
+}
+#altTabPopup .thumbnail {
+  width: 256px;
+}
+
 /*****************************
  ! Checkboxes + Radio buttons
  *****************************/
@@ -793,44 +801,6 @@ stage {
 
 .nm-menu-item-icons {
   spacing: .3em;
-}
-
-StScrollBar {
-  padding: 4px;
-}
-
-StScrollView.vfade {
-  -st-vfade-offset: 68px;
-}
-
-StScrollView StScrollBar {
-  min-width: 10px;
-  min-height: 10px;
-}
-
-StScrollBar StBin#trough {
-  background-color: #2d2d2d;
-  border: 1px solid #444444;
-  border-radius: 2px;
-}
-
-StScrollBar StButton#vhandle {
-  background-color: #2d2d2d;
-  border: 1px solid #444444;
-  border-radius: 2px;
-}
-
-StScrollBar StButton#hhandle {
-  background-color: #2d2d2d;
-  border: 1px solid #444444;
-  border-radius: 2px;
-}
-
-StScrollBar StButton#hhandle:hover,
-StScrollBar StButton#vhandle:hover {
-  background-color: #d64937;
-  border: 1px solid #d64937;
-  padding: 4px;
 }
 
 /* Connamonból átvéve */
@@ -933,99 +903,6 @@ StScrollBar StButton#vhandle:hover {
   border-bottom-width: 0px;
   height: 120px;
   width: 220px;
-}
-
-/* ===================================================================
- * Alt Tab
- * ===================================================================*/
-#altTabPopup {
-  padding: 8px;
-  spacing: 16px;
-}
-
-.switcher-list {
-  background-color: #2d2d2d;
-  border: 1px solid #444444;
-  border-radius: 2px;
-  padding: 20px;
-  font-size: 9pt;
-  color: #dcdcdc;
-  font-weight: bold;
-}
-
-.switcher-list-item-container {
-  spacing: 8px;
-}
-
-.thumbnail-scroll-gradient-left {
-  background-color: rgba(45, 45, 45, 0.5);
-  border-radius: 24px;
-  border-radius-topright: 0px;
-  border-radius-bottomright: 0px;
-  width: 60px;
-}
-
-.thumbnail-scroll-gradient-right {
-  background-color: rgba(45, 45, 45, 0.5);
-  border-radius: 24px;
-  border-radius-topleft: 0px;
-  border-radius-bottomleft: 0px;
-  width: 60px;
-}
-
-.switcher-list .item-box {
-  padding: 8px;
-  border: 1px solid transparent;
-  border-radius: 0px;
-}
-
-.switcher-list .item-box:outlined {
-  padding: 6px;
-  border: 2px solid rgba(68, 68, 68, 0);
-}
-
-.switcher-list .item-box:selected {
-  background-color: #d64937;
-  border-radius: 2px;
-}
-
-.switcher-list .thumbnail-box {
-  background-color: none;
-  padding: 2px;
-  spacing: 4px;
-}
-
-.switcher-list .thumbnail {
-  width: 256px;
-}
-
-.switcher-list .separator {
-  width: 1px;
-  background: rgba(255, 255, 255, 0.33);
-}
-
-.ripple-box {
-  width: 104px;
-  height: 104px;
-  background-image: url("corner-ripple.png");
-}
-
-.ripple-box:rtl {
-  background-image: url("corner-ripple.png");
-}
-
-.switcher-arrow {
-  border-color: transparent;
-  color: #dcdcdc;
-}
-
-.switcher-arrow:highlighted {
-  border-color: transparent;
-  color: #fff;
-}
-
-.switcher-preview-backdrop {
-  background-color: rgba(45, 45, 45, 0.7);
 }
 
 /* ===================================================================
