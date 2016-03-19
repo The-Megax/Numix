@@ -12,11 +12,11 @@
     font-size: $font-size;
 
     &.panel-top {
-        box-shadow: 0 1px rgba(255, 255, 255, .2);
+        box-shadow: 0 1px alpha($white, 0.2);
     }
 
     &.panel-bottom {
-        box-shadow: 0 -1px rgba(255, 255, 255, .2);
+        box-shadow: 0 -1px alpha($white, 0.2);
     }
 
     &:highlight {
@@ -29,8 +29,8 @@
 
         &:dnd {
             background-gradient-direction: vertical;
-            background-gradient-start: rgba(255,0,0,0.05);
-            background-gradient-end: rgba(255,0,0,0.2);
+            background-gradient-start: rgba(255, 0, 0, 0.05);
+            background-gradient-end: rgba(255, 0, 0, 0.2);
         }
 
         &:ltr {
@@ -47,8 +47,8 @@
 
         &:dnd {
             background-gradient-direction: vertical;
-            background-gradient-start: rgba(0,255,0,0.05);
-            background-gradient-end: rgba(0,255,0,0.2);
+            background-gradient-start: rgba(0, 255, 0, 0.05);
+            background-gradient-end: rgba(0, 255, 0, 0.2);
         }
     }
 
@@ -57,8 +57,8 @@
 
         &:dnd {
             background-gradient-direction: vertical;
-            background-gradient-start: rgba(0,0,255,0.05);
-            background-gradient-end: rgba(0,0,255,0.2);
+            background-gradient-start: rgba(0, 0, 255, 0.05);
+            background-gradient-end: rgba(0, 0, 255, 0.2);
         }
 
         &:ltr {
@@ -110,8 +110,8 @@
 
 .panel-launcher {
     border: 1px solid alpha($white, 0.0);
-    margin: 1px;
-    padding: 1px;
+    margin: 0px;
+    padding: 0px;
     transition-duration: 200;
 
     &:hover {
@@ -122,48 +122,5 @@
         background-gradient-direction: vertical;
         background-gradient-end: alpha($white, 0.3);
         background-gradient-start: alpha($white, 0.2);
-    }
-
-    &-add-dialog-content-box {
-        padding: 15px;
-        spacing: 20px;
-
-        &-left {
-            padding: 12px;
-            spacing: 20px;
-        }
-
-        &-right {
-            padding: 6px;
-            spacing: 10px;
-        }
-    }
-
-    &-add-dialog-entry {
-        font-size: $font-size;
-        font-weight: normal;
-        width: 23em;
-        selection-background-color: $black;
-        selected-color: $white;
-        border-radius: 2px;
-        padding: 4px;
-        color: $white;
-        border: 1px solid rgba(200,200,200,0.12);
-        background-gradient-direction: vertical;
-        background-gradient-start: alpha($black, 0.3);
-        background-gradient-end: alpha($black, 0.3);
-        box-shadow: inset 0px 1px 2px 0px alpha($black, 0.5);
-        caret-size: 1px;
-        height: 16px;
-
-        &:focus, &:hover {
-            color: #2e2e2e;
-            border: 1px solid alpha($black, 0.2);
-            background-gradient-direction: vertical;
-            background-gradient-start: rgba(200,200,200,0.9);
-            background-gradient-end: rgba(238,238,238,0.9);
-            box-shadow: inset 0px 1px 2px 0px alpha($black, 0.4);
-            caret-color: $black;
-        }
     }
 }

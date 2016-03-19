@@ -16,7 +16,7 @@
    id="svg11300"
    sodipodi:version="0.32"
    inkscape:version="0.91 r"
-   sodipodi:docname="calendar-arrow-left.svg"
+   sodipodi:docname="checkbox-focused.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    version="1.0"
    style="display:inline;enable-background:new">
@@ -29,9 +29,9 @@
      borderopacity="1"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="21.21875"
-     inkscape:cx="-15.776141"
-     inkscape:cy="7.6229748"
+     inkscape:zoom="15.431818"
+     inkscape:cx="-17.452136"
+     inkscape:cy="8.3342918"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:grid-bbox="true"
@@ -51,7 +51,7 @@
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:window-maximized="1"
-     inkscape:bbox-nodes="false"
+     inkscape:bbox-nodes="true"
      inkscape:bbox-paths="false"
      inkscape:snap-bbox-edge-midpoints="false"
      inkscape:snap-bbox-midpoints="false"
@@ -130,11 +130,23 @@
      inkscape:label="Base"
      id="layer1"
      transform="translate(0,-284)">
-    <path
-       style="display:inline;fill:#888888;fill-opacity:1;stroke:none"
-       d="m 10,296 0,-8 -4,4 z"
-       id="path18028"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccc" />
+    <rect
+       rx="2"
+       ry="2"
+       y="284"
+       x="0"
+       height="16"
+       width="16"
+       id="rect2999"
+       style="opacity:0.5;fill:#484848;fill-opacity:1;stroke:none" />
+    <rect
+       style="fill:#2d2d2d;fill-opacity:1;stroke:none"
+       id="rect3769"
+       width="14"
+       height="14"
+       x="1"
+       y="285"
+       ry="1"
+       rx="1" />
   </g>
 </svg>

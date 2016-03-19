@@ -63,13 +63,12 @@ stage {
   padding-top: 2px;
 }
 .sound-player .slider {
-  height: 6px;
-  -slider-height: 4px;
+  border-image: none;
+  padding: 0px;
+  height: 0.5em;
+  -slider-height: 0.4em;
   -slider-background-color: #2d2d2d;
-  -slider-border-color: #444444;
   -slider-active-background-color: #d64937;
-  -slider-active-border-color: #d64937;
-  -slider-border-width: 0px;
   -slider-handle-radius: 0px;
 }
 
@@ -90,15 +89,18 @@ stage {
  ! Slider
  *********/
 .slider {
-  height: 18px;
-  min-width: 15em;
-  -slider-height: 4px;
-  -slider-background-color: #2d2d2d;
-  -slider-border-color: #444444;
+  -slider-height: 2px;
+  -slider-background-color: transparent;
+  -slider-border-color: transparent;
   -slider-active-background-color: #d64937;
-  -slider-active-border-color: #d64937;
-  -slider-border-width: 1px;
+  -slider-active-border-color: transparent;
+  -slider-border-width: 2px;
   -slider-handle-radius: 6px;
+  color: #dcdcdc;
+  border-image: url("control-assets/slider.svg") 9 6 8 8;
+  border: 0 solid transparent;
+  min-width: 15em;
+  height: 16px;
 }
 
 /**************
@@ -254,8 +256,11 @@ stage {
   border-width: 0;
 }
 .popup-sub-menu StScrollBar StBin#vhandle {
-  background: #f58254;
+  background: #d64937;
   border-width: 0;
+}
+.popup-sub-menu .popup-slider-menu-item {
+  border-image: url("control-assets/slider--submenu.svg") 9 32 8 8;
 }
 
 .popup-combo-menu {
@@ -284,21 +289,22 @@ stage {
 }
 
 .popup-slider-menu-item {
-  border-image: url("misc-assets/slider.png") 10 10 10 8 stretch;
-  height: 18px;
-  min-width: 15em;
-  -slider-height: 4px;
+  -slider-height: 2px;
   -slider-background-color: transparent;
   -slider-border-color: transparent;
   -slider-active-background-color: #d64937;
-  -slider-active-border-color: #d64937;
-  -slider-border-width: 1px;
+  -slider-active-border-color: transparent;
+  -slider-border-width: 2px;
   -slider-handle-radius: 6px;
   color: #dcdcdc;
+  border-image: url("control-assets/slider.svg") 9 6 8 8;
+  border: 0 solid transparent;
+  min-width: 15em;
+  height: 16px;
 }
 
 .popup-device-menu-item {
-  spacing: .5em;
+  spacing: 0.5em;
 }
 
 .popup-inactive-menu-item {
@@ -312,7 +318,6 @@ stage {
 
 .popup-submenu-menu-item:open {
   border-radius: 0px;
-  background-color: #d64937;
   border-image: url("misc-assets/sub-menu-item-active.png") 4;
   color: #fff;
 }
@@ -412,8 +417,8 @@ stage {
  *************************/
 .panel-launcher {
   border: 1px solid rgba(255, 255, 255, 0);
-  margin: 1px;
-  padding: 1px;
+  margin: 0px;
+  padding: 0px;
   transition-duration: 200;
 }
 .panel-launcher:hover {
@@ -425,160 +430,189 @@ stage {
   background-gradient-end: rgba(255, 255, 255, 0.3);
   background-gradient-start: rgba(255, 255, 255, 0.2);
 }
-.panel-launcher-add-dialog-content-box {
-  padding: 15px;
-  spacing: 20px;
-}
-.panel-launcher-add-dialog-content-box-left {
-  padding: 12px;
-  spacing: 20px;
-}
-.panel-launcher-add-dialog-content-box-right {
-  padding: 6px;
-  spacing: 10px;
-}
-.panel-launcher-add-dialog-entry {
-  font-size: 9pt;
-  font-weight: normal;
-  width: 23em;
-  selection-background-color: #000;
-  selected-color: #fff;
-  border-radius: 2px;
-  padding: 4px;
-  color: #fff;
-  border: 1px solid rgba(200, 200, 200, 0.12);
-  background-gradient-direction: vertical;
-  background-gradient-start: rgba(0, 0, 0, 0.3);
-  background-gradient-end: rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
-  caret-size: 1px;
-  height: 16px;
-}
-.panel-launcher-add-dialog-entry:focus, .panel-launcher-add-dialog-entry:hover {
-  color: #2e2e2e;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  background-gradient-direction: vertical;
-  background-gradient-start: rgba(200, 200, 200, 0.9);
-  background-gradient-end: rgba(238, 238, 238, 0.9);
-  box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.4);
-  caret-color: #000;
-}
 
 /**************
  ! Date applet
  **************/
+.datemenu-date-label {
+  padding: .7em 1.3em .4em 1.3em;
+  font-size: 10pt;
+  font-weight: bold;
+  text-align: center;
+  color: #dcdcdc;
+}
+
 .calendar {
-  padding: .4em 1.75em;
+  padding: .4em 1.8em;
   spacing-rows: 0px;
   spacing-columns: 0px;
 }
 
 .calendar-month-label {
-  color: #dedede;
-  padding-bottom: 8px;
-  padding-top: 8px;
+  padding-top: 2px;
+  font-size: 9pt;
   font-weight: bold;
+  color: #555555;
 }
 
 .calendar-change-month-back,
 .calendar-change-month-forward:rtl {
-  width: 18px;
-  height: 12px;
   background-image: url("control-assets/calendar-arrow-left.svg");
-  border-radius: 4px;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
 }
-
-.calendar-change-month-back:hover {
+.calendar-change-month-back:hover,
+.calendar-change-month-forward:rtl:hover {
   background-image: url("control-assets/calendar-arrow-left-hover.svg");
 }
 
 .calendar-change-month-forward,
 .calendar-change-month-back:rtl {
-  width: 18px;
-  height: 12px;
   background-image: url("control-assets/calendar-arrow-right.svg");
-  border-radius: 4px;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
 }
-
-.calendar-change-month-forward:hover {
+.calendar-change-month-forward:hover,
+.calendar-change-month-back:rtl:hover {
   background-image: url("control-assets/calendar-arrow-right-hover.svg");
 }
 
-.datemenu-date-label {
-  padding: .4em 1.75em;
-  font-size: 9pt;
-  color: #dedede;
-  font-weight: bold;
-  text-align: center;
-}
-
-.calendar-day-base {
-  text-align: center;
-  width: 2.4em;
-  max-height: 2.4em;
-  padding: 5px 0px 5px 0px;
-}
-
-.calendar-day-heading {
-  color: #dedede;
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
-
-.calendar-week-number {
-  padding-left: 0px;
-  color: #dedede;
-}
-
-/* Hack used in lieu of border-collapse - see calendar.js */
 .calendar-day {
-  border: 1px solid #2d2d2d;
-  color: #dedede;
-  border-top-width: 0;
-  border-left-width: 0;
-  border-radius: 0px;
-  width: 32px;
+  /* ! */
 }
 
 .calendar-day-top {
-  border-top-width: 1px;
+  /* ! */
 }
 
 .calendar-day-left {
-  border-left-width: 1px;
+  /* ! */
+}
+
+.calendar-day-base {
+  font-size: 9pt;
+  font-weight: bold;
+  text-align: center;
+  width: 2.3em;
+  height: 2.5em;
+}
+
+.calendar-day-heading {
+  color: #dcdcdc;
+  padding: 1em;
+  height: 1em;
 }
 
 .calendar-work-day {
-  border-color: #444444;
+  border-image: url("misc-assets/calendar-work-day.svg") 6;
+  border: none;
+  color: #dcdcdc;
 }
 
 .calendar-nonwork-day {
-  background-color: rgba(45, 45, 45, 0.1);
-  border-color: #fff;
+  border-image: url("misc-assets/calendar-nonwork-day.svg") 6;
+  border: none;
+  color: #dcdcdc;
 }
 
 .calendar-today {
-  background-gradient-direction: vertical;
-  background-gradient-start: rgba(255, 255, 255, 0.4);
-  background-gradient-end: rgba(255, 255, 255, 0.4);
-  box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.2);
-  color: #fff;
+  border-image: url("misc-assets/calendar-today.svg") 6;
+  color: #dcdcdc;
   font-weight: bold;
 }
 
 .calendar-other-month-day {
-  color: #dedede;
+  border-image: url("misc-assets/calendar-other-month-day.svg") 6;
+  color: #555555;
+  font-weight: normal;
+}
+
+.calendar-week-number {
+  color: #dcdcdc;
+  font-size: 9pt;
+  font-weight: normal;
+  width: 1.2em;
+  height: 1.6em;
+  padding-top: .4em;
+  padding-right: .4em;
+}
+
+/*.datemenu-date-label {
+    padding: .4em 1.75em;
+    font-size: $font-size;
+    color: $bg_color;
+    font-weight: bold;
+    text-align: center;
+}
+
+.calendar-day-base {
+    text-align: center;
+    width: 2.4em;
+    max-height: 2.4em;
+    padding: 5px 0px 5px 0px;
+
+    &:active { }
+}
+
+.calendar-day-heading {
+    color: $bg_color;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.calendar-week-number {
+    padding-left: 0px;
+    color: $bg_color;
+}*/
+/* Hack used in lieu of border-collapse - see calendar.js */
+/*.calendar-day {
+    border: 1px solid $dark_bg_color;
+    color: $bg_color;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-radius: 0px;
+    width: 32px;
+}
+
+.calendar-day-top {
+    border-top-width: 1px;
+}
+
+.calendar-day-left {
+    border-left-width: 1px;
+}*/
+/*.calendar-work-day {
+    border-color: $border_color;
+}
+
+.calendar-nonwork-day {
+    background-color: alpha($dark_bg_color, 0.1);
+    border-color: $white;
+}
+
+.calendar-today {
+    background-gradient-direction: vertical;
+    background-gradient-start: alpha($white, 0.4);
+    background-gradient-end: alpha($white, 0.4);
+    box-shadow:inset 0px 0px 0px 1px alpha($white, 0.2);
+    color: $white;
+    font-weight: bold;
+}
+
+.calendar-other-month-day {
+    color: $bg_color;
 }
 
 .calendar-day-with-events {
-  font-weight: bold;
-  color: #fff;
+    font-weight: bold;
+    color: $white;
 }
 
 .calendar-month-label, .calendar-day-base {
-  font-size: 7.5pt;
-}
-
+    font-size: 7.5pt;
+}*/
 /****************
  ! Looking Glass
  ****************/
@@ -614,10 +648,6 @@ stage {
   margin-from-right-edge-of-screen: 20px;
   width: 34em;
   color: #dcdcdc;
-  /* We use row-span = 2 for the image cell, which prevents its height preferences to be
-     taken into account during allocation, so its height ends up being limited by the height
-     of the content in the other rows. To avoid showing a stretched image, we set the minimum
-     height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 = 159 */
 }
 #notification CinnamonGenericContainer * {
   font-weight: normal;
@@ -701,6 +731,53 @@ stage {
 .popup-menu-content #notification.notification-with-image {
   border-image: url("background-assets/dark-bg-marked-green.svg") 7;
   padding-bottom: .8em;
+}
+
+/*****************************
+ ! Checkboxes + Radio buttons
+ *****************************/
+.check-box CinnamonGenericContainer {
+  spacing: .2em;
+  min-height: 16px;
+}
+.check-box StLabel {
+  padding-top: 1px;
+}
+.check-box StBin {
+  width: 16px;
+  height: 16px;
+  background-image: url("control-assets/check-box.svg");
+}
+.check-box:focus StBin {
+  background-image: url("control-assets/check-box-focused.svg");
+}
+.check-box:checked StBin {
+  background-image: url("control-assets/check-box-checked.svg");
+}
+.check-box:focus:checked {
+  background-image: url("control-assets/check-box-focused-checked.svg");
+}
+
+.radiobutton CinnamonGenericContainer {
+  spacing: .2em;
+  min-height: 16px;
+}
+.radiobutton StLabel {
+  padding-top: 1px;
+}
+.radiobutton StBin {
+  width: 16px;
+  height: 16px;
+  background-image: url("control-assets/radiobutton.svg");
+}
+.radiobutton:focus StBin {
+  background-image: url("control-assets/radiobutton-focused.svg");
+}
+.radiobutton:checked StBin {
+  background-image: url("control-assets/radiobutton-checked.svg");
+}
+.radiobutton:focus:checked {
+  background-image: url("control-assets/radiobutton-focused-checked.svg");
 }
 
 /* small fonts */
@@ -1737,66 +1814,6 @@ StScrollBar StButton#vhandle:hover {
   background-color: rgba(0, 0, 0, 0.3);
   caret-size: 1px;
   box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
-}
-
-/* Check Boxes */
-.check-box CinnamonGenericContainer {
-  spacing: .2em;
-  min-height: 30px;
-  padding-top: 2px;
-}
-
-.check-box StBin {
-  width: 24px;
-  height: 22px;
-  background-image: url("control-assets/checkbox-off.svg");
-}
-
-.check-box:focus StBin {
-  background-image: url("control-assets/checkbox-off-focused.svg");
-}
-
-.check-box:checked StBin {
-  background-image: url("control-assets/checkbox.svg");
-}
-
-.check-box:focus:checked StBin {
-  background-image: url("control-assets/checkbox-focused.svg");
-}
-
-.check-box StLabel {
-  font-weight: normal;
-}
-
-.radiobutton CinnamonGenericContainer {
-  spacing: .2em;
-  height: 26px;
-  padding-top: 2px;
-}
-
-.radiobutton StBin {
-  width: 22px;
-  height: 22px;
-  background-image: url("control-assets/radiobutton-off.png");
-  border-radius: 15px;
-}
-
-.radiobutton:focus StBin {
-  background-image: url("control-assets/radiobutton-off.png");
-}
-
-.radiobutton:checked StBin {
-  background-image: url("control-assets/radiobutton.png");
-}
-
-.radiobutton:focus:checked StBin {
-  background-image: url("control-assets/radiobutton.png");
-}
-
-.radiobutton StLabel {
-  padding-top: 4px;
-  font-size: 0.9em;
-  box-shadow: none;
 }
 
 .flashspot {

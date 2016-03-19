@@ -37,7 +37,7 @@
     }
 
     &-generic-coverart {
-        background: rgba(0,0,0,0.2);
+        background: alpha($black, 0.2);
     }
 
     &-overlay {
@@ -45,7 +45,7 @@
         height: 70px;
         padding: 15px;
         spacing: 0.5em;
-        background: rgba(0,0,0,0.8);
+        background: alpha($black, 0.8);
         color: $white;
 
         StBoxLayout {
@@ -54,13 +54,12 @@
     }
 
     .slider {
-        height: 6px;
-        -slider-height: 4px;
+        border-image: none;
+        padding: 0px;
+        height: 0.5em;
+        -slider-height: 0.4em;
         -slider-background-color: $dark_bg_color;
-        -slider-border-color: $border_color;
         -slider-active-background-color: $selected_bg_color;
-        -slider-active-border-color: $selected_bg_color;
-        -slider-border-width: 0px;
         -slider-handle-radius: 0px;
     }
 }

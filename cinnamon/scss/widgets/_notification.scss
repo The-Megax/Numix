@@ -51,11 +51,10 @@
         color: $dark_fg_color;
     }
 
-/* We use row-span = 2 for the image cell, which prevents its height preferences to be
-   taken into account during allocation, so its height ends up being limited by the height
-   of the content in the other rows. To avoid showing a stretched image, we set the minimum
-   height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 = 159 */
-    // min-height hack to prevent image stretching
+    // We use row-span = 2 for the image cell, which prevents its height preferences to be
+    // taken into account during allocation, so its height ends up being limited by the height
+    // of the content in the other rows. To avoid showing a stretched image, we set the minimum
+    // height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 = 159
     &.notification-with-image {
         min-height: 159px;
 
@@ -103,6 +102,7 @@
 /***********************
  ! Notifications applet
  ***********************/
+
 .notification-applet-padding {
     padding: .5em 1em;
 }

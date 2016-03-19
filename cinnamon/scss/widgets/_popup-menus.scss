@@ -71,9 +71,14 @@
         }
 
         StBin#vhandle {
-            background: #f58254;
+            background: $selected_bg_color;
             border-width: 0;
         }
+    }
+
+    // FIX for strange padding in "StDrawingArea"
+    .popup-slider-menu-item {
+        border-image: url("control-assets/slider--submenu.svg") 9 32 8 8;
     }
 }
 
@@ -107,21 +112,28 @@
 }
 
 .popup-slider-menu-item {
-    border-image: url("misc-assets/slider.png") 10 10 10 8 stretch; 
-    height: 18px;
-    min-width: 15em;
-    -slider-height: 4px;
+    -slider-height: 2px;
     -slider-background-color: $transparent;
     -slider-border-color: $transparent;
     -slider-active-background-color: $selected_bg_color;
-    -slider-active-border-color: $selected_bg_color;
-    -slider-border-width: 1px;
+    -slider-active-border-color: $transparent;
+    -slider-border-width: 2px;
     -slider-handle-radius: 6px;
     color: $dark_fg_color;
+
+    border-image: url("control-assets/slider.svg") 9 6 8 8;
+    border: 0 solid $transparent;
+    min-width: 15em;
+    height: 16px;
+
+    .popup-menu-item:active & {
+        //-slider-handle-radius: 5px;
+        //color: $white;
+    }
 }
 
 .popup-device-menu-item {
-    spacing: .5em;
+    spacing: 0.5em;
 }
 
 .popup-inactive-menu-item {
@@ -135,7 +147,7 @@
 
 .popup-submenu-menu-item:open {
     border-radius: 0px;
-    background-color: $selected_bg_color;
+    //background-color: $selected_bg_color;
     border-image: url("misc-assets/sub-menu-item-active.png") 4;
     color: $white;
 }

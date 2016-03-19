@@ -2,116 +2,99 @@
  ! Date applet
  **************/
 
+.datemenu-date-label {
+    padding: .7em 1.3em .4em 1.3em;
+    font-size: 10pt;
+    font-weight: bold;
+    text-align: center;
+    color: $dark_fg_color;
+}
+
 .calendar {
-    padding: .4em 1.75em;
+    padding: .4em 1.8em;
     spacing-rows: 0px;
     spacing-columns: 0px;
 }
 
 .calendar-month-label {
-    color: $bg_color;
-    padding-bottom: 8px;
-    padding-top: 8px;
+    padding-top: 2px;
+    font-size: 9pt;
     font-weight: bold;
+    color: $fg_color;
 }
 
 .calendar-change-month-back,
 .calendar-change-month-forward:rtl {
-    width: 18px;
-    height: 12px;
     background-image: url("control-assets/calendar-arrow-left.svg");
-    border-radius: 4px;
-}
+    background-size: 16px;
+    @include size(16px);
 
-.calendar-change-month-back:hover {
-    background-image: url("control-assets/calendar-arrow-left-hover.svg");
+    &:hover {
+        background-image: url("control-assets/calendar-arrow-left-hover.svg");
+    }
 }
 
 .calendar-change-month-forward,
 .calendar-change-month-back:rtl {
-    width: 18px;
-    height: 12px;
     background-image: url("control-assets/calendar-arrow-right.svg");
-    border-radius: 4px;
+    background-size: 16px;
+    @include size(16px);
+
+    &:hover {
+        background-image: url("control-assets/calendar-arrow-right-hover.svg");
+    }
 }
 
-.calendar-change-month-forward:hover {
-    background-image: url("control-assets/calendar-arrow-right-hover.svg");
-}
+.calendar-day {/* ! */}
 
-.datemenu-date-label {
-    padding: .4em 1.75em;
-    font-size: $font-size;
-    color: $bg_color;
-    font-weight: bold;
-    text-align: center;
-}
+
+.calendar-day-top {/* ! */}
+
+
+.calendar-day-left {/* ! */}
 
 .calendar-day-base {
+    font-size: 9pt;
+    font-weight: bold;
     text-align: center;
-    width: 2.4em;
-    max-height: 2.4em;
-    padding: 5px 0px 5px 0px;
-
-    &:active { }
+    @include size(2.3em, 2.5em);
 }
 
 .calendar-day-heading {
-    color: $bg_color;
-    padding-top: 1em;
-    padding-bottom: 1em;
-}
-
-.calendar-week-number {
-    padding-left: 0px;
-    color: $bg_color;
-}
-
-/* Hack used in lieu of border-collapse - see calendar.js */
-.calendar-day {
-    border: 1px solid $dark_bg_color;
-    color: $bg_color;
-    border-top-width: 0;
-    border-left-width: 0;
-    border-radius: 0px;
-    width: 32px;
-}
-
-.calendar-day-top {
-    border-top-width: 1px;
-}
-
-.calendar-day-left {
-    border-left-width: 1px;
+    color: $dark_fg_color;
+    padding: 1em;
+    height: 1em;
 }
 
 .calendar-work-day {
-    border-color: $border_color;
+    border-image: url("misc-assets/calendar-work-day.svg") 6;
+    border: none;
+    color: $dark_fg_color;
 }
 
 .calendar-nonwork-day {
-    background-color: alpha($dark_bg_color, 0.1);
-    border-color: $white;
+    border-image: url("misc-assets/calendar-nonwork-day.svg") 6;
+    border: none;
+    color: $dark_fg_color;
 }
 
 .calendar-today {
-    background-gradient-direction: vertical;
-    background-gradient-start: alpha($white, 0.4);
-    background-gradient-end: alpha($white, 0.4);
-    box-shadow:inset 0px 0px 0px 1px alpha($white, 0.2);
-    color: $white;
+    border-image: url("misc-assets/calendar-today.svg") 6;
+    color: $dark_fg_color;
     font-weight: bold;
 }
 
 .calendar-other-month-day {
-    color: $bg_color;
+    border-image: url("misc-assets/calendar-other-month-day.svg") 6;
+    color: $fg_color;
+    font-weight: normal;
 }
 
-.calendar-day-with-events {
-    font-weight: bold;
-    color: $white;
-}
-
-.calendar-month-label, .calendar-day-base {
-    font-size: 7.5pt;
+.calendar-week-number {
+    color: $dark_fg_color;
+    font-size: 9pt;
+    font-weight: normal;
+    @include size(1.2em, 1.6em);
+    padding-top: .4em;
+    padding-right: .4em;
 }

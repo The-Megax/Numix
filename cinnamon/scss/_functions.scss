@@ -77,3 +77,9 @@ $modules: () !default;
 
     &:active:insensitive, &:checked:insensitive { border-color: border_normal($color); }
 }
+
+// Shorthand for size properties
+@mixin size($width, $height:$width) {
+    width: $width;
+    height: $height;
+}
