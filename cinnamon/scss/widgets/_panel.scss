@@ -1,0 +1,169 @@
+/********
+ ! Panel
+ ********/
+
+#panel {
+    background-gradient-direction: vertical;
+    background-gradient-end: alpha($black, 0.3);
+    background-gradient-start: alpha($black, 0.5);
+    height: 25px;
+    color: $white;
+    font-weight: normal;
+    font-size: $font-size;
+
+    &.panel-top {
+        box-shadow: 0 1px rgba(255, 255, 255, .2);
+    }
+
+    &.panel-bottom {
+        box-shadow: 0 -1px rgba(255, 255, 255, .2);
+    }
+
+    &:highlight {
+        border-color: $transparent;
+        color: $white;
+    }
+
+    &Left {
+        spacing: 0px;
+
+        &:dnd {
+            background-gradient-direction: vertical;
+            background-gradient-start: rgba(255,0,0,0.05);
+            background-gradient-end: rgba(255,0,0,0.2);
+        }
+
+        &:ltr {
+            padding-right: 4px;
+        }
+
+        &:rtl {
+            padding-left: 4px;
+        }
+    }
+
+    &Center {
+        spacing: 0px;
+
+        &:dnd {
+            background-gradient-direction: vertical;
+            background-gradient-start: rgba(0,255,0,0.05);
+            background-gradient-end: rgba(0,255,0,0.2);
+        }
+    }
+
+    &Right {
+        spacing: 0px;
+
+        &:dnd {
+            background-gradient-direction: vertical;
+            background-gradient-start: rgba(0,0,255,0.05);
+            background-gradient-end: rgba(0,0,255,0.2);
+        }
+
+        &:ltr {
+            padding-left: 0px;
+        }
+
+        &:rtl {
+            padding-right: 0px;
+        }
+    }
+
+    // Panel Launchers Applet
+    &-launchers-box {
+        padding-left: 0px;
+    }
+}
+
+.panel-button,
+.panel-status-button {
+    -natural-hpadding: 5px;
+    -minimum-hpadding: 5px;
+    font-weight: bold;
+    color: $white;
+    border: 1px solid alpha($white, 0);
+    border-top: 0px;
+    border-bottom: 0px;
+    transition-duration: 200;
+}
+
+.panel-top .panel-status-button:hover {
+    border-image: url("panel-assets/panel-top-item-hover.svg") 4;
+}
+
+.panel-bottom .panel-status-button:hover {
+    border-image: url("panel-assets/panel-bottom-item-hover.svg") 4;
+}
+
+.panel-menu {
+    -boxpointer-gap: 4px
+}
+
+.system-status-icon {
+    icon-size: 1.09em;
+}
+
+/*************************
+ ! Panel Launchers Applet
+ *************************/
+
+.panel-launcher {
+    border: 1px solid alpha($white, 0.0);
+    margin: 1px;
+    padding: 1px;
+    transition-duration: 200;
+
+    &:hover {
+        border: 1px solid alpha($white, 0.4);
+        border-top: 0px;
+        border-bottom: 0px;
+        color: $white;
+        background-gradient-direction: vertical;
+        background-gradient-end: alpha($white, 0.3);
+        background-gradient-start: alpha($white, 0.2);
+    }
+
+    &-add-dialog-content-box {
+        padding: 15px;
+        spacing: 20px;
+
+        &-left {
+            padding: 12px;
+            spacing: 20px;
+        }
+
+        &-right {
+            padding: 6px;
+            spacing: 10px;
+        }
+    }
+
+    &-add-dialog-entry {
+        font-size: $font-size;
+        font-weight: normal;
+        width: 23em;
+        selection-background-color: $black;
+        selected-color: $white;
+        border-radius: 2px;
+        padding: 4px;
+        color: $white;
+        border: 1px solid rgba(200,200,200,0.12);
+        background-gradient-direction: vertical;
+        background-gradient-start: alpha($black, 0.3);
+        background-gradient-end: alpha($black, 0.3);
+        box-shadow: inset 0px 1px 2px 0px alpha($black, 0.5);
+        caret-size: 1px;
+        height: 16px;
+
+        &:focus, &:hover {
+            color: #2e2e2e;
+            border: 1px solid alpha($black, 0.2);
+            background-gradient-direction: vertical;
+            background-gradient-start: rgba(200,200,200,0.9);
+            background-gradient-end: rgba(238,238,238,0.9);
+            box-shadow: inset 0px 1px 2px 0px alpha($black, 0.4);
+            caret-color: $black;
+        }
+    }
+}

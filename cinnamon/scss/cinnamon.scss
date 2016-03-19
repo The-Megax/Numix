@@ -9,11 +9,6 @@
     font-size: 8pt;
 }
 
-/* small 7.5 pt */
-.calendar-month-label, .calendar-day-base {
-    font-size: 7.5pt;
-}
-
 /* small bold fonts */
 .window-caption, .switcher-list {
     font-size: 8pt;
@@ -90,96 +85,6 @@ StScrollBar StButton#vhandle:hover {
 }
 
 /* ===================================================================
- * Panel (panel.js)
- * ===================================================================*/
-#panel {
-    border: 1px solid alpha($white, 0.2);
-    border-bottom: 0px;
-    border-left: 0px;
-    border-right: 0px;
-    border-radius: 0px;
-    color: $white;
-    background-gradient-direction: vertical;
-    background-gradient-end: alpha($black, 0.1);
-    background-gradient-start: alpha($black, 0.4);
-    height: 25px;
-    font-weight: normal;
-    font-size: $font-size;
-}
-
-#panelLeft, #panelCenter, #panelRight {
-    spacing: 0px;
-}
-
-#panelLeft:dnd {
-    background-gradient-direction: vertical;
-    background-gradient-start: rgba(255,0,0,0.05);
-    background-gradient-end: rgba(255,0,0,0.2);
-}
-
-#panelCenter:dnd {
-    background-gradient-direction: vertical;
-    background-gradient-start: rgba(0,255,0,0.05);
-    background-gradient-end: rgba(0,255,0,0.2);
-}
-
-#panelRight:dnd {
-    background-gradient-direction: vertical;
-    background-gradient-start: rgba(0,0,255,0.05);
-    background-gradient-end: rgba(0,0,255,0.2);
-}
-
-#panelLeft:ltr {
-    padding-right: 4px;
-}
-
-#panelLeft:rtl {
-    padding-left: 4px;
-}
-
-#panelRight:ltr { 
-    padding-left: 0px;
-}
-
-#panelRight:rtl {
-    padding-right: 0px;
-}
-
-.panel-button,
-.panel-status-button {
-    -natural-hpadding: 5px;
-    -minimum-hpadding: 5px;
-    font-weight: bold;
-    color: $white;
-    border: 1px solid alpha($white, 0);
-    border-top: 0px;
-    border-bottom: 0px;
-    transition-duration: 200;
-}
-
-.panel-button:hover,
-.panel-status-button:hover {
-    border: 1px solid alpha($white, 0.4);
-    border-top: 0px;
-    border-bottom: 0px;
-    color: $white;
-    background-gradient-direction: vertical;
-    background-gradient-end: alpha($white, 0.3);
-    background-gradient-start: alpha($white, 0.2);
-}
-
-.panel-menu {
-    -boxpointer-gap: 4px
-}
-
-.popup-menu-item-dot {
-}
-
-.system-status-icon {
-    icon-size: 1.09em;
-}
-
-/* ===================================================================
  * Overview 
  * ===================================================================*/
 #overview {
@@ -191,6 +96,7 @@ StScrollBar StButton#vhandle:hover {
     spacing: 12px;
     background-color: rgba(100,100,100,0.3);
 }
+
 .window-caption {
     spacing: 25px;
     background-color: alpha($black, 0.5);
@@ -250,252 +156,12 @@ StScrollBar StButton#vhandle:hover {
 
 .window-close-area {
     background-image: url("misc-assets/trash.png");
-    background-color: rgba(32,32,32,1.0);
+    background-color: rgba(32, 32, 32, 1.0);
     border: 2px solid alpha($white, 0.6);
     box-shadow: 0px 0px 2px 1px alpha($black, 0.5);
     border-bottom-width: 0px;
     height: 120px;
     width: 220px;
-}
-
-/* ===================================================================
- * Looking Glass 
- * ===================================================================*/
-#LookingGlassDialog
-{
-    background-color: $dark_bg_color;
-    border-radius: 2px;
-    border: 1px solid $border_color;
-    transition-duration: 300;
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    color: $dark_fg_color;
-}
-
-/* ===================================================================
- * Date applet 
- * ===================================================================*/
-.calendar {
-    padding: .4em 1.75em;
-    spacing-rows: 0px;
-    spacing-columns: 0px;
-}
-
-.calendar-month-label {
-    color: $bg_color;
-    padding-bottom: 8px;
-    padding-top: 8px;
-    font-weight: bold;
-}
-
-.calendar-change-month-back,
-.calendar-change-month-forward:rtl {
-    width: 18px;
-    height: 12px;
-    background-image: url("control-assets/calendar-arrow-left.svg");
-    border-radius: 4px;
-}
-
-.calendar-change-month-back:hover {
-    background-image: url("control-assets/calendar-arrow-left-hover.svg");
-}
-
-.calendar-change-month-forward,
-.calendar-change-month-back:rtl {
-    width: 18px;
-    height: 12px;
-    background-image: url("control-assets/calendar-arrow-right.svg");
-    border-radius: 4px;
-}
-
-.calendar-change-month-forward:hover {
-    background-image: url("control-assets/calendar-arrow-right-hover.svg");
-}
-
-.datemenu-date-label {
-    padding: .4em 1.75em;
-    font-size: $font-size;
-    color: $bg_color;
-    font-weight: bold;
-    text-align: center;
-}
-
-.calendar-day-base {
-    text-align: center;
-    width: 2.4em;
-    max-height: 2.4em;
-    padding: 5px 0px 5px 0px;
-}
-
-.calendar-day-base:active {
-}
-
-.calendar-day-heading {
-    color: $bg_color;
-    padding-top: 1em;
-    padding-bottom: 1em;
-}
-
-.calendar-week-number {
-    padding-left: 0px;
-    color: $bg_color;
-}
-
-/* Hack used in lieu of border-collapse - see calendar.js */
-.calendar-day {
-    border: 1px solid $dark_bg_color;
-    color: $bg_color;
-    border-top-width: 0;
-    border-left-width: 0;
-    border-radius: 0px;
-    width: 32px;
-}
-
-.calendar-day-top {
-    border-top-width: 1px;
-}
-
-.calendar-day-left {
-    border-left-width: 1px;
-}
-
-.calendar-work-day {
-    border-color: $border_color;
-}
-
-.calendar-nonwork-day {
-    background-color: alpha($dark_bg_color, 0.1);
-    border-color: $white;
-}
-
-.calendar-today {
-    background-gradient-direction: vertical;
-    background-gradient-start: alpha($white, 0.4);
-    background-gradient-end: alpha($white, 0.4);
-    box-shadow:inset 0px 0px 0px 1px alpha($white, 0.2);
-    color: $white;
-    font-weight: bold;
-}
-
-.calendar-other-month-day {
-    color: $bg_color;
-}
-
-.calendar-day-with-events {
-    font-weight: bold;
-    color: $white;
-}
-
-/* ===================================================================
- * Notifications
- * ===================================================================*/
-
-#notification {
-    font-size: 10pt;
-    border-radius: 2px;
-    border: 1px solid $border_color;
-    background-color: $dark_bg_color;
-    padding: 8px 8px 8px 8px;
-    spacing-rows: 10px;
-    spacing-columns: 10px;
-    margin-from-right-edge-of-screen: 20px;    
-    width: 34em;
-    color: $dark_fg_color;
-}
-
-#notification.multi-line-notification {
-    padding: 8px 8px 8px 8px;
-    color: $dark_fg_color;
-}
-
-/* We use row-span = 2 for the image cell, which prevents its height preferences to be
-   taken into account during allocation, so its height ends up being limited by the height
-   of the content in the other rows. To avoid showing a stretched image, we set the minimum
-   height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 = 159 */
-.notification-with-image {
-    min-height: 159px;
-    color: $dark_fg_color;
-}
-
-#notification-scrollview {
-    max-height: 10em;
-}
-
-#notification-scrollview > .top-shadow, #notification-scrollview > .bottom-shadow {
-    height: 1em;
-}
-
-#notification-scrollview:ltr > StScrollBar {
-    padding-left: 6px;
-}
-
-#notification-scrollview:rtl > StScrollBar {
-    padding-right: 6px;
-}
-
-#notification-body {
-    spacing: 5px;
-}
-
-#notification-actions {
-    spacing: 10px;
-}
-
-.notification-button {
-    height: 22px;
-    font-size: 10pt;
-    padding: 5px 31px 5px;
-}
-
-.notification-button:focus {
-    padding: 5px 31px 5px;
-}
-
-.notification-icon-button {
-    width: 22px;
-    height: 22px;
-    border-radius: 2px;
-    padding: 5px;
-}
-
-.notification-icon-button:focus {
-    padding: 5px;
-}
-
-.notification-icon-button > StIcon {
-    icon-size: 16px;
-}
-
-#notification StEntry {
-    padding: 4px 12px;
-    border-radius: 2px;
-    color: $dark_fg_color;
-    border: 1px solid $border_color;
-    background-color: $dark_bg_color;
-    selected-color: $dark_fg_color;
-    caret-color: $dark_fg_color;
-    caret-size: 1px;
-    width: 250px;
-    height: 16px; 
-    transition-duration: 300;
-    selection-background-color: $selected_bg_color;
-}
-
-#notification StEntry:focus {
-    padding: 4px 12px;
-    border-radius: 2px;
-    color: $dark_fg_color;
-    border: 1px solid $border_color;
-    background-color: $dark_bg_color;
-    selected-color: $dark_fg_color;
-    caret-color: $dark_fg_color;
-    caret-size: 1px;
-    width: 250px;
-    height: 16px; 
-    transition-duration: 300;
-    selection-background-color: $selected_bg_color;
 }
 
 /* ===================================================================
@@ -1319,76 +985,6 @@ StScrollBar StButton#vhandle:hover {
 }
 
 /* ===================================================================
- * Panel Launchers Applet (panelLaunchers.js)
- * ===================================================================*/
-#panel-launchers-box {
-    padding-left: 0px;
-}
-
-.panel-launcher {
-    border: 1px solid alpha($white, 0.0);
-    margin: 1px;
-    padding: 1px;
-    transition-duration: 200;
-}
-
-.panel-launcher:hover {
-    border: 1px solid alpha($white, 0.4);
-    border-top: 0px;
-    border-bottom: 0px;
-    color: $white;
-    background-gradient-direction: vertical;
-    background-gradient-end: alpha($white, 0.3);
-    background-gradient-start: alpha($white, 0.2);
-}
-
-.panel-launcher-add-dialog-content-box {
-    padding: 15px;
-    spacing: 20px;
-}
-
-.panel-launcher-add-dialog-content-box-left {
-    padding: 11px;
-    spacing: 20px;
-}
-
-.panel-launcher-add-dialog-content-box-right {
-    padding: 6px;
-    spacing: 10px;
-}
-
-.panel-launcher-add-dialog-entry {
-    font-size: $font-size;
-    font-weight: normal;
-    width: 23em;
-    selection-background-color: black;
-    selected-color: $white;
-    border-radius: 2px;
-    padding: 4px;
-    color: $white;
-    border: 1px solid rgba(200,200,200,0.12);
-    background-gradient-direction: vertical;
-    background-gradient-start: alpha($black, 0.3);
-    background-gradient-end: alpha($black, 0.3);
-    box-shadow: inset 0px 1px 2px 0px alpha($black, 0.5);
-    caret-size: 1px;
-    height: 16px; 
-}
-
-.panel-launcher-add-dialog-entry:focus,
-.panel-launcher-add-dialog-entry:hover {
-    color: #2e2e2e;
-    border: 1px solid alpha($black, 0.2);
-    background-gradient-direction: vertical;
-    background-gradient-start: rgba(200,200,200,0.9);
-    background-gradient-end: rgba(238,238,238,0.9);
-    box-shadow: inset 0px 1px 2px 0px alpha($black, 0.4);
-    selected-color: $white;
-    caret-color: black;
-    caret-size: 1px;
-}
-
-/* ===================================================================
  * Overview corner
  * ===================================================================*/
 #overview-corner {
@@ -1465,17 +1061,6 @@ StScrollBar StButton#vhandle:hover {
     background-color: alpha($black, 0.3);
     caret-size: 1px;
     box-shadow: inset 0px 1px 2px 0px alpha($black, 0.5);
-}
-
-/* ===================================================================
- * Notification Applet
- * ===================================================================*/
-.notification-applet-padding {
-    padding: .5em 1em;
-}
-
-.notification-applet-container {
-    max-height: 100px;
 }
 
 /* Check Boxes */

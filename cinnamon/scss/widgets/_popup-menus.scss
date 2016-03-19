@@ -26,7 +26,7 @@
     &-item {
         padding: .4em 1.75em;
         spacing: 1em;
-        border: 1px solid transparent;
+        border: 1px solid $transparent;
 
         &:active {
             color: $dark_fg_color;
@@ -38,6 +38,12 @@
         &:insensitive {
             color: $bg_color;
         }
+
+        &-dot { }
+    }
+
+    &-icon {
+        icon-size: 1.14em;
     }
 }
 
@@ -92,7 +98,7 @@
 }
 
 .popup-separator-menu-item {
-    background-color: rgba(233,233,233,0.21);
+    background-color: rgba(233, 233, 233, 0.21);
     height: 1px;
 }
 
@@ -127,12 +133,9 @@
     font-weight: bold;
 }
 
-.popup-menu-icon {
-    icon-size: 1.14em;
-}
-
 .popup-submenu-menu-item:open {
-    background-color: $transparent;
+    border-radius: 0px;
+    background-color: $selected_bg_color;
     border-image: url("misc-assets/sub-menu-item-active.png") 4;
     color: $white;
 }

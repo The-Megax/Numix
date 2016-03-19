@@ -3,8 +3,8 @@
  **************/
 
 .window-list-box {
-    spacing: 0px;
-    padding-top: 1px;
+    spacing: 1px;
+    padding-left: 0px;
 }
 
 .window-list-item-label {
@@ -14,22 +14,54 @@
 }
 
 .window-list-item-box {
-    color: $white;
-    background-gradient-direction: vertical;
-    background-gradient-end: alpha($black, 0.1);
-    background-gradient-start: alpha($black, 0.25);
     transition-duration: 100;
+    color: $white;
+}
 
-    &:active, &:checked, &:focus { }
+/* Different images used in top & bottom panels. */
+@each $v in panel-top, panel-bottom {
+    .#{$v} {
+        .window-list-item-box:hover {
+            border-image: url("panel-assets/#{$v}-item-hover.svg") 4;
+            color: $white;
+        }
 
-    &:hover {
-        background-gradient-direction: vertical;
-        background-gradient-end: alpha($white, 0.3);
-        background-gradient-start: alpha($white, 0.2);
+        .window-list-item-box:active,
+        .window-list-item-box:checked,
+        .window-list-item-box:focus {
+            border-image: url("panel-assets/#{$v}-item.svg") 4;
+            color: $white;
+        }
+
+        .window-list-item-box:checked:hover,
+        .window-list-item-box:focus:hover,
+        .window-list-item-box:active:hover {
+            border-image: url("panel-assets/#{$v}-item-hover.svg") 4;
+        }
+
+        .window-list-item-demands-attention {
+            border-image: url("panel-assets/#{$v}-item-attention.svg") 4;
+        }
+
+        .window-list-item-demands-attention:hover {
+            border-image: url("panel-assets/#{$v}-item-attention-hover.svg") 4;
+        }
     }
 }
 
-.window-list-item-demands-attention {
-    background-gradient-start: $warning_color;
-    background-gradient-end: alpha($warning_color, 0.9);
+/* This styles the window-list preview and window name
+   in "cover" and "timeline" alt-tab modes */
+.switcher-list {
+    border-image: url("background-assets/tooltip.svg") 7;
+    color: $white;
+    padding: 0px 3px;
+    font-weight: bold;
+
+    > StBoxLayout {
+        spacing: .4em;
+
+        > StBoxLayout {
+            spacing: .4em;
+        }
+    }
 }
