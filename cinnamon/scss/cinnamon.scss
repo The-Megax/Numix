@@ -4,32 +4,6 @@
 
 @import "widgets";
 
-/* small fonts */
-.run-dialog-label, .run-dialog-error-label {
-    font-size: 8pt;
-}
-
-/* small bold fonts */
-.window-caption, .switcher-list {
-    font-size: 8pt;
-    font-weight: bold;
-}
-
-.nm-menu-item-icons {
-    spacing: .3em;
-}
-
-/* Connamonból átvéve */
-/*.separator {
-    -gradient-height: 2px;
-    -gradient-start: rgba(85,85,85,1);
-    -gradient-end: $selected_bg_color;
-    -margin-horizontal: 1.5em;
-    height: 1em;
-}*/
-
-/* Connamonból átvéve - vége */
-
 /* Switches (to be used in menus) */
 .toggle-switch {
     width: 51px;
@@ -60,6 +34,8 @@
 }
 
 .window-caption {
+    font-size: 8pt;
+    font-weight: bold;
     spacing: 25px;
     background-color: alpha($black, 0.5);
     border: 1px solid alpha($white, 0.25);
@@ -230,278 +206,6 @@
 .run-dialog .modal-dialog-button-box {
     padding-top: 0;
     spacing: 110px;
-}
-
-.lightbox {
-    background-color: alpha($black, 0.4);
-}
-
-/* ===================================================================
- * End session dialog
- * ===================================================================*/
-.end-session-dialog {
-    spacing: 42px;
-}
-
-.end-session-dialog-subject {
-    font-size: 12pt;
-    font-weight: bold;
-    color: $fg_color;
-    padding-top: 10px;
-    padding-left: 17px;
-    padding-bottom: 30px;
-}
-
-.end-session-dialog-subject:rtl {
-    padding-left: 0px;
-    padding-right: 17px;
-}
-
-.end-session-dialog-description {
-    font-size: 10pt;
-    color: $white;
-    padding-left: 17px;
-    width: 28em;
-}
-
-.end-session-dialog-description:rtl {
-    padding-right: 17px;
-}
-
-.end-session-dialog-logout-icon {
-    border: 2px solid $border_color;
-    border-radius: 0px;
-    width: 32px;
-    height: 32px;
-}
-
-.end-session-dialog-shutdown-icon {
-    width: 32px;
-    height: 32px;
-}
-
-.end-session-dialog-app-list {
-    font-size: 10pt;
-    max-height: 200px;
-    padding-top: 42px;
-    padding-left: 49px;
-    padding-right: 32px;
-}
-
-.end-session-dialog-app-list:rtl {
-    padding-right: 49px;
-    padding-left: 32px;
-}
-
-.end-session-dialog-app-list-item {
-    color: #ccc;
-}
-
-.end-session-dialog-app-list-item:hover {
-    color: $white;
-}
-
-.end-session-dialog-app-list-item:ltr {
-    padding-right: 1em;
-}
-
-.end-session-dialog-app-list-item:rtl {
-    padding-left: 1em;
-}
-
-.end-session-dialog-app-list-item-icon:ltr {
-    padding-right: 17px;
-}
-
-.end-session-dialog-app-list-item-icon:rtl {
-    padding-left: 17px;
-}
-
-.end-session-dialog-app-list-item-name {
-    font-size: 10pt;
-}
-
-.end-session-dialog-app-list-item-description {
-    font-size: 8pt;
-    color: $fg_color;
-}
-
-/* CinnamonMountOperation Dialogs */
-.cinnamon-mount-operation-icon {
-    icon-size: 48px;
-}
-
-.mount-password-reask {
-    color: red;
-}
-
-.show-processes-dialog,
-.mount-question-dialog {
-    spacing: 24px;
-}
-
-.show-processes-dialog-subject,
-.mount-question-dialog-subject {
-    font-size: 12pt;
-    font-weight: bold;
-    color: $fg_color;
-    padding-top: 10px;
-    padding-left: 17px;
-    padding-bottom: 6px;
-}
-
-.show-processes-dialog-subject:rtl,
-.mount-question-dialog-subject:rtl {
-    padding-left: 0px;
-    padding-right: 17px;
-}
-
-.show-processes-dialog-description,
-.mount-question-dialog-description {
-    font-size: 10pt;
-    color: $white;
-    padding-left: 17px;
-    width: 28em;
-}
-
-.show-processes-dialog-description:rtl,
-.mount-question-dialog-description:rtl {
-    padding-right: 17px;
-}
-
-.show-processes-dialog-app-list {
-    font-size: 10pt;
-    max-height: 200px;
-    padding-top: 24px;
-    padding-left: 49px;
-    padding-right: 32px;
-}
-
-.show-processes-dialog-app-list:rtl {
-    padding-right: 49px;
-    padding-left: 32px;
-}
-
-.show-processes-dialog-app-list-item {
-    color: rgba(200,200,200,1);
-}
-
-.show-processes-dialog-app-list-item:hover {
-    color: $white;
-}
-
-.show-processes-dialog-app-list-item:ltr {
-    padding-right: 1em;
-}
-
-.show-processes-dialog-app-list-item:rtl {
-    padding-left: 1em;
-}
-
-.show-processes-dialog-app-list-item-icon:ltr {
-    padding-right: 17px;
-}
-
-.show-processes-dialog-app-list-item-icon:rtl {
-    padding-left: 17px;
-}
-
-.show-processes-dialog-app-list-item-name {
-    font-size: 10pt;
-}
-
-/* ===================================================================
- * Policykit authentication dialog
- * ===================================================================*/
-.polkit-dialog {
-    /* this is the width of the entire modal popup */
-    width: 500px;
-}
-
-.polkit-dialog-main-layout {
-    spacing: 24px;
-    padding: 10px;
-}
-
-.polkit-dialog-message-layout {
-    spacing: 16px;
-}
-
-.polkit-dialog-headline {
-    font-size: $font-size;
-    font-weight: bold;
-    color: $fg_color;
-}
-
-.polkit-dialog-description {
-    font-weight: normal;
-}
-
-.polkit-dialog-user-layout {
-    padding-left: 10px;
-    spacing: 10px;
-}
-
-.polkit-dialog-user-layout:rtl {
-    padding-left: 0px;
-    padding-right: 10px;
-}
-
-.polkit-dialog-user-root-label {
-    color: $error_color;
-}
-
-.polkit-dialog-password-label:ltr {
-    padding-right: 0.5em;
-}
-
-.polkit-dialog-password-label:rtl {
-    padding-left: 0.5em;
-}
-
-.polkit-dialog-password-entry {
-    selected-color: $white;
-    border-radius: 0;
-    color: $white;
-    border: 1px solid rgba(200,200,200,0.12);
-    background-gradient-direction: vertical;
-    background-gradient-start: alpha($black, 0.3);
-    background-gradient-end: alpha($black, 0.3);
-    box-shadow: inset 0px 1px 2px 0px alpha($black, 0.5);
-    caret-size: 1px;
-    caret-color: $white;
-}
-
-.polkit-dialog-password-entry:focus {
-    color: $white;
-}
-
-.polkit-dialog-password-entry .capslock-warning {
-    icon-size: 16px;
-    warning-color: $warning_color;
-    padding: 0 4px;
-}
-
-.polkit-dialog-error-label {
-    font-size: 10pt;
-    color: $error_color;
-    padding-bottom: 8px;
-}
-
-.polkit-dialog-info-label {
-    font-size: 10pt;
-    padding-bottom: 8px;
-}
-
-/* intentionally left transparent to avoid dialog changing size */
-.polkit-dialog-null-label {
-    font-size: 10pt;
-    color: $transparent;
-    padding-bottom: 8px;
-}
-
-.network-dialog-secret-table {
-    spacing-rows: 15px;
 }
 
 /* ===================================================================
@@ -865,38 +569,6 @@
 }
 
 /* ===================================================================
- * Applets (applet.js) 
- * ===================================================================*/
-.applet-box {
-    padding-left: 5px;
-    padding-right: 5px;
-    font-weight: bold;
-    color: $white;
-    border: 1px solid alpha($white, 0);
-    border-top: 0px;
-    border-bottom: 0px;
-    transition-duration: 200;
-}
-
-.applet-box:hover {
-    border: 1px solid alpha($white, 0.4);
-    border-top: 0px;
-    border-bottom: 0px;
-    color: $white;
-    background-gradient-direction: vertical;
-    background-gradient-end: alpha($white, 0.3);
-    background-gradient-start: alpha($white, 0.2);
-}
-
-.applet-label {
-    color: $white;
-    text-align: center;
-}
-
-.applet-icon {
-    color: $white;
-}
-/* ===================================================================
  * Workspace OSD
  * ===================================================================*/
 
@@ -930,6 +602,10 @@
     background-color: alpha($black, 0.3);
     caret-size: 1px;
     box-shadow: inset 0px 1px 2px 0px alpha($black, 0.5);
+}
+
+.lightbox {
+    background-color: alpha($black, 0.4);
 }
 
 .flashspot {
