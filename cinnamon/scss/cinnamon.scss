@@ -219,67 +219,6 @@
     border-width: 0px;
 }
 
-/* ===================================================================
- * On screen keyboard
- * ===================================================================*/
-#keyboard {
-    background-color: $dark_bg_color;
-    border-top: 1px solid $border_color;
-}
-
-.keyboard-layout {
-    spacing: 10px;
-    padding: 10px;
-}
-
-.keyboard-row {
-    spacing: 15px;
-}
-
-.keyboard-key {
-    min-height: 30px;
-    min-width: 30px;
-    background-color: $dark_bg_color;
-    border: 1px solid $border_color;
-    border-radius: 2px;
-    font-size: 14pt;
-    font-weight: bold;
-    color: $dark_fg_color;
-}
-
-.keyboard-key:grayed {
-    color: #888;
-    background-color: $dark_bg_color;
-    border: 1px solid $border_color;
-    border-radius: 2px;
-}
-
-.keyboard-key:checked,
-.keyboard-key:hover {
-    background-color: $selected_bg_color;
-    border: 1px solid $selected_bg_color;
-    border-radius: 2px;
-}
-
-.keyboard-key:active {
-    background-color: alpha($selected_bg_color, 0.8);
-    border: 1px solid $selected_bg_color;
-    border-radius: 2px
-}
-
-.keyboard-subkeys {
-    color: $dark_fg_color;
-    padding: 5px;
-    -arrow-border-radius: 0px;
-    -arrow-background-color: $dark_bg_color;
-    -arrow-border-width: 1px;
-    -arrow-border-color: $border_color;
-    -arrow-border-radius: 2px;
-    -arrow-base: 21px;
-    -arrow-rise: 9px;
-    -boxpointer-gap: 2px;
-}
-
 /* ###################################################################
  * Cinnamon Specific Section 
  * ###################################################################*/

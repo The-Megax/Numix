@@ -381,7 +381,6 @@ StScrollBar StButton#hhandle:focus {
   color: #dcdcdc;
 }
 
-/* Context menu (at the moment only for favorites) */
 /**************
  ! Popup Menus
  **************/
@@ -924,6 +923,60 @@ StScrollBar StButton#hhandle:focus {
   width: 256px;
 }
 
+/*********************
+ ! On screen keyboard
+ *********************/
+#keyboard {
+  background-gradient-direction: vertical;
+  background-gradient-start: rgba(0, 0, 0, 0.7);
+  background-gradient-end: rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+}
+
+.keyboard-layout {
+  spacing: 10px;
+  padding: 10px;
+}
+
+.keyboard-row {
+  spacing: 15px;
+}
+
+.keyboard-key {
+  min-height: 30px;
+  min-width: 30px;
+  background-color: #2d2d2d;
+  border: 1px solid #444444;
+  border-radius: 2px;
+  font-size: 14pt;
+  font-weight: bold;
+  color: #dcdcdc;
+}
+.keyboard-key:grayed {
+  color: #888888;
+}
+.keyboard-key:checked, .keyboard-key:hover {
+  background-color: #444444;
+  border: 1px solid #656565;
+}
+.keyboard-key:active {
+  background-color: #242424;
+  border: 1px solid #363636;
+}
+
+.keyboard-subkeys {
+  color: #dcdcdc;
+  padding: 0px;
+  -arrow-border-radius: 0px;
+  -arrow-background-color: #2d2d2d;
+  -arrow-border-width: 1px;
+  -arrow-border-color: #444444;
+  -arrow-border-radius: 2px;
+  -arrow-base: 16px;
+  -arrow-rise: 8px;
+  -boxpointer-gap: 2px;
+}
+
 /********************
  ! Hot corners icons
  ********************/
@@ -1197,67 +1250,6 @@ StScrollBar StButton#hhandle:focus {
 
 .magnifier-zoom-region.full-screen {
   border-width: 0px;
-}
-
-/* ===================================================================
- * On screen keyboard
- * ===================================================================*/
-#keyboard {
-  background-color: #2d2d2d;
-  border-top: 1px solid #444444;
-}
-
-.keyboard-layout {
-  spacing: 10px;
-  padding: 10px;
-}
-
-.keyboard-row {
-  spacing: 15px;
-}
-
-.keyboard-key {
-  min-height: 30px;
-  min-width: 30px;
-  background-color: #2d2d2d;
-  border: 1px solid #444444;
-  border-radius: 2px;
-  font-size: 14pt;
-  font-weight: bold;
-  color: #dcdcdc;
-}
-
-.keyboard-key:grayed {
-  color: #888;
-  background-color: #2d2d2d;
-  border: 1px solid #444444;
-  border-radius: 2px;
-}
-
-.keyboard-key:checked,
-.keyboard-key:hover {
-  background-color: #d64937;
-  border: 1px solid #d64937;
-  border-radius: 2px;
-}
-
-.keyboard-key:active {
-  background-color: rgba(214, 73, 55, 0.8);
-  border: 1px solid #d64937;
-  border-radius: 2px;
-}
-
-.keyboard-subkeys {
-  color: #dcdcdc;
-  padding: 5px;
-  -arrow-border-radius: 0px;
-  -arrow-background-color: #2d2d2d;
-  -arrow-border-width: 1px;
-  -arrow-border-color: #444444;
-  -arrow-border-radius: 2px;
-  -arrow-base: 21px;
-  -arrow-rise: 9px;
-  -boxpointer-gap: 2px;
 }
 
 /* ###################################################################

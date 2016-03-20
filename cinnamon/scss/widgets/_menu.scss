@@ -95,7 +95,6 @@
     &-label:rtl { padding-right: 5px; }
 }
 
-
 /* Name and description of the currently hovered item in the menu
  * This appears on the bottom right hand corner of the menu */
 .menu-selected-app-box {
@@ -152,5 +151,5 @@
     color: $dark_fg_color;
 }
 
-/* Context menu (at the moment only for favorites) */
+// Context menu (at the moment only for favorites)
 .menu-context-menu { }

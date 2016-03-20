@@ -1,0 +1,57 @@
+/*********************
+ ! On screen keyboard
+ *********************/
+
+#keyboard {
+    background-gradient-direction: vertical;
+    background-gradient-start: alpha($black, 0.7);
+    background-gradient-end: alpha($black, 0.5);
+    box-shadow: inset 0px 1px 3px 0px alpha($black, 0.3);
+}
+
+.keyboard-layout {
+    spacing: 10px;
+    padding: 10px;
+}
+
+.keyboard-row {
+    spacing: 15px;
+}
+
+.keyboard-key {
+    min-height: 30px;
+    min-width: 30px;
+    background-color: $dark_bg_color;
+    border: 1px solid $border_color;
+    border-radius: 2px;
+    font-size: 14pt;
+    font-weight: bold;
+    color: $dark_fg_color;
+
+    &:grayed {
+        color: shade($fg_color, 1.6);
+    }
+
+    &:checked, &:hover {
+        background-color: shade($dark_bg_color, 1.5);
+        border: 1px solid shade($border_color, 1.5);
+    }
+
+    &:active {
+        background-color: shade($dark_bg_color, 0.8);
+        border: 1px solid shade($border_color, 0.8);
+    }
+}
+
+.keyboard-subkeys {
+    color: $dark_fg_color;
+    padding: 0px;
+    -arrow-border-radius: 0px;
+    -arrow-background-color: $dark_bg_color;
+    -arrow-border-width: 1px;
+    -arrow-border-color: $border_color;
+    -arrow-border-radius: 2px;
+    -arrow-base: 16px;
+    -arrow-rise: 8px;
+    -boxpointer-gap: 2px;
+}
