@@ -1,0 +1,156 @@
+/*******
+ ! Menu
+ *******/
+
+/* Main menu title */
+.menu-favorites-box {  
+    background-gradient-direction: vertical;
+    background-gradient-start: $transparent;
+    background-gradient-end: alpha($black, 0.15);
+    border: 1px solid alpha($white, 0.1);
+    width: 70%;
+    margin: auto;
+    padding: 0px;
+    border-radius: 0px;
+}
+
+.menu-favorites-button {
+    padding: 10px;
+    border-radius: 0px;
+
+    &:hover {
+        background-color: $selected_bg_color;
+        box-shadow: inset 0px 0px 1px 1px alpha($selected_bg_color, 0.8);
+        border-radius: 0px;
+    }
+}
+
+.menu-places-box {  
+    margin: auto;
+    padding: 8px;
+    border: 0px solid $border_color;  
+}
+
+.menu-places-button {
+    padding: 10px;
+}
+
+.menu-applications-box {
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.menu-application-button {
+    padding: 7px;
+    max-width: 10px;
+
+    &:highlighted { }
+
+    &-label:ltr { padding-left: 5px; }
+
+    &-label:rtl { padding-right: 5px; }
+
+    &-selected {
+        padding: 7px;
+        color: $dark_fg_color;
+        background-color: $selected_bg_color;
+        box-shadow: inset 0px 0px 1px 1px alpha($selected_bg_color, 0.8);
+        border-radius: 0px;
+
+        &:highlighted {
+            border-image: none;
+            color: $dark_fg_color;
+            background-color: $selected_bg_color;
+            box-shadow: inset 0px 0px 1px 1px alpha($selected_bg_color, 0.8);
+            border-radius: 0px;
+        }
+    }
+}
+
+.menu-categories-box {
+    padding: 10px 30px;
+}
+
+.menu-category-button {
+    padding: 7px;
+
+    &-button:hover { }
+
+    &-greyed {
+        padding: 7px;
+        color: shade($fg_color, 1.6);
+        font-style: normal;
+    }
+
+    &-selected {
+        padding: 7px;
+        color: $dark_fg_color;
+        background-color: $selected_bg_color;
+        box-shadow: inset 0px 0px 1px 1px alpha($selected_bg_color, 0.8);
+        border-radius: 0px;
+    }
+
+    &-label:ltr { padding-left: 5px; }
+
+    &-label:rtl { padding-right: 5px; }
+}
+
+
+/* Name and description of the currently hovered item in the menu
+ * This appears on the bottom right hand corner of the menu */
+.menu-selected-app-box {
+    padding-right: 30px;
+    padding-left: 30px;
+    text-align: right;
+}
+
+.menu-selected-app-title {
+    font-weight: bold;
+}
+
+.menu-selected-app-description {
+    max-width: 150px;
+}
+
+.menu-search-box {
+   padding-left: 30px;
+}
+
+#menu-search-entry {
+    padding: 4px 12px;
+    color: $dark_fg_color;
+    border-radius: 2px;
+    border: 1px solid $border_color;
+    background-color: $dark_bg_color;
+    selected-color: $dark_fg_color;
+    selection-background-color: $selected_bg_color;
+    caret-color: $dark_fg_color;
+    caret-size: 1px;
+    width: 250px;
+    height: 16px;
+    transition-duration: 300;
+
+    &:hover {
+        color: $dark_fg_color;
+        border: 1px solid $border_color;
+        background-color: $dark_bg_color;
+        border-radius: 2px;
+    }
+
+    &:focus {
+        color: $dark_fg_color;
+        border: 1px solid $border_color;
+        background-color: $dark_bg_color;
+        border-radius: 2px;
+        //font-weight: bold;
+        transition-duration: 0;
+    }
+}
+
+.menu-search-entry-icon {
+    icon-size: 1em;
+    color: $dark_fg_color;
+}
+
+/* Context menu (at the moment only for favorites) */
+.menu-context-menu { }

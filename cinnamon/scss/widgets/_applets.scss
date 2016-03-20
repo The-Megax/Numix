@@ -14,6 +14,8 @@
 
     &:hover {
         border: 1px solid alpha($white, 0.4);
+        border-top: 0px;
+        border-bottom: 0px;
         background-gradient-direction: vertical;
         background-gradient-end: alpha($white, 0.3);
         background-gradient-start: alpha($white, 0.2);

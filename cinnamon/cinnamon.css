@@ -237,6 +237,151 @@ StScrollBar StButton#hhandle:focus {
   margin: 6px;
 }
 
+/*******
+ ! Menu
+ *******/
+/* Main menu title */
+.menu-favorites-box {
+  background-gradient-direction: vertical;
+  background-gradient-start: transparent;
+  background-gradient-end: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 70%;
+  margin: auto;
+  padding: 0px;
+  border-radius: 0px;
+}
+
+.menu-favorites-button {
+  padding: 10px;
+  border-radius: 0px;
+}
+.menu-favorites-button:hover {
+  background-color: #d64937;
+  box-shadow: inset 0px 0px 1px 1px rgba(214, 73, 55, 0.8);
+  border-radius: 0px;
+}
+
+.menu-places-box {
+  margin: auto;
+  padding: 8px;
+  border: 0px solid #444444;
+}
+
+.menu-places-button {
+  padding: 10px;
+}
+
+.menu-applications-box {
+  padding: 10px;
+  padding-bottom: 0px;
+}
+
+.menu-application-button {
+  padding: 7px;
+  max-width: 10px;
+}
+.menu-application-button-label:ltr {
+  padding-left: 5px;
+}
+.menu-application-button-label:rtl {
+  padding-right: 5px;
+}
+.menu-application-button-selected {
+  padding: 7px;
+  color: #dcdcdc;
+  background-color: #d64937;
+  box-shadow: inset 0px 0px 1px 1px rgba(214, 73, 55, 0.8);
+  border-radius: 0px;
+}
+.menu-application-button-selected:highlighted {
+  border-image: none;
+  color: #dcdcdc;
+  background-color: #d64937;
+  box-shadow: inset 0px 0px 1px 1px rgba(214, 73, 55, 0.8);
+  border-radius: 0px;
+}
+
+.menu-categories-box {
+  padding: 10px 30px;
+}
+
+.menu-category-button {
+  padding: 7px;
+}
+.menu-category-button-greyed {
+  padding: 7px;
+  color: #888888;
+  font-style: normal;
+}
+.menu-category-button-selected {
+  padding: 7px;
+  color: #dcdcdc;
+  background-color: #d64937;
+  box-shadow: inset 0px 0px 1px 1px rgba(214, 73, 55, 0.8);
+  border-radius: 0px;
+}
+.menu-category-button-label:ltr {
+  padding-left: 5px;
+}
+.menu-category-button-label:rtl {
+  padding-right: 5px;
+}
+
+/* Name and description of the currently hovered item in the menu
+ * This appears on the bottom right hand corner of the menu */
+.menu-selected-app-box {
+  padding-right: 30px;
+  padding-left: 30px;
+  text-align: right;
+}
+
+.menu-selected-app-title {
+  font-weight: bold;
+}
+
+.menu-selected-app-description {
+  max-width: 150px;
+}
+
+.menu-search-box {
+  padding-left: 30px;
+}
+
+#menu-search-entry {
+  padding: 4px 12px;
+  color: #dcdcdc;
+  border-radius: 2px;
+  border: 1px solid #444444;
+  background-color: #2d2d2d;
+  selected-color: #dcdcdc;
+  selection-background-color: #d64937;
+  caret-color: #dcdcdc;
+  caret-size: 1px;
+  width: 250px;
+  height: 16px;
+  transition-duration: 300;
+}
+#menu-search-entry:hover {
+  color: #dcdcdc;
+  border: 1px solid #444444;
+  background-color: #2d2d2d;
+  border-radius: 2px;
+}
+#menu-search-entry:focus {
+  color: #dcdcdc;
+  border: 1px solid #444444;
+  background-color: #2d2d2d;
+  border-radius: 2px;
+  transition-duration: 0;
+}
+
+.menu-search-entry-icon {
+  icon-size: 1em;
+  color: #dcdcdc;
+}
+
+/* Context menu (at the moment only for favorites) */
 /**************
  ! Popup Menus
  **************/
@@ -607,9 +752,9 @@ StScrollBar StButton#hhandle:focus {
   transition-duration: 200;
 }
 .applet-box:hover {
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-top: 0px;
   border-bottom: 0px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
   background-gradient-direction: vertical;
   background-gradient-end: rgba(255, 255, 255, 0.3);
   background-gradient-start: rgba(255, 255, 255, 0.2);
@@ -1118,194 +1263,6 @@ StScrollBar StButton#hhandle:focus {
 /* ###################################################################
  * Cinnamon Specific Section 
  * ###################################################################*/
-/* ===================================================================
- * Menu (menu.js)
- * ===================================================================*/
-/* Main menu title */
-.menu-favorites-box {
-  background-gradient-direction: vertical;
-  background-gradient-start: transparent;
-  background-gradient-end: rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  width: 70%;
-  margin: auto;
-  padding: 0px;
-  border-radius: 3px;
-}
-
-.menu-favorites-button {
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  border-radius: 2px;
-}
-
-.menu-favorites-button:hover {
-  background-color: #d64937;
-  box-shadow: inset 0px 0px 1px 1px rgba(214, 73, 55, 0.8);
-  border-radius: 2px;
-}
-
-.menu-places-box {
-  margin: auto;
-  padding: 8px;
-  border: 0px solid #444444;
-}
-
-.menu-places-button {
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-}
-
-.menu-categories-box {
-  padding-top: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 10px;
-}
-
-.menu-applications-box {
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 0px;
-}
-
-.menu-application-button {
-  padding-top: 7px;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-bottom: 7px;
-  max-width: 10px;
-}
-
-.menu-application-button-selected {
-  padding-top: 7px;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-bottom: 7px;
-  color: #dcdcdc;
-  background-color: #d64937;
-  box-shadow: inset 0px 0px 1px 1px rgba(214, 73, 55, 0.8);
-  border-radius: 2px;
-}
-
-.menu-application-button-label:ltr {
-  padding-left: 5px;
-}
-
-.menu-application-button-label:rtl {
-  padding-right: 5px;
-}
-
-.menu-application-button-selected:highlighted {
-  border-image: none;
-  color: #dcdcdc;
-  background-color: #d64937;
-  box-shadow: inset 0px 0px 1px 1px rgba(214, 73, 55, 0.8);
-  border-radius: 2px;
-}
-
-.menu-category-button {
-  padding-top: 7px;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-bottom: 7px;
-}
-
-.menu-category-button-greyed {
-  padding-top: 7px;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-bottom: 7px;
-  color: #646464;
-  font-style: normal;
-}
-
-.menu-category-button-selected {
-  padding-top: 7px;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-bottom: 7px;
-  color: #dcdcdc;
-  background-color: #d64937;
-  box-shadow: inset 0px 0px 1px 1px rgba(214, 73, 55, 0.8);
-  border-radius: 2px;
-}
-
-.menu-category-button-label:ltr {
-  padding-left: 5px;
-}
-
-.menu-category-button-label:rtl {
-  padding-right: 5px;
-}
-
-.menu-category-button-button:hover {
-  background-color: #2d2d2d;
-  border: 1px solid #444444;
-  border-radius: 2px;
-}
-
-/* Name and description of the currently hovered item in the menu
- * This appears on the bottom right hand corner of the menu */
-.menu-selected-app-box {
-  padding-right: 30px;
-  padding-left: 28px;
-  text-align: right;
-}
-
-.menu-selected-app-title {
-  font-weight: bold;
-}
-
-.menu-selected-app-description {
-  max-width: 150px;
-}
-
-.menu-search-box {
-  padding-left: 30px;
-}
-
-#menu-search-entry {
-  padding: 4px 12px;
-  border-radius: 2px;
-  color: #dcdcdc;
-  border: 1px solid #444444;
-  background-color: #2d2d2d;
-  border-radius: 2px;
-  selected-color: #dcdcdc;
-  caret-color: #dcdcdc;
-  caret-size: 1px;
-  width: 250px;
-  height: 16px;
-  transition-duration: 300;
-  selection-background-color: #d64937;
-}
-
-#menu-search-entry:focus,
-#menu-search-entry:hover {
-  color: #dcdcdc;
-  border: 1px solid #444444;
-  background-color: #2d2d2d;
-  border-radius: 2px;
-}
-
-#menu-search-entry:focus {
-  color: #dcdcdc;
-  font-weight: bold;
-  transition-duration: 0;
-}
-
-.menu-search-entry-icon {
-  icon-size: 1em;
-  color: #dcdcdc;
-}
-
-/* Context menu (at the moment only for favorites) */
 /* ===================================================================
  * Workspace Switcher applet (workspaceSwitcher.js)
  * ===================================================================*/
