@@ -22,8 +22,7 @@ stage {
  ! Entries
  **********/
 .popup-menu StEntry,
-.modal-dialog StEntry,
-#notification StEntry {
+.modal-dialog StEntry {
   background-gradient-direction: vertical;
   background-gradient-start: transparent;
   background-gradient-end: transparent;
@@ -42,10 +41,7 @@ stage {
 .popup-menu StEntry:focus, .popup-menu StEntry:active, .popup-menu StEntry:pressed,
 .modal-dialog StEntry:focus,
 .modal-dialog StEntry:active,
-.modal-dialog StEntry:pressed,
-#notification StEntry:focus,
-#notification StEntry:active,
-#notification StEntry:pressed {
+.modal-dialog StEntry:pressed {
   border-image: url("control-assets/entry-focused.svg") 6;
   font-weight: bold;
   color: #dcdcdc;
@@ -55,17 +51,13 @@ stage {
   selection-background-color: #d64937;
 }
 .popup-menu StEntry StIcon,
-.modal-dialog StEntry StIcon,
-#notification StEntry StIcon {
+.modal-dialog StEntry StIcon {
   color: #f9f9f9;
 }
 .popup-menu StEntry:focus > StIcon, .popup-menu StEntry:active > StIcon, .popup-menu StEntry:pressed > StIcon,
 .modal-dialog StEntry:focus > StIcon,
 .modal-dialog StEntry:active > StIcon,
-.modal-dialog StEntry:pressed > StIcon,
-#notification StEntry:focus > StIcon,
-#notification StEntry:active > StIcon,
-#notification StEntry:pressed > StIcon {
+.modal-dialog StEntry:pressed > StIcon {
   color: #f9f9f9;
 }
 
