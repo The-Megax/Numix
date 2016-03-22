@@ -3,6 +3,8 @@
 @import "font";
 
 @import "widgets/base";
+@import "widgets/buttons";
+@import "widgets/entries";
 @import "widgets/separator";
 @import "widgets/switchers";
 @import "widgets/scrollbars";
@@ -20,6 +22,7 @@
 @import "widgets/notification";
 @import "widgets/osd";
 @import "widgets/magnifier";
+@import "widgets/modal-dialogs";
 @import "widgets/alt-tab";
 @import "widgets/expo-&-scale";
 @import "widgets/workspace-switcher";

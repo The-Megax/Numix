@@ -1,0 +1,50 @@
+@mixin entry($height: 22px, $width: 220px) {
+    background-gradient-direction: vertical;
+    background-gradient-start: $transparent;
+    background-gradient-end: $transparent;
+    border: 0;
+    border-width: 0;
+    box-shadow: 0 0 $transparent;
+    border-radius: 0;
+
+    border-image: url("control-assets/entry.svg") 6;
+    padding: 4px 8px 3px 8px;
+    height: $height;
+    width: $width;
+    font-size: 10pt;
+    font-weight: normal;
+    color: $dark_fg_color;
+
+    &:focus,
+    &:active,
+    &:pressed {
+        border-image: url("control-assets/entry-focused.svg") 6;
+        font-weight: bold;
+        color: $dark_fg_color;
+        caret-color: $dark_fg_color;
+        caret-size: 1px;
+        selected-color: $selected_fg_color;
+        selection-background-color: $selected_bg_color;
+    }
+
+    StIcon {
+        color: $selected_fg_color;
+    }
+
+    &:focus > StIcon,
+    &:active > StIcon,
+    &:pressed > StIcon {
+        color: $selected_fg_color;
+    }
+}
+
+/**********
+ ! Entries
+ **********/
+
+//.popup-menu StEntry,
+//.modal-dialog StEntry,
+//#notification StEntry {
+.modal-dialog StEntry {
+    @include entry;
+}

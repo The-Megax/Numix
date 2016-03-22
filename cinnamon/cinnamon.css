@@ -18,6 +18,41 @@ stage {
   text-decoration: underline;
 }
 
+/**********
+ ! Entries
+ **********/
+.modal-dialog StEntry {
+  background-gradient-direction: vertical;
+  background-gradient-start: transparent;
+  background-gradient-end: transparent;
+  border: 0;
+  border-width: 0;
+  box-shadow: 0 0 transparent;
+  border-radius: 0;
+  border-image: url("control-assets/entry.svg") 6;
+  padding: 4px 8px 3px 8px;
+  height: 22px;
+  width: 220px;
+  font-size: 10pt;
+  font-weight: normal;
+  color: #dcdcdc;
+}
+.modal-dialog StEntry:focus, .modal-dialog StEntry:active, .modal-dialog StEntry:pressed {
+  border-image: url("control-assets/entry-focused.svg") 6;
+  font-weight: bold;
+  color: #dcdcdc;
+  caret-color: #dcdcdc;
+  caret-size: 1px;
+  selected-color: #f9f9f9;
+  selection-background-color: #d64937;
+}
+.modal-dialog StEntry StIcon {
+  color: #f9f9f9;
+}
+.modal-dialog StEntry:focus > StIcon, .modal-dialog StEntry:active > StIcon, .modal-dialog StEntry:pressed > StIcon {
+  color: #f9f9f9;
+}
+
 /************
  ! Separator
  ************/
@@ -876,6 +911,197 @@ StScrollBar StButton#hhandle:focus {
   padding-bottom: .8em;
 }
 
+/******
+ ! OSD
+ ******/
+.workspace-osd {
+  border-radius: 6px;
+  padding: 12px 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 20pt;
+  font-weight: bold;
+  color: #fff;
+}
+
+/************
+ ! Magnifier
+ ************/
+.magnifier-zoom-region {
+  border: 2px solid maroon;
+}
+.magnifier-zoom-region.full-screen {
+  border-width: 0px;
+}
+
+/***********************
+ ! Lightbox + flashspot
+ ***********************/
+/* The background shade when a dialog appears */
+.lightbox {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+/* Among other places, appears when adding an applet */
+.flashspot {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/****************
+ ! Modal dialogs
+ ****************/
+.modal-dialog {
+  border-image: url("background-assets/popup.svg") 9;
+  border-radius: 0;
+  padding: 0;
+  color: #dcdcdc;
+}
+.modal-dialog > * {
+  padding: 24px;
+  border-radius: 0;
+}
+.modal-dialog > .modal-dialog-button-box {
+  border-image: url("background-assets/buttonbox-bg.svg") 8;
+  spacing: 0;
+  margin: 0;
+  padding: 5px 8px 6px 8px;
+}
+
+.modal-dialog-button {
+  background-color: transparent;
+  background-gradient-direction: none;
+  background-gradient-start: transparent;
+  background-gradient-end: transparent;
+  box-shadow: 0 0 transparent;
+  border: none;
+  border-width: 0;
+  border-radius: 0;
+  font-weight: bold;
+  font-size: 9pt;
+  border-image: url("button-assets/button-primary.svg") 10;
+  color: #dcdcdc;
+  padding: .9em;
+}
+.modal-dialog-button:grayed, .modal-dialog-button:disabled, .modal-dialog-button:insensitive {
+  border-image: url("button-assets/button-insensitive.svg") 10;
+  color: #888888;
+}
+.modal-dialog-button:grayed StIcon, .modal-dialog-button:disabled StIcon, .modal-dialog-button:insensitive StIcon {
+  color: #888888;
+}
+.modal-dialog-button > StIcon {
+  width: 16px;
+  height: 16px;
+  icon-size: 16px;
+}
+.modal-dialog-button:hover {
+  border-image: url("button-assets/button-primary-hover.svg") 10;
+}
+.modal-dialog-button:active, .modal-dialog-button:pressed {
+  border-image: url("button-assets/button-primary-pressed.svg") 10;
+}
+.modal-dialog-button:focus {
+  border-image: url("button-assets/button-orange.svg") 10;
+  color: #dcdcdc;
+}
+.modal-dialog-button:focus:hover {
+  border-image: url("button-assets/button-orange-hover.svg") 10;
+}
+.modal-dialog-button:focus:active, .modal-dialog-button:focus:pressed {
+  border-image: url("button-assets/button-orange-pressed.svg") 10;
+}
+.modal-dialog-button > StIcon {
+  color: #2d2d2d;
+}
+.modal-dialog-button:hover > StIcon, .modal-dialog-button:active > StIcon, .modal-dialog-button:pressed > StIcon {
+  color: #2d2d2d;
+}
+.modal-dialog-button:focus > StIcon, .modal-dialog-button:focus:hover > StIcon, .modal-dialog-button:focus:active > StIcon, .modal-dialog-button:focus:pressed > StIcon {
+  color: #2d2d2d;
+}
+
+/**************
+ ! Run dialogs
+ **************/
+.run-dialog > * {
+  padding: 8px;
+}
+.run-dialog > .modal-dialog-button-box {
+  background-color: transparent;
+  border-image: none;
+  box-shadow: none;
+  padding: 0;
+  height: 0;
+}
+.run-dialog-error-box {
+  padding: 12px 4px 6px 4px;
+  spacing: 1em;
+  color: #f44336;
+  font-weight: bold;
+}
+.run-dialog-error-box StIcon {
+  width: 16px;
+  height: 16px;
+  color: #ef6c00;
+}
+.run-dialog-completion-box {
+  font-size: 10pt;
+  padding: 1em .7em;
+}
+.run-dialog-label {
+  font-size: 0;
+}
+.run-dialog-entry {
+  /*!*/
+}
+
+/****************
+ ! About dialogs
+ ****************/
+.about-content {
+  width: 550px;
+  height: 250px;
+  spacing: 8px;
+}
+
+.about-title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.about-uuid {
+  font-size: 9pt;
+  color: #888888;
+}
+
+.about-description {
+  padding-top: 6px;
+  padding-bottom: 8px;
+}
+
+.about-version {
+  padding-left: 7px;
+  font-size: 9pt;
+  color: #dcdcdc;
+}
+
+.about-icon {
+  padding-right: 20px;
+  padding-bottom: 14px;
+  color: #dcdcdc;
+}
+
+.about-scrollBox {
+  border-image: url("background-assets/dark-bg.svg") 7;
+  padding: 4px;
+  padding-right: 0;
+  border-radius: 0;
+}
+.about-scrollBox-innerBox {
+  padding: 1.2em;
+  spacing: 1.2em;
+}
+
 /**********
  ! Alt Tab
  **********/
@@ -1215,142 +1441,4 @@ StScrollBar StButton#hhandle:focus {
 }
 .radiobutton:focus:checked {
   background-image: url("control-assets/radiobutton-focused-checked.svg");
-}
-
-/* ===================================================================
- * Modal dialogs
- * ===================================================================*/
-.modal-dialog {
-  font-size: 10pt;
-  background-color: #2d2d2d;
-  color: #dcdcdc;
-  border: 1px solid #444444;
-  border-radius: 2px;
-  padding: 22px;
-}
-
-.modal-dialog-button-box {
-  padding-top: 8px;
-  spacing: 21px;
-}
-
-.modal-dialog-button {
-  font-size: 10pt;
-  color: #dcdcdc;
-  background-color: #2d2d2d;
-  border: 1px solid #444444;
-  border-radius: 2px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: 5px 31px 5px;
-}
-
-.modal-dialog-button:focus {
-  font-size: 10pt;
-  color: #dcdcdc;
-  background-color: #2d2d2d;
-  border: 1px solid #d64937;
-  border-radius: 2px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: 5px 31px 5px;
-}
-
-.modal-dialog-button:hover {
-  background-color: #d64937;
-  border: 1px solid #d64937;
-  border-radius: 2px;
-}
-
-.modal-dialog-button:active,
-.modal-dialog-button:checked {
-  background-color: rgba(214, 73, 55, 0.8);
-  border: 1px solid #d64937;
-  border-radius: 2px;
-}
-
-.modal-dialog-button:disabled {
-  color: #a6a6a6;
-}
-
-/* ===================================================================
- * Run dialog
- * ===================================================================*/
-.run-dialog-label {
-  font-size: 0pt;
-  padding-bottom: 0px;
-  color: transparent;
-  font-weight: bold;
-}
-
-.run-dialog-error-box {
-  padding-top: 15px;
-  spacing: 5px;
-}
-
-.run-dialog-entry {
-  padding: 4px 12px;
-  border-radius: 2px;
-  color: #dcdcdc;
-  border: 1px solid #444444;
-  background-color: #2d2d2d;
-  selected-color: #dcdcdc;
-  caret-color: #dcdcdc;
-  caret-size: 1px;
-  width: 250px;
-  height: 16px;
-  transition-duration: 300;
-  selection-background-color: #d64937;
-}
-
-.run-dialog-completion-box {
-  padding-left: 15px;
-  font-size: 10px;
-}
-
-.run-dialog {
-  padding-right: 12px;
-  padding-left: 12px;
-  padding-bottom: 20px;
-  padding-top: 20px;
-}
-
-.run-dialog .modal-dialog-button-box {
-  padding-top: 0;
-  spacing: 110px;
-}
-
-/* ===================================================================
- * Magnifier
- * ===================================================================*/
-.magnifier-zoom-region {
-  border: 2px solid maroon;
-}
-
-.magnifier-zoom-region.full-screen {
-  border-width: 0px;
-}
-
-/* ###################################################################
- * Cinnamon Specific Section 
- * ###################################################################*/
-/* ===================================================================
- * Workspace OSD
- * ===================================================================*/
-.workspace-osd {
-  border-radius: 6px;
-  padding: 12px 16px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  font-size: 20pt;
-  font-weight: bold;
-  color: #fff;
-}
-
-.lightbox {
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.flashspot {
-  background-color: #fff;
 }

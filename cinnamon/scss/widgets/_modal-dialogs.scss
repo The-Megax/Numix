@@ -1,0 +1,125 @@
+/***********************
+ ! Lightbox + flashspot
+ ***********************/
+
+/* The background shade when a dialog appears */
+.lightbox { background-color: alpha($black, 0.65); }
+
+/* Among other places, appears when adding an applet */
+.flashspot { background-color: alpha($white, 0.6); }
+
+/****************
+ ! Modal dialogs
+ ****************/
+
+.modal-dialog {
+    border-image: url("background-assets/popup.svg") 9;
+    border-radius: 0;
+    padding: 0;
+    color: $dark_fg_color;
+
+    > * {
+        padding: 24px;
+        border-radius: 0;
+    }
+
+    > .modal-dialog-button-box {
+        border-image: url("background-assets/buttonbox-bg.svg") 8;
+        spacing: 0;
+        margin: 0;
+        padding: 5px 8px 6px 8px;
+    }
+}
+
+.modal-dialog-button {
+    @include btn-primary;
+    @include btn-width(small);
+}
+
+/**************
+ ! Run dialogs
+ **************/
+
+.run-dialog {
+    > * {
+        padding: 8px;
+    }
+
+    > .modal-dialog-button-box {
+        background-color: $transparent;
+        border-image: none;
+        box-shadow: none;
+        padding: 0;
+        height: 0;
+    }
+
+    &-error-box {
+        padding: 12px 4px 6px 4px;
+        spacing: 1em;
+        color: $error_color;
+        font-weight: bold;
+
+        StIcon {
+            @include size(16px);
+            color: $warning_color;
+        }
+    }
+
+    &-completion-box {
+        font-size: 10pt;
+        padding: 1em .7em;
+    }
+
+    &-label { font-size: 0; }
+
+    &-entry {/*!*/}
+}
+
+/****************
+ ! About dialogs
+ ****************/
+
+.about-content {
+    width: 550px;
+    height: 250px;
+    spacing: 8px;
+}
+
+.about-title {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.about-uuid {
+    font-size: 9pt;
+    color: shade($fg_color, 1.6);
+}
+
+.about-description {
+    padding-top: 6px;
+    padding-bottom: 8px;
+}
+
+.about-version {
+    padding-left: 7px;
+    font-size: 9pt;
+    color: $dark_fg_color;
+}
+
+.about-icon {
+    padding-right: 20px;
+    padding-bottom: 14px;
+    color: $dark_fg_color;
+}
+
+.about-scrollBox {
+    border-image: url("background-assets/dark-bg.svg") 7;
+    padding: 4px;
+    padding-right: 0;
+    border-radius: 0;
+
+    &-innerBox {
+        padding: 1.2em;
+        spacing: 1.2em;
+    }
+}
