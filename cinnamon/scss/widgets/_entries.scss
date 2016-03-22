@@ -42,9 +42,8 @@
  ! Entries
  **********/
 
-//.popup-menu StEntry,
-//.modal-dialog StEntry,
 //#notification StEntry {
+.popup-menu StEntry,
 .modal-dialog StEntry {
     @include entry;
 }

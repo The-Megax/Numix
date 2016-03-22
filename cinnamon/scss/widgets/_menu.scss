@@ -115,40 +115,8 @@
    padding-left: 30px;
 }
 
-#menu-search-entry {
-    padding: 4px 12px;
-    color: $dark_fg_color;
-    border-radius: 2px;
-    border: 1px solid $border_color;
-    background-color: $dark_bg_color;
-    selected-color: $dark_fg_color;
-    selection-background-color: $selected_bg_color;
-    caret-color: $dark_fg_color;
-    caret-size: 1px;
-    width: 250px;
-    height: 16px;
-    transition-duration: 300;
-
-    &:hover {
-        color: $dark_fg_color;
-        border: 1px solid $border_color;
-        background-color: $dark_bg_color;
-        border-radius: 2px;
-    }
-
-    &:focus {
-        color: $dark_fg_color;
-        border: 1px solid $border_color;
-        background-color: $dark_bg_color;
-        border-radius: 2px;
-        //font-weight: bold;
-        transition-duration: 0;
-    }
-}
-
 .menu-search-entry-icon {
     icon-size: 1em;
-    color: $dark_fg_color;
 }
 
 // Context menu (at the moment only for favorites)

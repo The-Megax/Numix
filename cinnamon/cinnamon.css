@@ -21,6 +21,7 @@ stage {
 /**********
  ! Entries
  **********/
+.popup-menu StEntry,
 .modal-dialog StEntry {
   background-gradient-direction: vertical;
   background-gradient-start: transparent;
@@ -37,7 +38,10 @@ stage {
   font-weight: normal;
   color: #dcdcdc;
 }
-.modal-dialog StEntry:focus, .modal-dialog StEntry:active, .modal-dialog StEntry:pressed {
+.popup-menu StEntry:focus, .popup-menu StEntry:active, .popup-menu StEntry:pressed,
+.modal-dialog StEntry:focus,
+.modal-dialog StEntry:active,
+.modal-dialog StEntry:pressed {
   border-image: url("control-assets/entry-focused.svg") 6;
   font-weight: bold;
   color: #dcdcdc;
@@ -46,10 +50,14 @@ stage {
   selected-color: #f9f9f9;
   selection-background-color: #d64937;
 }
+.popup-menu StEntry StIcon,
 .modal-dialog StEntry StIcon {
   color: #f9f9f9;
 }
-.modal-dialog StEntry:focus > StIcon, .modal-dialog StEntry:active > StIcon, .modal-dialog StEntry:pressed > StIcon {
+.popup-menu StEntry:focus > StIcon, .popup-menu StEntry:active > StIcon, .popup-menu StEntry:pressed > StIcon,
+.modal-dialog StEntry:focus > StIcon,
+.modal-dialog StEntry:active > StIcon,
+.modal-dialog StEntry:pressed > StIcon {
   color: #f9f9f9;
 }
 
@@ -397,37 +405,8 @@ StScrollBar StButton#hhandle:focus {
   padding-left: 30px;
 }
 
-#menu-search-entry {
-  padding: 4px 12px;
-  color: #dcdcdc;
-  border-radius: 2px;
-  border: 1px solid #444444;
-  background-color: #2d2d2d;
-  selected-color: #dcdcdc;
-  selection-background-color: #d64937;
-  caret-color: #dcdcdc;
-  caret-size: 1px;
-  width: 250px;
-  height: 16px;
-  transition-duration: 300;
-}
-#menu-search-entry:hover {
-  color: #dcdcdc;
-  border: 1px solid #444444;
-  background-color: #2d2d2d;
-  border-radius: 2px;
-}
-#menu-search-entry:focus {
-  color: #dcdcdc;
-  border: 1px solid #444444;
-  background-color: #2d2d2d;
-  border-radius: 2px;
-  transition-duration: 0;
-}
-
 .menu-search-entry-icon {
   icon-size: 1em;
-  color: #dcdcdc;
 }
 
 /**************
