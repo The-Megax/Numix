@@ -11,18 +11,11 @@
     font-weight: normal;
     font-size: $font-size;
 
-    &.panel-top {
-        box-shadow: 0 1px alpha($white, 0.2);
-    }
+    &.panel-top { }
 
-    &.panel-bottom {
-        box-shadow: 0 -1px alpha($white, 0.2);
-    }
+    &.panel-bottom { }
 
-    &:highlight {
-        border-color: $transparent;
-        color: $white;
-    }
+    &:highlight { }
 
     &Left {
         spacing: 0px;
@@ -71,9 +64,7 @@
     }
 
     // Panel Launchers Applet
-    &-launchers-box {
-        padding-left: 0px;
-    }
+    &-launchers-box { }
 }
 
 .panel-button,
@@ -82,7 +73,6 @@
     -minimum-hpadding: 5px;
     font-weight: bold;
     color: $white;
-    border: 1px solid alpha($white, 0);
     border-top: 0px;
     border-bottom: 0px;
     transition-duration: 200;
@@ -109,18 +99,12 @@
  *************************/
 
 .panel-launcher {
-    border: 1px solid alpha($white, 0.0);
     margin: 0px;
-    padding: 0px;
-    transition-duration: 200;
+    padding: 0px 5px;
+}
 
-    &:hover {
-        border: 1px solid alpha($white, 0.4);
-        border-top: 0px;
-        border-bottom: 0px;
-        color: $white;
-        background-gradient-direction: vertical;
-        background-gradient-end: alpha($white, 0.3);
-        background-gradient-start: alpha($white, 0.2);
+@each $v in panel-top, panel-bottom {
+    .#{$v} .panel-launcher:hover {
+        border-image: url("panel-assets/#{$v}-item-hover.svg") 4;
     }
 }

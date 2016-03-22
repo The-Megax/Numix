@@ -8,7 +8,7 @@
 
     &-boxpointer {
         -arrow-border-radius: 2px;
-        -arrow-background-color: alpha($black, 0.85);
+        -arrow-background-color: alpha($black, 0.90);
         -arrow-border-width: 1px;
         -arrow-border-color: alpha($white, 0.1);
         -arrow-base: 21px;
@@ -49,8 +49,8 @@
 
 .popup-sub-menu {
     background-gradient-direction: vertical;
-    background-gradient-start: alpha($black, 0.21);
-    background-gradient-end: alpha($black, 0.15);
+    background-gradient-start: alpha($white, 0.15);
+    background-gradient-end: alpha($white, 0.10);
     box-shadow: inset 0px 1px 3px 0px alpha($black, 0.3);
 
     .popup-menu-item {
@@ -103,7 +103,7 @@
 }
 
 .popup-separator-menu-item {
-    background-color: rgba(233, 233, 233, 0.21);
+    background-color: rgba(233, 233, 233, 0.20);
     height: 1px;
 }
 
