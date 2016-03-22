@@ -282,10 +282,8 @@ StScrollBar StButton#hhandle:focus {
  ! User applet
  **************/
 .user-icon {
-  background-color: #2d2d2d;
-  border: 1px solid #444444;
-  border-radius: 2px;
-  padding: 0.4em;
+  background-color: transparent;
+  border: none;
 }
 
 .user-label {

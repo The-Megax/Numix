@@ -3,10 +3,8 @@
  **************/
 
 .user-icon {
-    background-color: $dark_bg_color;
-    border: 1px solid $border_color;
-    border-radius: 2px;
-    padding: 0.4em;
+    background-color: $transparent;
+    border: none;
 }
 
 .user-label {
