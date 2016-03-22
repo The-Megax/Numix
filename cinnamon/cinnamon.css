@@ -531,6 +531,12 @@ StScrollBar StButton#hhandle:focus {
   font-weight: normal;
   font-size: 9pt;
 }
+#panel.panel-top {
+  box-shadow: 0 1px rgba(255, 255, 255, 0.2);
+}
+#panel.panel-bottom {
+  box-shadow: 0 -1px rgba(255, 255, 255, 0.2);
+}
 #panelLeft {
   spacing: 0px;
 }

@@ -110,34 +110,9 @@
     spacing: 110px;
 }
 
-/* ===================================================================
- * Magnifier
- * ===================================================================*/
-.magnifier-zoom-region {
-    border: 2px solid rgba(128, 0, 0, 255);
-}
-
-.magnifier-zoom-region.full-screen {
-    border-width: 0px;
-}
-
 /* ###################################################################
  * Cinnamon Specific Section 
  * ###################################################################*/
-
-/* ===================================================================
- * Workspace OSD
- * ===================================================================*/
-
-.workspace-osd {
-    border-radius: 6px;
-    padding: 12px 16px;
-    background-color: alpha($black, 0.5);
-    border: 1px solid alpha($white, 0.25);
-    font-size: 20pt;
-    font-weight: bold;
-    color: $white;
-}
 
 .lightbox {
     background-color: alpha($black, 0.4);

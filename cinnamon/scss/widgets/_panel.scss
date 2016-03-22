@@ -11,9 +11,13 @@
     font-weight: normal;
     font-size: $font-size;
 
-    &.panel-top { }
+    &.panel-top {
+        box-shadow: 0 1px alpha($white, 0.2);
+    }
 
-    &.panel-bottom { }
+    &.panel-bottom {
+        box-shadow: 0 -1px alpha($white, 0.2);
+    }
 
     &:highlight { }
 
