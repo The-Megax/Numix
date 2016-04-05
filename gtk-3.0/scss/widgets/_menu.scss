@@ -253,8 +253,14 @@
                 box-shadow: none;
             }
 
-            &.flat:checked {
-                box-shadow: none;
+            &.flat {
+                &:checked {
+                    box-shadow: none;
+                }
+
+                &, &:hover {
+                    transition: none;
+                }
             }
         }
     }
