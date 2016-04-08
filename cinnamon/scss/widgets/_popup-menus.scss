@@ -31,7 +31,7 @@
         &:active {
             color: $dark_fg_color;
             background-color: $selected_bg_color;
-            box-shadow: inset 0px 0px 1px 1px alpha($selected_bg_color, 0.8);
+            box-shadow: inset 0px 0px 1px 1px boxshadow_normal($selected_bg_color);
             border-radius: 2px;
         }
 
@@ -103,7 +103,7 @@
 }
 
 .popup-separator-menu-item {
-    background-color: rgba(233, 233, 233, 0.20);
+    background-color: shade($menu_bg_color, ($contrast + .1));
     height: 1px;
 }
 

@@ -48,6 +48,22 @@ $modules: () !default;
     @return shade($color, ($contrast + .05));
 }
 
+@function boxshadow_normal($color) {
+    @return alpha($color, $contrast);
+}
+
+@function boxshadow_focus($color) {
+    @return alpha($color, ($contrast - .05));
+}
+
+@function boxshadow_active($color) {
+    @return alpha($color, ($contrast - .1));
+}
+
+@function boxshadow_insensitive($color) {
+    @return alpha($color, ($contrast + .05));
+}
+
 @mixin linear-gradient($color, $direction: to bottom) {
     @if $gradient == 0 {
         background-color: $color;

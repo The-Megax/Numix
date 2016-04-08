@@ -20,7 +20,7 @@
 
     &:hover {
         background-color: $selected_bg_color;
-        box-shadow: inset 0px 0px 1px 1px alpha($selected_bg_color, 0.8);
+        box-shadow: inset 0px 0px 1px 1px boxshadow_normal($selected_bg_color);
         border-radius: 0px;
     }
 }
@@ -54,14 +54,14 @@
         padding: 7px;
         color: $dark_fg_color;
         background-color: $selected_bg_color;
-        box-shadow: inset 0px 0px 1px 1px alpha($selected_bg_color, 0.8);
+        box-shadow: inset 0px 0px 1px 1px boxshadow_normal($selected_bg_color);
         border-radius: 0px;
 
         &:highlighted {
             border-image: none;
             color: $dark_fg_color;
             background-color: $selected_bg_color;
-            box-shadow: inset 0px 0px 1px 1px alpha($selected_bg_color, 0.8);
+            box-shadow: inset 0px 0px 1px 1px boxshadow_normal($selected_bg_color);
             border-radius: 0px;
         }
     }
@@ -86,7 +86,7 @@
         padding: 7px;
         color: $dark_fg_color;
         background-color: $selected_bg_color;
-        box-shadow: inset 0px 0px 1px 1px alpha($selected_bg_color, 0.8);
+        box-shadow: inset 0px 0px 1px 1px boxshadow_normal($selected_bg_color);
         border-radius: 0px;
     }
 
