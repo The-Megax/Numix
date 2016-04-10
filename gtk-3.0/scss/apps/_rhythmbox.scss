@@ -4,11 +4,11 @@
 
 @include exports("rhythmbox") {
     /* Megax fix. */
-    RBButtonBar {
+    /*RBButtonBar {
         toolbar {
             button {
                 @include button($bg_color, $fg_color);
             }
         }
-    }
+    }*/
 }
