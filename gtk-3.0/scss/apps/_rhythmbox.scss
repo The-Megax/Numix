@@ -1,0 +1,14 @@
+/*************
+ ! Rhythmbox *
+**************/
+
+@include exports("rhythmbox") {
+    /* Megax fix. */
+    /*RBButtonBar {
+        toolbar {
+            .button.flat {
+                @include button($bg_color, $fg_color);
+            }
+        }
+    }*/
+}
