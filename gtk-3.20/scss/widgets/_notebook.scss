@@ -7,7 +7,7 @@
 
 @include exports("notebook") {
     notebook {
-        background-color: $base_color;
+        background-color: $base_color; // Nemo fix. Máshol hibát okoz, új megoldás kell.
 
         > header {
             padding: 0;
