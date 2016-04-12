@@ -12,6 +12,8 @@
             background-color: $backdrop_base_color;
             border-color: $backdrop_borders_color;
         }
+
+        row { padding: $spacing; }
     }
 
     row {
