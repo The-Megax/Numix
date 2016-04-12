@@ -104,6 +104,9 @@ $backdrop_scrollbar_slider_color: mix($backdrop_fg_color, $backdrop_bg_color, .4
 
 $backdrop_menu_color: if($variant == 'light', $backdrop_base_color, mix($backdrop_bg_color, $backdrop_base_color, .2));
 
+$ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$backdrop_transition: 200ms ease-out;
+
 // widget styles
 $roundness: 2px;
 $spacing: 5px;

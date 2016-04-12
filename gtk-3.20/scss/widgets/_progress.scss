@@ -109,7 +109,6 @@
         $_marks_length: 3px;
         $_marks_distance: 1px;
         $button_bg: if(hue($bg_color) == 0deg, shade($bg_color, 1.2), $bg_color);
-        $ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         $button_transition: all 200ms $ease-out-quad;
 
         min-height: 10px;
