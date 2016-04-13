@@ -12,7 +12,7 @@
         min-height: 6px;
 
         &.osd {
-            min-height: 4px;
+            min-height: 2px;
         }
 
         trough {
@@ -132,7 +132,7 @@
         slider {
             min-height: 15px;
             min-width: 15px;
-            margin: -6px;
+            margin: -7px; /* Megax fix. */
         }
 
         // Click-and-hold the slider to activate
@@ -162,7 +162,7 @@
 
         // Trough
         trough {
-            $_scale_trough_bg: if($variant == 'light', shade($toolbar_bg_color, .8), darken($bg_color, 5%));
+            $_scale_trough_bg: if($variant == 'light', shade($bg_color, .8), darken($bg_color, 5%)); /* Megax fix. */
 
             outline-offset: 2px;
             -gtk-outline-radius: 4.5px;
