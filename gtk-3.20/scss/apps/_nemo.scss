@@ -128,7 +128,7 @@
 
         toolbar {
             button {
-                @include button($bg_color, $fg_color);
+                @include button($toolbar_bg_color, $toolbar_fg_color); /* Megax fix. */
             }
 
             button.linked, .linked .button {
