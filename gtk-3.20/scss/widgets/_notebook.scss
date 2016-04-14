@@ -103,9 +103,9 @@
             tab {
                 padding: ($spacing + 1) 0 0; // top | left/right | bottom
                 border-style: solid;
-                border-color: shade($bg_color, .8);
+                //border-color: shade($bg_color, .8); /* Megax fix. */
                 border-width: 0px;
-                background-color: mix($bg_color, $base_color, .6);
+                //background-color: mix($bg_color, $base_color, .6); /* Megax fix. */
                 background-image: none;
                 box-shadow: none;
                 outline: none;
@@ -167,7 +167,7 @@
                 border-style: solid;
                 border-color: shade($bg_color, .8);
                 border-width: 0px;
-                border-bottom-width: 1px;
+                border-bottom-width: 0px; /* Megax fix. */
 
                 > box, > label {
                     padding: 0 ($spacing * 3) ($spacing + 1); // top | left/right | bottom
@@ -197,7 +197,7 @@
                 border-style: solid;
                 border-color: shade($bg_color, .8);
                 border-width: 0px;
-                border-left-width: 1px;
+                border-left-width: 0px; /* Megax fix. */
 
                 > box, > label {
                     padding: ($spacing + 1) ($spacing * 3); // top | right | bottom | left
@@ -220,7 +220,7 @@
                 border-style: solid;
                 border-color: shade($bg_color, .8);
                 border-width: 0px;
-                border-top-width: 1px;
+                border-top-width: 0px; /* Megax fix. */
 
                 > box, > label {
                     padding: ($spacing + 1) ($spacing * 3) 0;  // top/bottom | left/right
@@ -242,7 +242,7 @@
                 border-style: solid;
                 border-color: shade($bg_color, .8);
                 border-width: 0px;
-                border-right-width: 1px;
+                border-right-width: 0px; /* Megax fix. */
 
                 > box, > label {
                     padding: ($spacing + 1) ($spacing * 3); // top/bottom | left/right

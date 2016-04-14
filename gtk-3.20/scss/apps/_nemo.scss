@@ -108,7 +108,7 @@
             border: 0;
         }
 
-        paned {
+        /*paned {
             border-width: 0 1px 0 0;
             border-style: solid;
 
@@ -116,7 +116,7 @@
                 border-color: shade($bg_color, ($contrast + .1));
                 background-color: $bg_color;
             }
-        }
+        }*/
 
         notebook {
             border-width: 0;
@@ -128,7 +128,7 @@
 
         toolbar {
             button {
-                @include button($toolbar_bg_color, $toolbar_fg_color); /* Megax fix. */
+                //@include button($toolbar_bg_color, $toolbar_fg_color); /* Megax fix. */
             }
 
             button.linked, .linked .button {
