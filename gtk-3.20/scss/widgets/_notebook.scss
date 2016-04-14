@@ -221,8 +221,8 @@ notebook {
     &.top,
     &.bottom {
       tabs {
-        padding-left: 4px;
-        padding-right: 4px;
+        padding-left: 0px;
+        padding-right: 0px;
 
         &:not(:only-child) {
           margin-left: 3px;
@@ -244,8 +244,8 @@ notebook {
     &.left,
     &.right {
       tabs {
-        padding-top: 4px;
-        padding-bottom: 4px;
+        padding-top: 0px;
+        padding-bottom: 0px;
 
         &:not(:only-child) {
           margin-top: 3px;
