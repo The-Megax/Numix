@@ -32,7 +32,6 @@
     }
 
     iconview { @extend .view; }
-
 }
 
 
@@ -186,7 +185,7 @@
 
                     &:backdrop {
                         @if $variant == 'light' {
-                            color: $selected_bg_color;
+                            color: $backdrop_selected_fg_color; /* Megax fix. */
                             border-color: $selected_borders_color; // otherwise it gets inherited by .view(?!?)
                         } @else {
                             border-color: $backdrop_base_color;

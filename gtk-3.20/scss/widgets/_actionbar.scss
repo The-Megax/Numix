@@ -31,8 +31,8 @@
             padding: 0 ($spacing * 2);
         }
 
-        > revealer >  box {
-            padding: 6px;
+        > revealer > box {
+            padding: $spacing;
             border-top: 1px solid $borders_color;
 
             &:backdrop { border-color: $backdrop_borders_color; }

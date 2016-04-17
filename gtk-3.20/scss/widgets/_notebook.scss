@@ -50,8 +50,8 @@
             }
 
             @at-root %notebook_vert_arrows {
-                margin-left: -5px;
-                margin-right: -5px;
+                margin-left: 0px;
+                margin-right: 0px;
                 padding-left: 4px;
                 padding-right: 4px;
 
@@ -73,8 +73,8 @@
             }
 
             @at-root %notebook_horz_arrows {
-                margin-top: -5px;
-                margin-bottom: -5px;
+                margin-top: 0px;
+                margin-bottom: 0px;
                 padding-top: 4px;
                 padding-bottom: 4px;
 
@@ -128,7 +128,7 @@
 
                 &:hover {
                     background-color: shade($base_color, .93);
-                    border-bottom-color: transparent;
+                    border-color: transparent;
                     outline: none;
 
                     button, button:hover {
