@@ -320,8 +320,10 @@
             }
         }
 
-        stack {
+        > stack:not(:only-child) {
             background-color: $base_color;
+
+            &:backdrop { background-color: $backdrop_base_color; }
         }
     }
 }

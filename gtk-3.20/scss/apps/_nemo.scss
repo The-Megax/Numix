@@ -92,7 +92,7 @@
                 padding-right: $spacing;
             }
 
-            .places-sidebar {
+            //.places-sidebar {
                 &, & .view {
                     background-color: mix($bg_color, $base_color, .5);
                 }
@@ -101,7 +101,7 @@
                         @extend %selected_items;
                     }
                 }
-            }
+            //}
         }
 
         statusbar {
