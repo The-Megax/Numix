@@ -141,9 +141,9 @@ scrolledwindow {
         &:dir(rtl) { border-image-slice: 0 1 0 0; }
 
         &:backdrop {
-          border-image-source: linear-gradient(to bottom, $backdrop_borders_color 1px, transparent 1px);
-          background-color: $backdrop_scrollbar_bg_color;
-          transition: 200ms ease-out;
+            border-image-source: linear-gradient(to bottom, $backdrop_borders_color 1px, transparent 1px);
+            background-color: $backdrop_scrollbar_bg_color;
+            transition: 200ms ease-out;
         }
     }
 }
