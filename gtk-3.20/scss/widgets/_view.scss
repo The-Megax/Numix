@@ -57,6 +57,10 @@
         }
     }
 
+    treeview acceleditor > label { /* Megax fix. */
+        background-color: $selected_bg_color;
+    }
+
     %column_header_button {
         padding: 0 6px;
         border-radius: 0;
