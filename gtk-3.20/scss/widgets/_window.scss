@@ -5,18 +5,20 @@
 @include exports("window") {
     decoration {
         $_wm_border: if($variant == 'light', transparentize($black, .77), transparentize($borders_color, .1));
+        $_m_wm_border_focused: if($variant == 'light', transparentize($black, .5), transparentize($borders_color, .1)); /* Megax fix */
+        $_m_wm_border_unfocused: if($variant == 'light', transparentize($black, .55), transparentize($borders_color, .1)); /* Megax fix */
 
         border-radius: $roundness $roundness 0 0;
         // lamefun trick to get rounded borders regardless of CSD use
         border-width: 0;
 
-        box-shadow: 0 3px 9px 1px transparentize($black, .3), 0 0 0 1px $wm_border_focused; //doing borders with box-shadow
+        box-shadow: 0 3px 9px 1px transparentize($black, .3), 0 0 0 1px $_m_wm_border_focused; //doing borders with box-shadow /* Megax fix */
 
         /* this is used for the resize cursor area */
         margin: $spacing * 3;
 
         &:backdrop {
-            box-shadow: 0 3px 9px 1px transparent, 0 2px 6px 2px transparentize($black, .6), 0 0 0 1px $wm_border_unfocused;
+            box-shadow: 0 3px 9px 1px transparent, 0 2px 6px 2px transparentize($black, .6), 0 0 0 1px $_m_wm_border_unfocused; /* Megax fix */
             transition: 200ms ease-out;
         }
 
