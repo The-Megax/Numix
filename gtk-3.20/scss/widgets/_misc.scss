@@ -112,7 +112,7 @@
 ********************/
 
 @include exports("symbolicimage") {
-    .image {
+    image {
         color: alpha(currentColor, .5);
 
         &:hover { color: alpha(currentColor, .9); }
