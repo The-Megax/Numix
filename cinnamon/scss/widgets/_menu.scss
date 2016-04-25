@@ -6,38 +6,38 @@
 .menu-favorites-box {  
     background-gradient-direction: vertical;
     background-gradient-start: $transparent;
-    background-gradient-end: alpha($black, 0.15);
-    border: 1px solid alpha($white, 0.1);
+    background-gradient-end: alpha($black, .15);
+    border: 1px solid alpha($white, .1);
     width: 70%;
     margin: auto;
-    padding: 0px;
-    border-radius: 0px;
+    padding: 0;
+    border-radius: 0;
 }
 
 .menu-favorites-button {
-    padding: 10px;
-    border-radius: 0px;
+    padding: $spacing * 2;
+    border-radius: 0;
 
     &:hover {
         background-color: $selected_bg_color;
-        box-shadow: inset 0px 0px 1px 1px boxshadow_normal($selected_bg_color);
-        border-radius: 0px;
+        box-shadow: inset 0 0 1px 1px boxshadow_normal($selected_bg_color);
+        border-radius: 0;
     }
 }
 
 .menu-places-box {  
     margin: auto;
     padding: 8px;
-    border: 0px solid $border_color;  
+    border: 0 solid $border_color;  
 }
 
 .menu-places-button {
-    padding: 10px;
+    padding: $spacing * 2;
 }
 
 .menu-applications-box {
-    padding: 10px;
-    padding-bottom: 0px;
+    padding: $spacing * 2;
+    padding-bottom: 0;
 }
 
 .menu-application-button {
@@ -46,23 +46,23 @@
 
     &:highlighted { }
 
-    &-label:ltr { padding-left: 5px; }
+    &-label:ltr { padding-left: $spacing; }
 
-    &-label:rtl { padding-right: 5px; }
+    &-label:rtl { padding-right: $spacing; }
 
     &-selected {
         padding: 7px;
         color: $dark_fg_color;
         background-color: $selected_bg_color;
-        box-shadow: inset 0px 0px 1px 1px boxshadow_normal($selected_bg_color);
-        border-radius: 0px;
+        box-shadow: inset 0 0 1px 1px boxshadow_normal($selected_bg_color);
+        border-radius: 0;
 
         &:highlighted {
             border-image: none;
             color: $dark_fg_color;
             background-color: $selected_bg_color;
-            box-shadow: inset 0px 0px 1px 1px boxshadow_normal($selected_bg_color);
-            border-radius: 0px;
+            box-shadow: inset 0 0 1px 1px boxshadow_normal($selected_bg_color);
+            border-radius: 0;
         }
     }
 }
@@ -86,13 +86,13 @@
         padding: 7px;
         color: $dark_fg_color;
         background-color: $selected_bg_color;
-        box-shadow: inset 0px 0px 1px 1px boxshadow_normal($selected_bg_color);
-        border-radius: 0px;
+        box-shadow: inset 0 0 1 1 boxshadow_normal($selected_bg_color);
+        border-radius: 0;
     }
 
-    &-label:ltr { padding-left: 5px; }
+    &-label:ltr { padding-left: $spacing; }
 
-    &-label:rtl { padding-right: 5px; }
+    &-label:rtl { padding-right: $spacing; }
 }
 
 /* Name and description of the currently hovered item in the menu

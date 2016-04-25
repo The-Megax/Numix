@@ -3,19 +3,19 @@
  **********/
 
 #altTabPopup {
-    padding: 0px;
-    spacing: 4px;
+    padding: 0;
+    spacing: $spacing;
 
     // Thumbnails box in "icons & thumbnails" mode
     .switcher-list:last-child {
         //border-image: url("background-assets/popup.svg") 7;
         color: $dark-fg-color;
-        padding: 0px;
+        padding: 0;
         font-size: 10pt;
         font-weight: bold;
 
         .item-box {
-            padding: 10px;
+            padding: $spacing * 2;
 
             &:selected {
                 border-image: none;
@@ -36,7 +36,7 @@
         font-weight: bold;
 
         .item-box {
-            padding: 10px;
+            padding: $spacing * 2;
 
             &:selected {
                 border-image: url("background-assets/hover.svg") 7;
@@ -48,7 +48,7 @@
     }
 
     .switcher-list-item-container {
-        spacing: 0px;
+        spacing: 0;
     }
 
     .thumbnail {

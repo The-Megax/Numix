@@ -4,7 +4,7 @@
 
 .window-list-box {
     spacing: 1px;
-    padding-left: 0px;
+    padding-left: 0;
 }
 
 .window-list-item-label {
@@ -54,7 +54,7 @@
 .switcher-list {
     border-image: url("background-assets/tooltip.svg") 7;
     color: $white;
-    padding: 0px 3px;
+    padding: 0 3px;
     font-weight: bold;
 
     > StBoxLayout {

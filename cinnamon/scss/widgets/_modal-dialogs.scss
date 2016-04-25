@@ -3,10 +3,10 @@
  ***********************/
 
 /* The background shade when a dialog appears */
-.lightbox { background-color: alpha($black, 0.65); }
+.lightbox { background-color: alpha($black, .65); }
 
 /* Among other places, appears when adding an applet */
-.flashspot { background-color: alpha($white, 0.6); }
+.flashspot { background-color: alpha($white, .6); }
 
 /****************
  ! Modal dialogs

@@ -5,8 +5,8 @@
 .workspace-osd {
     border-radius: 6px;
     padding: 12px 16px;
-    background-color: alpha($black, 0.5);
-    border: 1px solid alpha($white, 0.25);
+    background-color: alpha($black, .5);
+    border: 1px solid alpha($white, .25);
     font-size: 20pt;
     font-weight: bold;
     color: $white;

@@ -3,22 +3,22 @@
  **********/
 
 .applet-box {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: $spacing;
+    padding-right: $spacing;
     font-weight: bold;
     color: $white;
     border: 1px solid alpha($white, 0);
-    border-top: 0px;
-    border-bottom: 0px;
+    border-top: 0;
+    border-bottom: 0;
     transition-duration: 200;
 
     &:hover {
-        border: 1px solid alpha($white, 0.4);
-        border-top: 0px;
-        border-bottom: 0px;
+        border: 1px solid alpha($white, .4);
+        border-top: 0;
+        border-bottom: 0;
         background-gradient-direction: vertical;
-        background-gradient-end: alpha($white, 0.3);
-        background-gradient-start: alpha($white, 0.2);
+        background-gradient-end: alpha($white, .3);
+        background-gradient-start: alpha($white, .2);
     }
 }
 

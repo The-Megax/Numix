@@ -30,12 +30,55 @@
         > header {
             padding: 0;
             margin: 0;
-            border-width: 0;
+            border-width: 1px;
             border-radius: 0;
+            border-color: $borders_color;
             background-image: none;
             background-clip: border-box;
             background-color: shade($base_color, .9);
             color: $text_color;
+
+            tabs { margin: -1px; }
+
+            &.top {
+                border-bottom-style: solid;
+
+                tabs {
+                    margin-top: 0;
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+            }
+
+            &.right {
+                border-left-style: solid;
+
+                tabs {
+                    margin-right: 0;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+            }
+
+            &.bottom {
+                border-top-style: solid;
+
+                tabs {
+                    margin-bottom: 0;
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+            }
+
+            &.left {
+                border-right-style: solid;
+
+                tabs {
+                    margin-left: 0;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+            }
 
             &.top > tabs > arrow {
                 @extend %notebook_vert_arrows;
@@ -50,8 +93,8 @@
             }
 
             @at-root %notebook_vert_arrows {
-                margin-left: 0px;
-                margin-right: 0px;
+                margin-left: 0;
+                margin-right: 0;
                 padding-left: 4px;
                 padding-right: 4px;
 
@@ -73,8 +116,8 @@
             }
 
             @at-root %notebook_horz_arrows {
-                margin-top: 0px;
-                margin-bottom: 0px;
+                margin-top: 0;
+                margin-bottom: 0;
                 padding-top: 4px;
                 padding-bottom: 4px;
 
@@ -123,7 +166,7 @@
                     border-width: 2px;
                     border-style: solid;
                     border-color: transparent;
-                    transition: border-bottom-color .3s ease-out;
+                    transition: border-color .3s ease-out;
                 }
 
                 &:hover {
@@ -166,9 +209,10 @@
             &.top tab {
                 padding: ($spacing + 1) 0 0; // top | left/right | bottom
                 border-style: solid;
-                border-color: shade($bg_color, .8);
-                border-width: 0px;
+                border-color: $borders_color;
+                border-width: 0;
                 border-bottom-width: 1px;
+                transition: border-bottom-color .3s ease-out;
 
                 > box, > label {
                     padding: 0 ($spacing * 3) ($spacing + 1); // top | left/right | bottom
@@ -192,7 +236,7 @@
                     }
 
                     label {
-                        margin-bottom: 0px;
+                        margin-bottom: 0;
                         color: $selected_bg_color;
                     }
 
@@ -205,9 +249,10 @@
             &.right tab {
                 padding: 0 ($spacing + 1) 0 0; // top | right | bottom | left
                 border-style: solid;
-                border-color: shade($bg_color, .8);
-                border-width: 0px;
+                border-color: $borders_color;
+                border-width: 0;
                 border-left-width: 1px;
+                transition: border-left-color .3s ease-out;
 
                 > box, > label {
                     padding: ($spacing + 1) ($spacing * 3); // top | right | bottom | left
@@ -231,7 +276,7 @@
                     }
 
                     label {
-                        margin-left: 0px;
+                        margin-left: 0;
                         color: $selected_bg_color;
                     }
 
@@ -244,9 +289,10 @@
             &.bottom tab {
                 padding: 0 0 ($spacing + 1); // top | left/right | bottom
                 border-style: solid;
-                border-color: shade($bg_color, .8);
-                border-width: 0px;
+                border-color: $borders_color;
+                border-width: 0;
                 border-top-width: 1px;
+                transition: border-top-color .3s ease-out;
 
                 > box, > label {
                     padding: ($spacing + 1) ($spacing * 3) 0;  // top/bottom | left/right
@@ -270,7 +316,7 @@
                     }
 
                     label {
-                        margin-top: 0px;
+                        margin-top: 0;
                         color: $selected_bg_color;
                     }
 
@@ -283,9 +329,10 @@
             &.left tab {
                 padding: 0 0 0 ($spacing + 1); // top | right | bottom | left
                 border-style: solid;
-                border-color: shade($bg_color, .8);
-                border-width: 0px;
+                border-color: $borders_color;
+                border-width: 0;
                 border-right-width: 1px;
+                transition: border-right-color .3s ease-out;
 
                 > box, > label {
                     padding: ($spacing + 1) ($spacing * 3); // top/bottom | left/right
@@ -309,7 +356,7 @@
                     }
 
                     label {
-                        margin-right: 0px;
+                        margin-right: 0;
                         color: $selected_bg_color;
                     }
 

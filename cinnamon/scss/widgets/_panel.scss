@@ -4,30 +4,30 @@
 
 #panel {
     background-gradient-direction: vertical;
-    background-gradient-end: alpha($black, 0.3);
-    background-gradient-start: alpha($black, 0.5);
+    background-gradient-end: alpha($black, .3);
+    background-gradient-start: alpha($black, .5);
     height: 25px;
     color: $white;
     font-weight: normal;
     font-size: $font-size;
 
     &.panel-top {
-        box-shadow: 0 1px alpha($white, 0.2);
+        box-shadow: 0 1px alpha($white, .2);
     }
 
     &.panel-bottom {
-        box-shadow: 0 -1px alpha($white, 0.2);
+        box-shadow: 0 -1px alpha($white, .2);
     }
 
     &:highlight { }
 
     &Left {
-        spacing: 0px;
+        spacing: 0;
 
         &:dnd {
             background-gradient-direction: vertical;
-            background-gradient-start: rgba(255, 0, 0, 0.05);
-            background-gradient-end: rgba(255, 0, 0, 0.2);
+            background-gradient-start: rgba(255, 0, 0, .05);
+            background-gradient-end: rgba(255, 0, 0, .2);
         }
 
         &:ltr {
@@ -40,30 +40,30 @@
     }
 
     &Center {
-        spacing: 0px;
+        spacing: 0;
 
         &:dnd {
             background-gradient-direction: vertical;
-            background-gradient-start: rgba(0, 255, 0, 0.05);
-            background-gradient-end: rgba(0, 255, 0, 0.2);
+            background-gradient-start: rgba(0, 255, 0, .05);
+            background-gradient-end: rgba(0, 255, 0, .2);
         }
     }
 
     &Right {
-        spacing: 0px;
+        spacing: 0;
 
         &:dnd {
             background-gradient-direction: vertical;
-            background-gradient-start: rgba(0, 0, 255, 0.05);
-            background-gradient-end: rgba(0, 0, 255, 0.2);
+            background-gradient-start: rgba(0, 0, 255, .05);
+            background-gradient-end: rgba(0, 0, 255, .2);
         }
 
         &:ltr {
-            padding-left: 0px;
+            padding-left: 0;
         }
 
         &:rtl {
-            padding-right: 0px;
+            padding-right: 0;
         }
     }
 
@@ -77,8 +77,8 @@
     -minimum-hpadding: 5px;
     font-weight: bold;
     color: $white;
-    border-top: 0px;
-    border-bottom: 0px;
+    border-top: 0;
+    border-bottom: 0;
     transition-duration: 200;
 }
 
@@ -103,8 +103,8 @@
  *************************/
 
 .panel-launcher {
-    margin: 0px;
-    padding: 0px 5px;
+    margin: 0;
+    padding: 0 $spacing;
 }
 
 @each $v in panel-top, panel-bottom {
