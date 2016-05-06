@@ -42,6 +42,8 @@
     &:link, &:visited { color: $link_color; }
 }
 
+*:disabled { -gtk-icon-effect: dim; } /* Megax fix. */
+
 .background {
     background-color: $bg_color;
     color: $fg_color;

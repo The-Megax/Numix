@@ -756,8 +756,8 @@ StScrollBar StButton#hhandle:focus {
  ! Applets
  **********/
 .applet-box {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 3px;
+  padding-right: 3px;
   font-weight: bold;
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0);

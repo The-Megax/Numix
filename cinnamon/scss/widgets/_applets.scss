@@ -3,8 +3,8 @@
  **********/
 
 .applet-box {
-    padding-left: $spacing;
-    padding-right: $spacing;
+    padding-left: $spacing - 2px;
+    padding-right: $spacing - 2px;
     font-weight: bold;
     color: $white;
     border: 1px solid alpha($white, 0);
