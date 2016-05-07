@@ -11,9 +11,10 @@
         text-shadow: 0 1px alpha($black, .5);
         -gtk-icon-shadow: 0 1px alpha($black, .5);
 
-        menubar, .menubar {
+        menubar {
+            padding-left: 5px;
+            
             &, > menuitem {
-                border-style: none;
                 background-color: transparent;
                 background-image: none;
                 color: $white;
@@ -32,8 +33,8 @@
 
                 &:disabled { color: alpha($white, .7); }
 
-                menu, .menu {
-                    border-radius: 0;
+                menu {
+                    border-radius: 0; /* Megax fix. */
 
                     menuitem {
                         font: normal;
@@ -59,7 +60,7 @@
                     inset 0 -1px mix(shade($lightdm_bg_color, .7), $lightdm_fg_color, .21);
 
         button {
-            padding: 3px $spacing * 3;
+            padding: 3px $spacing * 3; /* megax fix. */
             border-width: 1px;
             border-radius: $roundness;
             border-style: solid;
@@ -84,7 +85,7 @@
     }
 
     #login_window {
-        menu, .menu { border-radius: 0; }
+        menu { border-radius: 0; } /* Megax fix */
 
         combobox button {
             &, &:hover, &:active, &:active:hover,
@@ -97,7 +98,7 @@
         }
 
         entry {
-            padding: 3px $spacing;
+            padding: 3px $spacing; /* Megax fix */
             border-width: 1px;
             border-style: solid;
             border-color: shade($lightdm_bg_color, .8);
@@ -123,7 +124,7 @@
         color: $lightdm_fg_color;
         font: 18px;
 
-        menu, .menu { font: normal; }
+        menu { font: normal; }
 
         arrow { color: mix($lightdm_fg_color, $lightdm_bg_color, .5); }
     }
