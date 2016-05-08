@@ -1,4 +1,4 @@
-## Numix
+## Numix-Megax
 ##### This is a modified version of the Numix theme. A modern flat theme with a combination of light and dark elements. It supports GNOME, Unity, Xfce and Openbox.
 ##### [![The Numix Project](https://dl.dropboxusercontent.com/u/60521097/numix.jpg)](https://numixproject.org/) [The Numix Project](https://numixproject.org/)
 
