@@ -48,7 +48,7 @@
 
     &:disabled { box-shadow: none; }
 
-    & progressbar {
+    progressbar {
         @include linear-gradient($selected_bg_color);
 
         border-width: 0;
@@ -56,8 +56,8 @@
         color: $selected_fg_color;
     }
 
-    & image.left { padding-right: $spacing; }
-    & image.right { padding-left: $spacing; }
+    image.left { padding-right: $spacing; }
+    image.right { padding-left: $spacing; }
 
     selection {
         background-color: $selected_bg_color;
