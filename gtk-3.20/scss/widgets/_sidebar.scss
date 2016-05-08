@@ -79,7 +79,7 @@
         row {
             // Needs overriding of the GtkListBoxRow padding
             min-height: 36px;
-            padding: 0px;
+            padding: 0;
 
             // Using margins/padding directly in the SidebarRow
             // will make the animation of the new bookmark row jump
