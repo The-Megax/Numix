@@ -5,10 +5,14 @@
 @include exports("sidebar") {
     .sidebar {
         border-style: none;
-        background-color: mix($bg_color, $base_color, .5);
 
-        .view { // Megax fix: .view, nemo sidebar fix.
+        &, .view { /* Megax fix. */
             background-color: mix($bg_color, $base_color, .5);
+
+            &:backdrop {
+                background-color: $backdrop_sidebar_bg_color;
+                border-color: $backdrop_borders_color;
+            }
         }
 
         @at-root %sidebar_left,
@@ -27,8 +31,6 @@
         }
 
         &:backdrop {
-            background-color: $backdrop_sidebar_bg_color;
-            border-color: $backdrop_borders_color;
             transition: 200ms ease-out;
         }
 
