@@ -188,7 +188,7 @@
 
                     &:backdrop {
                         @if $variant == 'light' {
-                            color: $backdrop_selected_fg_color; /* Megax fix. */
+                            color: $backdrop_selected_fg_color;
                             border-color: $selected_borders_color; // otherwise it gets inherited by .view(?!?)
                         } @else {
                             border-color: $backdrop_base_color;
