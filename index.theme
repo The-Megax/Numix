@@ -1,12 +1,12 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=Numix-megax
+Name=Numix-Megax
 Comment=A modern flat theme
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=Numix-megax
-MetacityTheme=Numix-megax
+GtkTheme=Numix-Megax
+MetacityTheme=Numix-Megax
 IconTheme=fs-icons-ubuntu
 CursorTheme=DMZ-White
 ButtonLayout=:close,minimize,maximize
