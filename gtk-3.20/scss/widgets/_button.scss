@@ -4,7 +4,7 @@
 
 @include exports("button_extends") {
     // stuff for .needs-attention
-    $_dot_color: if($variant=='light', $selected_bg_color, lighten($selected_bg_color, .15));
+    $_dot_color: if($variant == 'light', $selected_bg_color, lighten($selected_bg_color, .15));
 
     @keyframes needs_attention {
         from {
@@ -27,8 +27,7 @@
 
         @if $variant == 'light' {
             background-position: right 3px, right 4px;
-        }
-        @else {
+        } @else {
             background-position: right 3px, right 2px;
         }
 
@@ -37,8 +36,7 @@
         &:dir(rtl) {
             @if $variant == 'light' {
                 background-position: left 3px, left 4px;
-            }
-            @else {
+            } @else {
                 background-position: left 3px, left 2px;
             }
         }
@@ -239,7 +237,6 @@
 }
 
 @include exports("button") {
-
     %close_button {
         border: 1px solid transparent;
         background-color: transparent;
@@ -356,7 +353,6 @@
 
 @include exports("combobox") {
     combobox {
-
         button.combo {
             // otherwise the arrow placement is not symmetric
             min-width: 0;
@@ -389,6 +385,5 @@
         .linked:not(.vertical) > &:last-child > box > button.combo { @extend %linked_button:last-child; }
 
         .linked:not(.vertical) > &:only-child > box > button.combo { @extend %linked_button:only-child; }
-
     }
 }
