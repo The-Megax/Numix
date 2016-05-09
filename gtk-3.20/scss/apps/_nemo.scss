@@ -28,11 +28,11 @@
             border-color: border_normal($toolbar_bg_color);
 
             button {
-                @include button($bg_color, $fg_color);
+                @include button($toolbar_bg_color, $toolbar_fg_color); /* Megax fix. */
             }
 
             button.linked, .linked .button {
-                @include linked_button($bg_color);
+                @include linked_button($toolbar_bg_color);
             }
 
             combobox button {
@@ -138,21 +138,20 @@
             + separator + box .primary-toolbar  {
                 padding-top: $spacing - 3px;
                 padding-bottom: $spacing - 4px;
-                border-top: none;
-                background-color: $selected_bg_color;
-                box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+                border-bottom: 1px solid border_normal(mix($bg_color, $base_color, .5)); /* Megax fix. */
+                background-color: mix($bg_color, $base_color, .5); /* Megax fix. */
 
                 button:nth-child(2) {
                     border-right: none;
-                    border-top-right-radius: 0px;
-                    border-bottom-right-radius: 0px;
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
                 }
 
                 button:nth-child(3) {
                     margin-left: -6px;
                     border-left: none;
-                    border-top-left-radius: 0px;
-                    border-bottom-left-radius: 0px;
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
                 }
                 
                 button.flat {

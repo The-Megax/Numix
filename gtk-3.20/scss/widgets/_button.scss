@@ -263,7 +263,7 @@
         min-width: 24px;
         @include button(shade($bg_color, 1.2), $fg_color);
 
-        &.link, .link & { @include linked_button(shade($bg_color, 1.2)); }
+        &.linked, .linked & { @include linked_button(shade($bg_color, 1.2)); }
 
         spinbutton & {
             color: mix($text_color, $base_color, .4);
