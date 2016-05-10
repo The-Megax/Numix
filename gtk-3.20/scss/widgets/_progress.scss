@@ -12,7 +12,7 @@
         min-height: 6px;
 
         &.osd {
-            min-height: 2px;
+            min-height: 4px;
         }
 
         trough {
@@ -133,6 +133,7 @@
             trough { padding: 0 7px; }
             highlight, fill { margin: 0 -7px; }
         }
+
         &.vertical {
             padding: 0 6px;
 
@@ -314,6 +315,7 @@
                 }
             }
         }
+
         &.horizontal {
             indicator {
                 min-height: $_marks_length;
@@ -322,6 +324,7 @@
 
             &.fine-tune indicator { min-height: ($_marks_length - 1px); }
         }
+
         &.vertical {
             indicator {
                 min-height: 1px;
