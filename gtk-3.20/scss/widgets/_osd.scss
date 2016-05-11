@@ -6,7 +6,7 @@
 ********/
 
 @include exports("osd") {
-    overlay.osd { background-color: transparent; }
+    overlay.osd { background-color: $black; }
 
     osd {
         &.background {

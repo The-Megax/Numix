@@ -59,10 +59,7 @@
     image.left { padding-right: $spacing; }
     image.right { padding-left: $spacing; }
 
-    selection {
-        background-color: $selected_bg_color;
-        color: $selected_fg_color;
-    }
+    selection { &:focus, & { @extend %selected_items; } } /* Megax fix. */
 }
 
 @mixin entry($bg, $fg) {
