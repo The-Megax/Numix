@@ -220,7 +220,7 @@
     }
 }
 
-@mixin linked_vertical_button($bg) { // Teszt
+@mixin linked_vertical_button($bg) {
     $border_strength: if(lightness($bg) > 50, 0, .1);
     $shadow_strength: if(lightness($bg) > 50, 0, .1);
 
