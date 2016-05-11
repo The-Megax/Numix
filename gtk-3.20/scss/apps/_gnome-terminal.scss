@@ -34,10 +34,45 @@
             }
         }
 
-        /*GtkNotebook.notebook {
-            border-right-width: 0;
-            border-bottom-width: 0;
-            border-left-width: 0;
-        }*/
+        notebook {
+            > header {
+                border-color: border_normal($osd_base);
+                background-color: $osd_base;
+
+                button { @include button($osd_bg, $osd_fg); }
+
+                tab {
+                    &:hover {
+                        background-color: shade($osd_base, .8);
+
+                        &:checked { background-color: mix($osd_bg, $osd_base, .4); }
+                    }
+
+                    &:checked:hover { background-color: mix($osd_bg, $osd_base, .4); }
+
+                    label { color: $osd_fg; }
+                }
+
+                &.top tab {
+                    border-color: border_normal($osd_base);
+
+                    &:hover {
+                        border-bottom-color: shade($osd_base, .4);
+
+                        > box, > label { border-bottom-color: shade($osd_base, .4); }
+                    }
+
+                    &:checked {
+                        border-bottom-color: $selected_bg_color;
+
+                        > box, > label { border-bottom-color: $selected_bg_color; }
+
+                        label { color: $selected_bg_color; }
+
+                        &:hover { background-color: mix($osd_bg, $osd_base, .3); }
+                    }
+                }
+            }
+        }
     }
 }
