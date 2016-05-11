@@ -76,7 +76,7 @@
         border-bottom-style: solid;
 
         &:dir(rtl) {
-            border-radius: 0; // needed when including %linked_middle:dir(rtl)
+            border-radius: 0; // needed when including %linked_vertical_middle:dir(rtl)
             border-top-style: none;
             border-bottom-style: solid;
         }
