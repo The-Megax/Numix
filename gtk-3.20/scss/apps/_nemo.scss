@@ -181,20 +181,6 @@
                 border: 0;
             }
         }
-
-        &:backdrop {
-            color: $backdrop_text_color;
-            background-color: $backdrop_base_color;
-        }
-
-        .view { /* Megax fix. */ // így nem tűnik el a mappák/fájlok szövegének háttérszine de nem az igazi így. Javításra szorul.
-            &:selected {
-                &:backdrop {
-                    color: $backdrop_selected_fg_color;
-                    background-color: $selected_bg_color;
-                }
-            }
-        }
     }
 }
 
