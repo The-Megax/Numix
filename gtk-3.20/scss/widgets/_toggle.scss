@@ -84,7 +84,7 @@ $suffix: if($variant == "dark", "-dark", "");
         padding: $spacing;
         border: none;
         outline: none;
-        transition: background-color 0.3s linear;
+        transition: background-color .3s linear;
         min-width: 93px;
         min-height: 25px;
         background-color: $switch_bg_color;
@@ -92,8 +92,8 @@ $suffix: if($variant == "dark", "-dark", "");
 
         slider {
             background-color: $switch_slider_bg_color;
-            transition: all 0.3s ease-in;
-            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+            transition: all .3s ease-in;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1);
             border-radius: $roundness;
         }
 
