@@ -4,30 +4,9 @@
 
 @include exports("rhythmbox") {
     /* Megax fix. */
-    .sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar { // Alsó gombokat javítja.
-        button {
-            @include button($toolbar_bg_color, $toolbar_fg_color);
-
-            min-height: 22px;
-            min-width: 24px;
-            padding: ($spacing + 2px) $spacing;
-        }
-
-        .linked > button { @include linked_button($toolbar_bg_color); }
-
-        combobox, button {
-            padding: $spacing - 1px;
-
-            &.text-button { padding: $spacing; }
-
-            &.image-button { padding: ($spacing + 1px) ($spacing - 1px) ($spacing + 1px) $spacing; }
-        }
-
-        background-color: $toolbar_bg_color;
+    .sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar { // Alsó gombok feletti elválasztást teszi vissza.
         box-shadow: inset 0 1px $borders_color;
 
-        &:dir(rtl) {
-            box-shadow: inset 0 1px $borders_color;
-        }
+        &:dir(rtl) { box-shadow: inset 0 1px $borders_color; }
     }
 }
