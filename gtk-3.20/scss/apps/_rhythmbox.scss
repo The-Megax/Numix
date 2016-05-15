@@ -11,6 +11,7 @@
             min-height: 22px;
             min-width: 24px;
             padding: ($spacing + 2px) $spacing;
+            @extend %linked_button;
         }
 
         combobox, button {
