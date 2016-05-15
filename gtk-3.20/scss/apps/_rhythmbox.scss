@@ -11,8 +11,9 @@
             min-height: 22px;
             min-width: 24px;
             padding: ($spacing + 2px) $spacing;
-            @extend %linked_button;
         }
+
+        .linked > button { @include linked_button($toolbar_bg_color); }
 
         combobox, button {
             padding: $spacing - 1px;
