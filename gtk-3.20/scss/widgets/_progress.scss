@@ -91,7 +91,7 @@
             @include linear-gradient($selected_bg_color);
 
             border-color: transparent;
-            border-radius: $roundness;
+            border-radius: 0;
 
             &.low {
                 background-color: $warning_color;
