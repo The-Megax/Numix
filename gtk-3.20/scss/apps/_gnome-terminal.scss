@@ -10,57 +10,70 @@
     }
 
     terminal-window {
-        scrolledwindow junction {
+        junction, scrollbar trough {
             background-color: $osd_base;
+            border-color: border_normal($osd_base);
+
+            &:backdrop {
+                background-color: shade($backdrop_osd_bg, .9);
+                border-color: border_normal(shade($backdrop_osd_bg, .9));
+            }
         }
 
-        scrollbar {
-            background-color: $osd_base;
-
-            button {
-                color: shade($osd_base, 0.6);
-
-                &:active, &:checked {
-                    color: shade($osd_base, 0.6);
-
-                    &:hover {
-                        color: shade($osd_base, 0.6);
-                    }
-                }
-            }
-
+        scrollbar.vertical {
             slider {
-                border-color: mix(shade($osd_base, .87), $osd_fg, .21);
-                background-color: mix($osd_base, $osd_fg, .21);
+                background-color: mix($osd_base, $osd_fg, .2);
 
-                &:hover {
-                    border-color: mix(shade($osd_base, .87), $osd_fg, .31);
-                    background-color: mix($osd_base, $osd_fg, .31);
-                }
+                &:hover { background-color: mix($osd_base, $osd_fg, .3); }
 
-                &.vertical {
-                    &:hover {
-                        border-color: mix(shade($osd_base, .87), $osd_fg, .31);
-                        background-color: mix($osd_base, $osd_fg, .31);
-                    }
+                &:hover:active { background-color: $selected_bg_color; }
 
-                    &:active, &:checked {
-                        border-color: shade($selected_bg_color, .9);
-                        background-color: $selected_bg_color;
-                    }
-                }
+                &:backdrop { background-color: mix($backdrop_osd_fg, $backdrop_osd_bg, .4); }
 
-                &:active {
-                    border-color: shade($selected_bg_color, .9);
-                    background-color: $selected_bg_color;
-                }
+                &:disabled { background-color: transparent; }
             }
         }
 
-        /*GtkNotebook.notebook {
-            border-right-width: 0;
-            border-bottom-width: 0;
-            border-left-width: 0;
-        }*/
+        notebook {
+            > header {
+                border-color: border_normal(shade($osd_base, .8));
+                background-color: shade($osd_base, .8);
+
+                button { @include button($osd_bg, $osd_fg); }
+
+                tab {
+                    &:hover {
+                        background-color: shade($osd_base, .8);
+
+                        &:checked { background-color: mix($osd_bg, $osd_base, .4); }
+                    }
+
+                    &:checked:hover { background-color: mix($osd_bg, $osd_base, .4); }
+
+                    label { color: $osd_fg; }
+                }
+
+                &.top tab {
+                    border-color: border_normal($osd_base);
+
+                    &:hover {
+                        border-bottom-color: shade($osd_bg, 1.2);
+
+                        > box, > label { border-bottom-color: shade($osd_bg, 1.2); }
+                    }
+
+                    &:checked {
+                        background-color: $osd_base;
+                        border-bottom-color: $selected_bg_color;
+
+                        > box, > label { border-bottom-color: $selected_bg_color; }
+
+                        label { color: $selected_bg_color; }
+
+                        &:hover { background-color: $osd_base; }
+                    }
+                }
+            }
+        }
     }
 }

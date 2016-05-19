@@ -30,9 +30,7 @@
                 @include button($toolbar_bg_color, $toolbar_fg_color); /* Megax fix. */
             }
 
-            button.linked, .linked .button {
-                @include linked_button($toolbar_bg_color);
-            }
+            .linked > button { @include linked_button($toolbar_bg_color); } /* Megax fix. */
 
             combobox button {
                 padding: $spacing - 1px;
@@ -65,7 +63,6 @@
                     -NemoPathbarButton-border-radius: $roundness;
                 }
             }
-
         } // END toolbar
 
         /* Status Bar */

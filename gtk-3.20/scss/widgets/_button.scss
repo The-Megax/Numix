@@ -70,6 +70,18 @@
         }
     }
 
+    %linked_vertical_middle {
+        border-radius: 0;
+        border-top-style: none;
+        border-bottom-style: solid;
+
+        &:dir(rtl) {
+            border-radius: 0; // needed when including %linked_vertical_middle:dir(rtl)
+            border-top-style: none;
+            border-bottom-style: solid;
+        }
+    }
+
     %linked_button {
         border-width: 1px;
         border-style: solid;
@@ -114,6 +126,51 @@
             border-radius: $roundness;
         }
     }
+
+    %linked_vertical_button {
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 0;
+        border-top-style: none;
+        border-bottom-style: none;
+
+        &:first-child {
+            border-width: 1px;
+            border-radius: $roundness;
+            border-top-style: solid;
+            border-bottom-style: none;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+
+            &:dir(rtl) {
+                border-top-style: none;
+                border-bottom-style: solid;
+            }
+        }
+
+        &:last-child {
+            border-width: 1px;
+            border-radius: $roundness;
+            border-top-style: none;
+            border-bottom-style: solid;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+
+            &:dir(rtl) {
+                border-top-style: solid;
+                border-bottom-style: none;
+            }
+        }
+
+        &:only-child, &:first-child:only-child {
+            border-width: 1px;
+            border-style: solid;
+        }
+
+        &:only-child {
+            border-radius: $roundness;
+        }
+    }
 }
 
 @mixin linked_button($bg) {
@@ -140,6 +197,53 @@
     }
 
     &:disabled { box-shadow: inset -1px 0 shade($bg, .8); }
+
+    &:last-child, &:only-child { box-shadow: 0 1px 2px -1px alpha($dark_shadow, .12 + $shadow_strength); }
+
+    &:last-child:hover, &:only-child:hover { box-shadow: 0 1px 2px -1px alpha($dark_shadow, .32 + $shadow_strength); }
+
+    &:disabled:last-child, &:disabled:only-child,
+    &:active:disabled:last-child, &:active:disabled:only-child,
+    &:checked:disabled:last-child, &:checked:disabled:only-child { box-shadow: none; }
+
+    &:active:last-child, &:active:last-child:focus, &:active:last-child:hover, &:active:last-child:hover:focus,
+    &:checked:last-child, &:checked:last-child:focus, &:checked:last-child:hover, &:checked:last-child:hover:focus {
+        box-shadow: inset 0 1px alpha($dark_shadow, .07),
+        inset -1px 0 alpha($dark_shadow, .06);
+    }
+
+    &:active:only-child, &:active:only-child:focus, &:active:only-child:hover, &:active:only-child:hover:focus,
+    &:checked:only-child, &:checked:only-child:focus, &:checked:only-child:hover, &:checked:only-child:hover:focus {
+        box-shadow: inset 1px 0 alpha($dark_shadow, .06),
+        inset 0 1px alpha($dark_shadow, .07),
+        inset -1px 0 alpha($dark_shadow, .06);
+    }
+}
+
+@mixin linked_vertical_button($bg) {
+    $border_strength: if(lightness($bg) > 50, 0, .1);
+    $shadow_strength: if(lightness($bg) > 50, 0, .1);
+
+    @extend %linked_vertical_button;
+
+    box-shadow: inset 0 -1px border_normal(rgba(0, 0, 0, .22 + $border_strength)), /* Megax fix. */
+    0 1px 2px -1px alpha($dark_shadow, .22 + $shadow_strength); /* Megax fix. */
+
+    &:focus, &:hover {
+        box-shadow: inset 0 -1px border_focus(rgba(0, 0, 0, .22 + $border_strength)), /* Megax fix. */
+        0 1px 2px -1px alpha($dark_shadow, .42 + $shadow_strength); /* Megax fix. */
+    }
+
+    &:active, &:active:hover,
+    &:active:focus, &:active:hover:focus,
+    &:checked, &:checked:hover,
+    &:checked:focus, &:checked:hover:focus {
+        box-shadow: inset 0 -1px border_active(rgba(0, 0, 0, .12 + $border_strength)),
+        inset 1px 0 alpha($dark_shadow, .07),
+        inset -1px 0 alpha($dark_shadow, .05);
+    }
+
+    &:disabled { box-shadow: inset 0 -1px shade($bg, .8); }
 
     &:last-child, &:only-child { box-shadow: 0 1px 2px -1px alpha($dark_shadow, .12 + $shadow_strength); }
 
@@ -263,86 +367,92 @@
         min-width: 24px;
         @include button(shade($bg_color, 1.2), $fg_color);
 
-        &.linked, .linked & { @include linked_button(shade($bg_color, 1.2)); }
+        .inline-toolbar &,
+        .linked > & { @include linked_button(shade($bg_color, 1.2)); }
 
-        spinbutton & {
+        .linked.vertical > & { @include linked_vertical_button(shade($bg_color, 1.2)); }
+    }
+
+    spinbutton {
+        button {
             color: mix($text_color, $base_color, .4);
-            padding: $spacing ($spacing * 2);
-            border: 0;
-            border-radius: 0;
-            border-style: none;
-            background-color: transparent;
-            background-image: none;
-            box-shadow: inset 1px 0 shade($base_color, .9);
-
-            &:disabled {
-                color: mix($text_color, $base_color, .7);
-                box-shadow: inset 1px 0 shade($base_color, .85);
-            }
 
             &:active, &:checked, &:hover { color: $text_color; }
 
-            &:first-child {
-                border-radius: $roundness 0 0 $roundness;
+            &:disabled { color: alpha($insensitive_fg_color, .8); }
+
+            &:backdrop { color: mix($backdrop_base_color, $backdrop_fg_color, .9); }
+
+            &:backdrop:disabled { color: alpha($backdrop_insensitive_color, .8); }
+        }
+
+        &:not(.vertical) {
+            @extend %entry;
+            @include linear-gradient($base_color, to top);
+            @include border($base_color);
+
+            padding: 0;
+
+            color: $text_color;
+            caret-color: $text_color;
+
+            &:focus, &:active { border-color: border_focus($borders_color); }
+
+            &:disabled {
+                @include linear-gradient(shade($base_color, .9), to top);
+
+                color: mix($base_color, $text_color, .5);
+            }
+
+            entry {
+                // reset all the other props since the spinbutton node is styled here
+                border: 0;
+                border-radius: 0;
                 box-shadow: none;
             }
 
-            &:last-child { border-radius: 0 $roundness $roundness 0; }
-
-            &:dir(rtl) { box-shadow: inset -1px 0 shade($base_color, .9); }
-        }
-
-        spinbutton.vertical & {
-            border: 1px solid shade($bg_color, .8);
-            border-radius: $roundness;
-            background-color: shade($bg_color, 1.08);
-            background-image: none;
-            color: $fg_color;
-            box-shadow: none;
-
-            &:hover {
-                border-color: shade($bg_color, .7);
-                background-color: shade($bg_color, 1.1);
+            button {
+                border-radius: 0;
+                border-color: alpha($borders_color, .8);
+                border-style: none none none solid;
                 background-image: none;
-            }
+                box-shadow: none;
 
-            &:active, &:checked {
-                border-color: shade($bg_color, .8);
-                background-color: shade($bg_color, .95);
-                background-image: none;
-            }
+                &:dir(rtl) { border-style: none solid none none; }
 
-            &:active:hover, &:checked:hover {
-                border-color: shade($bg_color, .7);
-            }
+                &:active { box-shadow: inset 0 2px 3px -1px transparentize($black, .8); }
 
-            &:focus, &:hover:focus, &:active:focus, &:active:hover:focus { border-color: shade($bg_color, .7); }
+                &:backdrop { border-color: alpha($backdrop_borders_color, .8); }
 
-            &:disabled {
-                border-color: shade($bg_color, .85);
-                background-color: shade($bg_color, .9);
-                background-image: none;
-            }
+                &:backdrop:disabled {
+                    border-style: none none none solid; // It is needed or it gets overridden
 
-            &:first-child {
-                border-width: 1px;
-                border-bottom-width: 0;
-                border-bottom-right-radius: 0;
-                border-bottom-left-radius: 0;
-            }
+                    &:dir(rtl) { border-style: none solid none none; }
+                }
 
-            &:last-child {
-                border-width: 1px;
-                border-top-width: 0;
-                border-top-left-radius: 0;
-                border-top-right-radius: 0;
+                &:dir(rtl):first-child { border-radius: $roundness 0 0 $roundness; }
+
+                &:dir(ltr):last-child { border-radius: 0 $roundness $roundness 0; }
             }
         }
 
-        spinbutton.vertical entry {
-            border-width: 1px;
-            border-style: solid;
-            border-radius: 0;
+        &.vertical {
+            entry {
+                // reset all the other props since the spinbutton node is styled here
+                border-radius: 0;
+            }
+
+            button {
+                &.up {
+                    border-style: solid solid none solid;
+                    border-radius: $roundness $roundness 0 0;
+                }
+
+                &.down {
+                    border-style: none solid solid solid;
+                    border-radius: 0 0 $roundness $roundness; 
+                }
+            }
         }
     }
 }
