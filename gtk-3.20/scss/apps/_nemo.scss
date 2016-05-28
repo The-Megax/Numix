@@ -70,8 +70,8 @@
             > widget:last-child {
                 button {
                     min-height: 15px;
-                    min-width: 22px;
-                    margin: 5px;
+                    min-width: 20px; /* Megax fix. */
+                    //margin: 5px; /* Megax fix. */
                 }
 
                 button:first-child {
