@@ -20,7 +20,7 @@
 ****************/
 
 @include exports("searchbar") {
-    .search-bar {
+    searchbar { /* Megax fix. */ // Frissítve. Részben.
         @include linear-gradient(shade($bg_color, .98));
 
         border-width: 0 0 1px;

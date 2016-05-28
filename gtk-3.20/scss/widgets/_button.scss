@@ -436,6 +436,55 @@
             }
         }
 
+        // OSD horizontal
+        .osd &:not(.vertical) {
+            button {
+                @include button($osd_bg, $osd_fg);
+
+                border-radius: 0;
+                //border-color: transparentize($osd_borders_color, .3);
+                border-style: none none none solid;
+                background-image: none;
+                box-shadow: none;
+
+                &:dir(rtl) { border-style: none solid none none; }
+
+            &:active, &:checked, &:hover { color: $text_color; }  // tesztelni
+
+            &:disabled { color: alpha($insensitive_fg_color, .8); }  // tesztelni
+
+            &:backdrop { color: mix($backdrop_base_color, $backdrop_fg_color, .9); }  // tesztelni
+
+            &:backdrop:disabled { color: alpha($backdrop_insensitive_color, .8); }  // tesztelni
+
+                &:active { box-shadow: inset 0 2px 3px -1px transparentize($black, .8); }  // tesztelni
+
+      &:hover {
+        //border-color: transparentize(opacify($osd_borders_color, 1), .5);
+      }
+
+      &:disabled {
+        //border-color: transparentize(opacify($osd_borders_color, 1), .5);
+      }
+
+      &:backdrop {
+
+        //border-color: transparentize(opacify($osd_borders_color, 1), .5);
+//background-color: transparentize($osd_fg, .9);  // tesztelni
+      }
+
+                &:backdrop:disabled {
+                    border-style: none none none solid; // It is needed or it gets overridden
+
+                    &:dir(rtl) { border-style: none solid none none; }
+                }
+
+                &:dir(rtl):first-child { border-radius: $roundness 0 0 $roundness; }
+
+                &:dir(ltr):last-child { border-radius: 0 $roundness $roundness 0; }
+            }
+        }
+
         &.vertical {
             entry {
                 // reset all the other props since the spinbutton node is styled here
@@ -453,6 +502,11 @@
                     border-radius: 0 0 $roundness $roundness; 
                 }
             }
+        }
+
+        // OSD vertical
+        .osd &.vertical {
+            @include button($osd_bg, $osd_fg);
         }
     }
 }

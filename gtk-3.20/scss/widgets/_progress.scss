@@ -20,8 +20,6 @@
             progress { min-width: 6px; }
         }
 
-        &.osd { min-height: 4px; }
-
         trough {
             border: 1px solid alpha(border_normal($bg_color), .5);
             background-color: shade($bg_color, 1.08);
@@ -52,6 +50,26 @@
             &.top {
                 border-top-left-radius: $roundness;
                 border-top-right-radius: $roundness;
+            }
+        }
+
+        &.osd { // progressbar.osd used for epiphany page loading progress
+            margin: 2px;
+            min-height: 2px;
+            min-width: 2px;
+
+            trough {
+                border-style: none;
+                border-radius: 0;
+                background-image: none;
+                background-color: transparent;
+            }
+
+            progress {
+                border-style: none;
+                border-radius: 0;
+                background-color: $selected_bg_color;
+                background-image: none;
             }
         }
     }
@@ -122,7 +140,7 @@
         $_marks_length: 3px;
         $_marks_distance: 1px;
         $button_bg: if(hue($bg_color) == 0deg, shade($bg_color, 1.2), $bg_color);
-        $ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        $ease-out-quad: cubic-bezier(.25, .46, .45, .94);
         $button_transition: all 200ms $ease-out-quad;
 
         min-height: 10px;
@@ -190,9 +208,7 @@
             .osd & {
                 background-color: lighten($osd_bg, 7%);
 
-                highlight {
-                    background-color: $selected_bg_color;
-                }
+                highlight { background-color: $selected_bg_color; }
             }
 
             // Troughs in selected list-rows and infobars
@@ -261,11 +277,13 @@
                     background-color: mix($selected_fg_color, $selected_bg_color, .85);
                     border-color: mix($selected_fg_color, $selected_bg_color, .85);
                 }
+
                 &:active {
                     background-color: mix($selected_fg_color, $selected_bg_color, .5);
                     border-color: mix($selected_fg_color, $selected_bg_color, .5);
                 }
-                &:disabled{
+
+                &:disabled {
                     background-color: mix($selected_fg_color, $selected_bg_color, .55);
                     border-color: mix($selected_fg_color, $selected_bg_color, .55);
                 }
@@ -333,6 +351,66 @@
             }
 
             &.fine-tune indicator { min-width: ($_marks_length - 1px); }
+        }
+
+        &.color {
+            trough {
+                padding: 0;
+                border: 0;
+                background-image: none;
+            }
+
+            highlight, fill { margin: 0; }
+
+            &.horizontal {
+                padding: 0 0 6px 0;
+
+                trough {
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 0;
+                }
+
+                slider {
+                    &:hover, &:backdrop, &:disabled, &:backdrop:disabled, & {
+                        margin-bottom: 0;
+                        margin-top: 0;
+                    }
+                }
+            }
+
+            &.vertical {
+                &:dir(ltr) {
+                    padding: 0 0 0 6px;
+
+                    trough {
+                        border-bottom-right-radius: 0;
+                        border-top-right-radius: 0;
+                    }
+
+                    slider {
+                        &:hover, &:backdrop, &:disabled, &:backdrop:disabled, & {
+                            margin-left: 0;
+                            margin-right: 0;
+                        }
+                    }
+                }
+
+                &:dir(rtl) {
+                    padding: 0 6px 0 0;
+
+                    trough {
+                        border-bottom-left-radius: 0;
+                        border-top-left-radius: 0;
+                    }
+
+                    slider {
+                        &:hover, &:backdrop, &:disabled, &:backdrop:disabled, & {
+                            margin-right: 0;
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
         }
     }
 }

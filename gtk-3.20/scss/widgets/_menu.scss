@@ -192,8 +192,8 @@
 
 @include exports("popover") {
     popover.background {
-        margin: 10px;
-        padding: $spacing;
+        //margin: 10px; /* Megax fix. */
+        //padding: $spacing; /* Megax fix. */
         border-radius: $roundness;
         background-clip: border-box;
         background-color: $menu_bg_color;
@@ -280,7 +280,9 @@
             //@extend %undecorated_button;
 
             &:hover { background-color: $selected_bg_color; color: $selected_fg_color }
+
             &:active, &:selected { &, arrow { @extend %selected_items; } }
+
             &:checked { color: $fg_color; }
 
             // FIXME: temporary workaround
@@ -292,6 +294,7 @@
 
             &.flat arrow {
                 &.left { -gtk-icon-source: -gtk-icontheme("pan-start-symbolic"); }
+
                 &.right { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
             }
         }
