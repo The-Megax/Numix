@@ -37,3 +37,27 @@
 @import "apps/lightdm";
 @import "apps/gnome-terminal";
 @import "apps/rhythmbox";
+
+/*******************
+ ! Selected Items  *
+********************/
+
+@include exports("selected_items") { /* Megax fix. */ // Idegesítő bug, az összes meghívás végén kell lennie.
+    %selected_items {
+        background-color: $selected_bg_color;
+
+        @at-root %nobg_selected_items, & {
+            color: $selected_fg_color;
+
+            @if $variant == 'light' { outline-color: transparentize($selected_fg_color, .7); }
+
+            &:disabled { color: mix($selected_fg_color, $selected_bg_color, .5); }
+
+            &:backdrop {
+                color: $backdrop_selected_fg_color;
+
+                &:disabled { color: mix($backdrop_selected_fg_color, $selected_bg_color, .3); }
+            }
+        }
+    }
+}
