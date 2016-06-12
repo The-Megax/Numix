@@ -134,8 +134,8 @@
             + separator + box .primary-toolbar  {
                 padding-top: $spacing - 3px;
                 padding-bottom: $spacing - 4px;
-                border-bottom: 1px solid border_normal(mix($bg_color, $base_color, .5)); /* Megax fix. */
-                background-color: mix($bg_color, $base_color, .5); /* Megax fix. */
+                border-bottom: 1px solid $borders_color; /* Megax fix. */
+                background-color: mix($borders_color, $bg_color, .7); /* Megax fix. */
 
                 button:nth-child(2) {
                     border-right: none;

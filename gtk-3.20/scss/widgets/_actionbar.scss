@@ -15,20 +15,19 @@
 }
 
 
-/***************
- ! Search bars *
-****************/
+/****************************
+ ! Search and Location bars *
+*****************************/
 
 @include exports("searchbar") {
-    searchbar { /* Megax fix. */ // Frissítve. Részben.
+    searchbar,
+    .location-bar { /* Megax fix. */ // Frissítve. Részben.
         @include linear-gradient(shade($bg_color, .98));
 
         border-width: 0 0 1px;
         border-style: solid;
         border-color: border_normal($bg_color);
         color: $fg_color;
-
-        .button.close-button { padding: $spacing; }
     }
 }
 
@@ -60,7 +59,7 @@
         &.header-bar, &.toolbar {
             @include toolbar($selected_bg_color, $selected_fg_color);
 
-            .button {
+            button { /* Megax fix. */
                 @include button($selected_bg_color, $selected_fg_color);
 
                 &.suggested-action { @extend .suggested-action.button; }
