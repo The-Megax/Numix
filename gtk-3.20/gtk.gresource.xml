@@ -28,6 +28,7 @@
 		<file preprocess='to-pixdata'>assets/menuitem-radio-checked-insensitive.svg</file>
 		<file preprocess='to-pixdata'>assets/menuitem-radio-checked.svg</file>
 		<file preprocess='to-pixdata'>assets/menuitem-radio-unchecked.svg</file>
+		<file preprocess='to-pixdata'>assets/pane-handle.png</file>
 		<file preprocess='to-pixdata'>assets/radio-checked-dark.svg</file>
 		<file preprocess='to-pixdata'>assets/radio-checked-insensitive-dark.svg</file>
 		<file preprocess='to-pixdata'>assets/radio-checked-insensitive.svg</file>

@@ -1,7 +1,19 @@
-/* Megax fix. */
-
 /*********************
  ! Cinnamon Settings *
 **********************/
 
-/* None */
+@include exports("cinnamon-settings") {
+    .cs-category-view {
+        &, .view {
+            &, &:backdrop {
+                background-color: transparent;
+            }
+
+            &:selected {
+                &:focus, & {
+                    @extend %selected_items;
+                }
+            }
+        }
+    }
+}
