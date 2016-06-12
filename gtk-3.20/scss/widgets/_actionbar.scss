@@ -21,7 +21,7 @@
 
 @include exports("searchbar") {
     searchbar,
-    .location-bar { /* Megax fix. */ // Frissítve. Részben.
+    .location-bar {
         @include linear-gradient(shade($bg_color, .98));
 
         border-width: 0 0 1px;
@@ -59,7 +59,7 @@
         &.header-bar, &.toolbar {
             @include toolbar($selected_bg_color, $selected_fg_color);
 
-            button { /* Megax fix. */
+            button {
                 @include button($selected_bg_color, $selected_fg_color);
 
                 &.suggested-action { @extend .suggested-action.button; }

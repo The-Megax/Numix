@@ -70,8 +70,7 @@
             > widget:last-child {
                 button {
                     min-height: 15px;
-                    min-width: 20px; /* Megax fix. */
-                    //margin: 5px; /* Megax fix. */
+                    min-width: 20px;
                 }
 
                 button:first-child {
@@ -131,11 +130,12 @@
             }
             
             /* Nemo Query Editor (File Search Bar) */
-            + separator + box .primary-toolbar  {
+            + separator + box .primary-toolbar {
+                @include linear-gradient(shade($bg_color, .98)); // Searchbar color (_actionbar.scss)
+
                 padding-top: $spacing - 3px;
                 padding-bottom: $spacing - 4px;
-                border-bottom: 1px solid $borders_color; /* Megax fix. */
-                background-color: mix($borders_color, $bg_color, .7); /* Megax fix. */
+                border-bottom: 1px solid $borders_color;
 
                 button:nth-child(2) {
                     border-right: none;
@@ -179,4 +179,3 @@
         }
     }
 }
-
