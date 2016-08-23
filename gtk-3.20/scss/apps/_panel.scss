@@ -47,7 +47,7 @@
     PanelApplet {
         border: 0;
 
-        .button {
+        button { /* Megax fix. */
             @extend %panelbutton;
 
             -GtkButton-inner-border: 2;
