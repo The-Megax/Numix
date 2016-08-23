@@ -3,10 +3,10 @@
 @import "functions";
 
 // default color scheme
-$bg_color: if($variant == "dark", #444, #dedede); /* Megax fix. */
-$fg_color: if($variant == "dark", #ddd, #555555); /* Megax fix. */
-$base_color: if($variant == "dark", #333, #f2f1f0); /* Megax fix. */
-$text_color: if($variant == "dark", #eee, #333333); /* Megax fix. */
+$bg_color: if($variant == "dark", #2d2d2d, #dedede); /* Megax fix. */
+$fg_color: if($variant == "dark", #dedede, #555555); /* Megax fix. */
+$base_color: if($variant == "dark", #222222, #f2f1f0); /* Megax fix. */
+$text_color: if($variant == "dark", #dedede, #333333); /* Megax fix. */
 $selected_bg_color: #d64937; /* Megax fix. */
 $selected_fg_color: #f9f9f9; /* Megax fix. */
 $tooltip_bg_color: #2d2d2d; /* Megax fix. */

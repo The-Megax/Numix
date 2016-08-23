@@ -320,12 +320,12 @@
             box-shadow: none;
         }
 
-        &:disabled:disabled {
-            @if (lightness($button_bg) > 50) {
+        &:disabled:disabled { /* Megax fix. */ // javítja bugokat.
+            /*@if (lightness($button_bg) > 50) {
                 @include linear-gradient(shade($button_bg, .95));
             } @else {
                 @include linear-gradient(alpha($button_bg, .3));
-            }
+            }*/
 
             color: mix($bg, $fg, .5);
             box-shadow: none;
