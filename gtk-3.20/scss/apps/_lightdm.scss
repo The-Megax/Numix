@@ -57,9 +57,9 @@
     #login_window {
         menu { border-radius: 0; }
 
-        button { @include button($lightdm_bg_color, $lightdm_fg_color); }
+        button { @include button(alpha($black, .5), $lightdm_fg_color); } /* Megax fix. */
 
-        entry { @include entry($lightdm_bg_color, $lightdm_fg_color); }
+        entry { @include entry(alpha($black, .5), $lightdm_fg_color); } /* Megax fix. */
     }
 
     #user_combobox {
@@ -71,24 +71,11 @@
         arrow { color: mix($lightdm_fg_color, $lightdm_bg_color, .5); }
     }
 
-    #user_image {
-        border-radius: $roundness;
-
-        /* draw border using box-shadow */
-        box-shadow: inset 1px 0 shade($lightdm_bg_color, .7),
-                    inset -1px 0 shade($lightdm_bg_color, .7),
-                    inset 0 1px shade($lightdm_bg_color, .7),
-                    inset 0 -1px shade($lightdm_bg_color, .7);
-    }
+    #user_image { } /* Megax fix. */
 
     #user_image_border {
-        border-radius: $roundness;
-        background-color: shade($lightdm_bg_color, .9);
+        background-color: transparent; /* Megax fix. */
         background-image: none;
-        box-shadow: inset 1px 0 alpha($dark_shadow, .07),
-                    inset 0 1px alpha($dark_shadow, .08),
-                    inset -1px 0 alpha($dark_shadow, .07),
-                    inset 0 -1px alpha($dark_shadow, .05);
     }
 
     #buttonbox_frame {
