@@ -75,6 +75,25 @@
         padding: $spacing;
         border-style: none;
 
+        // stand-alone OSD toolbars
+        &.osd {
+            -GtkToolbar-button-relief: normal;
+
+            padding: $spacing;
+            border: 1px solid border_normal($osd_bg);
+            border-radius: $roundness;
+            background-color: $osd_bg;
+            background-image: none;
+            color: $osd_fg;
+
+            separator { color: shade($osd_bg, ($contrast + .1)); }
+
+            &.left,
+            &.right,
+            &.top,
+            &.bottom { border-radius: 0; } // positional classes for `attached` osd toolbars
+        }
+
         // toolbar separators
         &.horizontal separator { margin: 0 ($spacing + 2px) 1px ($spacing + 2px); }
 
@@ -134,13 +153,13 @@
         }
 
         &.default-decoration {
-            min-height: 10px;
-            border: 0;
+            min-height: 24px;
             box-shadow: none;
+            border: 0;
 
             button.titlebutton {
-                min-height: 8px;
-                min-width: 8px;
+                min-height: 22px;
+                min-width: 22px;
                 margin: 0;
                 padding: 0;
             }
@@ -152,6 +171,11 @@
         .title { font-weight: bold; }
 
         separator.titlebutton { margin-left: $spacing * 2; }
+
+        button.titlebutton + separator.titlebutton {
+            margin-left: 0;
+            margin-right: $spacing * 2;
+        }
 
         button.titlebutton {
             border: 0;
@@ -190,15 +214,11 @@
         entry,
         spinbutton,
         separator,
+        switch,
         button {
             margin-top: $spacing + 1px;
             margin-bottom: $spacing + 1px;
         }
-
-        //switch { // Not tested
-        //  margin-top: 9px;
-        //  margin-bottom: 9px;
-        //}
 
         window:not(.tiled):not(.maximized) separator:first-child + &, // tackles the paned container case
         window:not(.tiled):not(.maximized) &:first-child { &:backdrop, & { border-top-left-radius: $roundness; } }
