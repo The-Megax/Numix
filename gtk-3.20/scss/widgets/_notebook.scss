@@ -177,13 +177,10 @@
                     button, button:hover {
                         opacity: 1;
                     }
-
-                    &:checked {
-                        background-color: mix($bg_color, $base_color, .6);
-                    }
                 }
 
                 &:checked {
+                    background-color: mix($bg_color, $base_color, .4);
                     border-bottom-color: transparent;
                     outline: none;
 
@@ -206,6 +203,68 @@
                 }
             }
 
+            &.top tab,
+            &.bottom tab {
+                &:hover {
+                    &:not(:first-child):not(:last-child):not(:only-child) {
+                        box-shadow: 1px 0 1px shade($base_color, .85), -1px 0 1px shade($base_color, .85);
+                    }
+
+                    &:last-child:not(:only-child) {
+                        box-shadow: -1px 0 1px shade($base_color, .85);
+                    }
+
+                    &:first-child:not(:only-child) {
+                        box-shadow: 1px 0 1px shade($base_color, .85);
+                    }
+                }
+
+                &:checked {
+                    &:not(:first-child):not(:last-child):not(:only-child) {
+                        box-shadow: 1px 0 1px shade($base_color, .8), -1px 0 1px shade($base_color, .8);
+                    }
+
+                    &:last-child:not(:only-child) {
+                        box-shadow: -1px 0 1px shade($base_color, .8);
+                    }
+
+                    &:first-child:not(:only-child) {
+                        box-shadow: 1px 0 1px shade($base_color, .8);
+                    }
+                }
+            }
+
+            &.right tab,
+            &.left tab {
+                &:hover {
+                    &:not(:first-child):not(:last-child):not(:only-child) {
+                        box-shadow: 0 1px 1px shade($base_color, .85), 0 -1px 1px shade($base_color, .85);
+                    }
+
+                    &:last-child:not(:only-child) {
+                        box-shadow: 0 -1px 1px shade($base_color, .85);
+                    }
+
+                    &:first-child:not(:only-child) {
+                        box-shadow: 0 1px 1px shade($base_color, .85);
+                    }
+                }
+
+                &:checked {
+                    &:not(:first-child):not(:last-child):not(:only-child) {
+                        box-shadow: 0 1px 1px shade($base_color, .8), 0 -1px 1px shade($base_color, .8);
+                    }
+
+                    &:last-child:not(:only-child) {
+                        box-shadow: 0 -1px 1px shade($base_color, .8);
+                    }
+
+                    &:first-child:not(:only-child) {
+                        box-shadow: 0 1px 1px shade($base_color, .8);
+                    }
+                }
+            }
+
             &.top tab {
                 padding: ($spacing + 1) 0 0; // top | left/right | bottom
                 border-style: solid;
@@ -219,12 +278,7 @@
                 }
 
                 &:hover {
-                    border-bottom-color: shade($base_color, .65);
                     outline: none;
-
-                    > box, > label {
-                        border-bottom-color: shade($base_color, .65);
-                    }
                 }
 
                 &:checked {
@@ -259,12 +313,7 @@
                 }
 
                 &:hover {
-                    border-left-color: shade($base_color, .65);
                     outline: none;
-
-                    > box, > label {
-                        border-left-color: shade($base_color, .65);
-                    }
                 }
 
                 &:checked {
@@ -299,12 +348,7 @@
                 }
 
                 &:hover {
-                    border-top-color: shade($base_color, .65);
                     outline: none;
-
-                    > box, > label {
-                        border-top-color: shade($base_color, .65);
-                    }
                 }
 
                 &:checked {
@@ -339,12 +383,7 @@
                 }
 
                 &:hover {
-                    border-right-color: shade($base_color, .65);
                     outline: none;
-
-                    > box, > label {
-                        border-right-color: shade($base_color, .65);
-                    }
                 }
 
                 &:checked {

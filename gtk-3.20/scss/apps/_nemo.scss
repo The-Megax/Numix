@@ -4,19 +4,15 @@
 
 @include exports("nemo") {
     .nemo-desktop, .nemo-desktop * {
-        color: $white;
-        text-shadow: 1px 1px $black;
+        &, &:backdrop {
+            color: $white;
+            text-shadow: 1px 1px $black;
 
-        &:active {
-            color: $fg_color;
-        }
+            &:active { color: $fg_color; }
 
-        &:selected {
-            color: $selected_fg_color;
-        }
+            &:selected { color: $selected_fg_color; }
 
-        &:active, &:hover, &:selected {
-            text-shadow: none;
+            &:active, &:hover, &:selected { text-shadow: none; }
         }
     }
 
@@ -31,18 +27,6 @@
             }
 
             .linked > button { @include linked_button($toolbar_bg_color); } /* Megax fix. */
-
-            combobox button {
-                padding: $spacing - 1px;
-
-                &.text-button {
-                    padding: $spacing;
-                }
-
-                &.image-button {
-                    padding: ($spacing + 1px) ($spacing - 1px) ($spacing + 1px) $spacing;
-                }
-            }
 
             separator, separator:disabled {
                 color: shade($bg_color, ($contrast + .1));
@@ -70,8 +54,7 @@
             > widget:last-child {
                 button {
                     min-height: 15px;
-                    min-width: 20px; /* Megax fix. */
-                    //margin: 5px; /* Megax fix. */
+                    min-width: 20px;
                 }
 
                 button:first-child {
@@ -131,11 +114,12 @@
             }
             
             /* Nemo Query Editor (File Search Bar) */
-            + separator + box .primary-toolbar  {
+            + separator + box .primary-toolbar {
+                @include linear-gradient(shade($bg_color, .98)); // Searchbar color (_actionbar.scss)
+
                 padding-top: $spacing - 3px;
                 padding-bottom: $spacing - 4px;
-                border-bottom: 1px solid border_normal(mix($bg_color, $base_color, .5)); /* Megax fix. */
-                background-color: mix($bg_color, $base_color, .5); /* Megax fix. */
+                border-bottom: 1px solid $borders_color;
 
                 button:nth-child(2) {
                     border-right: none;
@@ -179,4 +163,3 @@
         }
     }
 }
-

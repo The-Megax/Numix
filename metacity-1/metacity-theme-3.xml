@@ -733,15 +733,15 @@
 </draw_ops>
 
 <draw_ops name="unshade_focused_pressed">
-	<line 
+	<line
 		x1="width-(width-width%3)/3-6" y1="(height-height%3)/3+1"
 		x2="(width-width%3)/3" y2="height-(height-height%3)/3-5"
 		color="C_icons_focused_pressed" />
-	<line 
+	<line
 		x1="width-(width-width%3)/3-6" y1="(height-height%3)/3+2"
 		x2="(width-width%3)/3+1" y2="height-(height-height%3)/3-5"
 		color="C_icons_focused_pressed" />
-	<line 
+	<line
 		x1="width-(width-width%3)/3-7" y1="(height-height%3)/3+1"
 		x2="(width-width%3)/3" y2="height-(height-height%3)/3-6"
 		color="C_icons_focused_pressed" />
@@ -749,16 +749,16 @@
 		x1="(width-width%3)/3+3" y1="(height-height%3)/3+1"
 		x2="width-(width-width%3)/3-3" y2="height-(height-height%3)/3-5"
 		color="C_icons_focused_pressed" />
-	<line 
+	<line
 		x1="(width-width%3)/3+3" y1="(height-height%3)/3+2"
 		x2="width-(width-width%3)/3-4" y2="height-(height-height%3)/3-5"
 		color="C_icons_focused_pressed" />
 	<line
 		x1="(width-width%3)/3+4" y1="(height-height%3)/3+1"
 		x2="width-(width-width%3)/3-3" y2="height-(height-height%3)/3-6"
-		color="C_icons_focused_pressed" /> 
-	<rectangle 
-		x="(width-width%3)/3+3" y="height/2-2" 
+		color="C_icons_focused_pressed" />
+	<rectangle
+		x="(width-width%3)/3+3" y="height/2-2"
 		width="width-2*(width-width%3)/3-8" height="6" filled="true"
 		color="C_icons_focused_pressed" />
 </draw_ops>

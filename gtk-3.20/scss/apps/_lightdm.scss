@@ -4,7 +4,7 @@
 
 @include exports("lightdm") {
     #panel_window {
-        background-color: transparent;
+        background-color: alpha($black, .4); /* Megax fix. */ // Cinnamon default
         background-image: none;
         color: $white;
         font: bold;
@@ -12,112 +12,54 @@
         -gtk-icon-shadow: 0 1px alpha($black, .5);
 
         menubar {
-            padding-left: 5px;
+            padding-left: $spacing;
             
             &, > menuitem {
                 background-color: transparent;
                 background-image: none;
+                border-style: none;
                 color: $white;
-                font: bold;
                 text-shadow: 0 1px alpha($black, .5);
                 -gtk-icon-shadow: 0 1px alpha($black, .5);
 
-                *:hover { color: $white; }
-
                 &:hover {
-                    border-style: none;
                     background-color: alpha($white, .2);
                     background-image: none;
                     color: $white;
                 }
 
+                *:hover { color: $white; }
+
                 &:disabled { color: alpha($white, .7); }
-
-                menu {
-                    border-radius: 0; /* Megax fix. */
-
-                    menuitem {
-                        font: normal;
-                        text-shadow: none;
-                    }
-                }
             }
+
+            menu > menuitem { font: normal; }
         }
     }
 
-    #content_frame { padding-bottom: 14px; }
+    #content_frame { padding-bottom: $spacing * 3; }
 
     #login_window, #shutdown_dialog, #restart_dialog {
         border-style: none;
         border-radius: $roundness;
-        background-color: $lightdm_bg_color;
+        background-color: alpha($black, .7); /* Megax fix. */ // Cinnamon default
         color: $lightdm_fg_color;
 
         /* draw border using box-shadow */
-        box-shadow: inset 1px 0 mix(shade($lightdm_bg_color, .7), $lightdm_fg_color, .21),
-                    inset -1px 0 mix(shade($lightdm_bg_color, .7), $lightdm_fg_color, .21),
-                    inset 0 1px mix(shade($lightdm_bg_color, .7), $lightdm_fg_color, .21),
-                    inset 0 -1px mix(shade($lightdm_bg_color, .7), $lightdm_fg_color, .21);
+        box-shadow: inset 1px 0 alpha($black, .6), /* Megax fix. */ // Cinnamon default
+                    inset -1px 0 alpha($black, .6), /* Megax fix. */ // Cinnamon default
+                    inset 0 1px alpha($black, .6), /* Megax fix. */ // Cinnamon default
+                    inset 0 -1px alpha($black, .6); /* Megax fix. */ // Cinnamon default
 
-        button {
-            padding: 3px $spacing * 3; /* megax fix. */
-            border-width: 1px;
-            border-radius: $roundness;
-            border-style: solid;
-            border-color: shade($lightdm_bg_color, .8);
-            background-color: shade($lightdm_bg_color, 1.08);
-            background-image: none;
-            color: $lightdm_fg_color;
-            transition: all 150ms ease-out;
-
-            &:focus, &:active:focus {
-                border-color: shade($selected_bg_color, .8);
-                background-color: shade($selected_bg_color, 1.08);
-                background-image: none;
-                color: $selected_fg_color;
-
-                &:hover {
-                    border-color: shade($selected_bg_color, .7);
-                    background-color: $selected_bg_color;
-                }
-            }
-        }
+        @extend %panelbutton;
     }
 
     #login_window {
-        menu { border-radius: 0; } /* Megax fix */
+        menu { border-radius: 0; }
 
-        combobox button {
-            &, &:hover, &:active, &:active:hover,
-            &:focus, &:hover:focus, &:active:focus, &:active:hover:focus {
-                padding: 0;
-                background: none;
-                border-style: none;
-                box-shadow: none;
-            }
-        }
+        button { @include button(alpha($black, .5), $lightdm_fg_color); } /* Megax fix. */
 
-        entry {
-            padding: 3px $spacing; /* Megax fix */
-            border-width: 1px;
-            border-style: solid;
-            border-color: shade($lightdm_bg_color, .8);
-            border-radius: $roundness;
-            background-color: shade($lightdm_bg_color, .9);
-            background-image: none;
-            color: $lightdm_fg_color;
-            box-shadow: none;
-            transition: all 150ms ease-out;
-
-            &:focus, &:hover {
-                border-color: shade($lightdm_bg_color, .7);
-
-                box-shadow: inset 1px 0 alpha($dark_shadow, .1),
-                            inset 0 1px alpha($dark_shadow, .12),
-                            inset -1px 0 alpha($dark_shadow, .1),
-                            inset 0 -1px alpha($dark_shadow, .05);
-            }
-        }
+        entry { @include entry(alpha($black, .5), $lightdm_fg_color); } /* Megax fix. */
     }
 
     #user_combobox {
@@ -129,25 +71,11 @@
         arrow { color: mix($lightdm_fg_color, $lightdm_bg_color, .5); }
     }
 
-    #user_image {
-        padding: 3px;
-        border-radius: $roundness;
-
-        /* draw border using box-shadow */
-        box-shadow: inset 1px 0 shade($lightdm_bg_color, .7),
-                    inset -1px 0 shade($lightdm_bg_color, .7),
-                    inset 0 1px shade($lightdm_bg_color, .7),
-                    inset 0 -1px shade($lightdm_bg_color, .7);
-    }
+    #user_image { } /* Megax fix. */
 
     #user_image_border {
-        border-radius: $roundness;
-        background-color: shade($lightdm_bg_color, .9);
+        background-color: transparent; /* Megax fix. */
         background-image: none;
-        box-shadow: inset 1px 0 alpha($dark_shadow, .07),
-                    inset 0 1px alpha($dark_shadow, .08),
-                    inset -1px 0 alpha($dark_shadow, .07),
-                    inset 0 -1px alpha($dark_shadow, .05);
     }
 
     #buttonbox_frame {
@@ -163,28 +91,12 @@
 
     /* shutdown button */
     #shutdown_button {
-        border-color: shade($error_bg_color, .8);
-        background-color: shade($error_bg_color, 1.08);
-        background-image: none;
-        color: $error_fg_color;
-
-        &:hover, &:active, &:active:hover {
-            border-color: shade($error_bg_color, .7);
-            background-color: $error_bg_color;
-        }
+        button { @include button($error_bg_color, $error_fg_color); }
     }
 
     /* restart button */
     #restart_button {
-        border-color: shade($warning_bg_color, .8);
-        background-color: shade($warning_bg_color, 1.08);
-        background-image: none;
-        color: $warning_fg_color;
-
-        &:hover, &:active, &:active:hover {
-            border-color: shade($warning_bg_color, .7);
-            background-color: $warning_bg_color;
-        }
+        button { @include button($warning_bg_color, $warning_fg_color); }
     }
 
      /* password warning */
