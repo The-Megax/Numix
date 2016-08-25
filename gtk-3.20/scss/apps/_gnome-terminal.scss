@@ -33,13 +33,5 @@
                 &:disabled { background-color: transparent; }
             }
         }
-
-        notebook {
-            > header {
-                border-color: border_active($osd_base);
-                background-color: shade($osd_base, .9);
-                color: $osd_fg;
-            }
-        }
     }
 }
