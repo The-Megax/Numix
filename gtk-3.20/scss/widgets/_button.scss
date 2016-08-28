@@ -382,8 +382,8 @@
         .linked.vertical > & { @include linked_vertical_button(shade($bg_color, 1.2)); }
 
         &.circular { // FIXME: aggregate to buttons
-            border-radius: 20px;
-            -gtk-outline-radius: 20px;
+            border-radius: 9999px; // Fixed: https://github.com/GNOME/gtk/commit/a6409458f0d50d673a4dc370b9251993b7835b6b
+            -gtk-outline-radius: 9999px;
 
             label { padding: 0; }
         }
@@ -454,42 +454,44 @@
 
         // OSD horizontal
         .osd &:not(.vertical) {
+            @include linear-gradient($osd_base, to top);
+            @include border($osd_base);
+
+            padding: 0;
+
+            color: $osd_text_color;
+            caret-color: $osd_text_color;
+
+            &:focus, &:active { border-color: border_focus($osd_borders_color); }
+
+            &:disabled {
+                @include linear-gradient(shade($osd_base, .9), to top);
+
+                color: mix($osd_base, $osd_text_color, .5);
+            }
+
             button {
                 @include button($osd_bg, $osd_fg);
 
                 border-radius: 0;
-                //border-color: transparentize($osd_borders_color, .3);
+                border-color: transparentize($osd_borders_color, .3);
                 border-style: none none none solid;
                 background-image: none;
                 box-shadow: none;
 
                 &:dir(rtl) { border-style: none solid none none; }
 
-            &:active, &:checked, &:hover { color: $text_color; }  // tesztelni
+                &:active, &:checked, &:hover { color: $osd_text_color; }
 
-            &:disabled { color: alpha($insensitive_fg_color, .8); }  // tesztelni
+                &:disabled { color: alpha($osd_insensitive_fg_color, .8); }
 
-            &:backdrop { color: mix($backdrop_base_color, $backdrop_fg_color, .9); }  // tesztelni
+                &:backdrop { color: mix($backdrop_base_color, $backdrop_fg_color, .9); }
 
-            &:backdrop:disabled { color: alpha($backdrop_insensitive_color, .8); }  // tesztelni
-
-                &:active { box-shadow: inset 0 2px 3px -1px transparentize($black, .8); }  // tesztelni
-
-      &:hover {
-        //border-color: transparentize(opacify($osd_borders_color, 1), .5);
-      }
-
-      &:disabled {
-        //border-color: transparentize(opacify($osd_borders_color, 1), .5);
-      }
-
-      &:backdrop {
-
-        //border-color: transparentize(opacify($osd_borders_color, 1), .5);
-//background-color: transparentize($osd_fg, .9);  // tesztelni
-      }
+                &:active { box-shadow: inset 0 2px 3px -1px transparentize($black, .8); }
 
                 &:backdrop:disabled {
+                    color: alpha($backdrop_insensitive_color, .8);
+
                     border-style: none none none solid; // It is needed or it gets overridden
 
                     &:dir(rtl) { border-style: none solid none none; }

@@ -9,6 +9,9 @@
     overlay.osd { background-color: transparent; }
 
     .osd {
+        background-color: $osd_bg;
+        color: $osd_fg;
+
         &.background {
             background-color: alpha($osd_bg, .8);
             color: $osd_fg;
@@ -18,6 +21,8 @@
             background-clip: border-box;
             background-origin: border-box;
         }
+
+        entry { @include entry($osd_base, $osd_text_color, $osd_borders_color); }
 
         button { @include button($osd_bg, $osd_fg); }
 
