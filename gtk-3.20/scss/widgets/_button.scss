@@ -620,7 +620,7 @@
 
         box button, box entry {
             @extend %linked_button;
-            padding: ($spacing + 1px) ($spacing - 1px);
+            padding: ($spacing + 1px) $spacing;
         }
 
         .linked:not(.vertical) > & > box > button.combo {
