@@ -45,7 +45,7 @@
     %button {
         min-height: 22px;
         min-width: 20px;
-        padding: 2px 6px;
+        padding: ($spacing - 3px) ($spacing + 1px);
         border-width: 1px;
         border-style: solid;
         border-radius: $roundness;
@@ -543,8 +543,8 @@
         &.vertical {
             button, entry {
                 min-width: 0;
-                padding-left: 4px;
-                padding-right: 4px;
+                padding-left: $spacing - 1px;
+                padding-right: $spacing - 1px;
             }
 
             entry {
@@ -566,7 +566,7 @@
         }
 
         // OSD vertical
-        .osd &.vertical {
+        .osd &.vertical button:first-child {
             @include button($osd_bg, $osd_fg);
         }
     }

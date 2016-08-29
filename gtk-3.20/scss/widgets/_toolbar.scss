@@ -72,7 +72,7 @@
     toolbar {
         @include toolbar($toolbar_bg_color, $toolbar_fg_color);
 
-        padding: $spacing;
+        padding: $spacing - 1px;
         border-style: none;
 
         // stand-alone OSD toolbars
