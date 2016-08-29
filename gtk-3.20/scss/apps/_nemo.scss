@@ -34,12 +34,19 @@
                 -GtkWidget-window-dragging: true;
             }
 
+            &.primary-toolbar button {
+                min-width: 28px;
+                padding: 3px;
+            }
+
             /* Path Bar */
             toolitem stack {
                 margin-left: 15px;
 
                 widget button {
                     @include linked_button($toolbar_bg_color);
+
+                    padding: 0;
                     -NemoPathbarButton-border-radius: $roundness;
                 }
             }
