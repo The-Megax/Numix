@@ -32,10 +32,10 @@
         @include button($bg, $fg);
 
         min-height: 24px;
-        min-width: 16px;
+        min-width: 18px;
 
         &.image-button {
-            min-width: 16px;
+            min-width: 18px;
             padding-left: $spacing;
             padding-right: $spacing;
         }

@@ -426,6 +426,33 @@
         }
     }
 
+    .path-bar button {
+        &.text-button, &.image-button, & {
+            padding-left: $spacing;
+            padding-right: $spacing;
+        }
+
+        &.text-button.image-button label {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        &.text-button.image-button, & {
+            label:last-child { padding-right: $spacing * 2; }
+            label:first-child { padding-left: $spacing * 2; }
+        }
+
+        image {
+            padding-left: $spacing;
+            padding-right: $spacing;
+        }
+
+        &.slider-button {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
     spinbutton {
         button {
             color: mix($text_color, $base_color, .4);
