@@ -24,8 +24,6 @@
 
         entry { @include entry($osd_base, $osd_text_color, $osd_borders_color); }
 
-        button { @include button($osd_bg, $osd_fg); }
-
         /* used by gnome-settings-daemon's media-keys OSD */
         trough { background-color: shade($osd_bg, .8); }
 

@@ -32,10 +32,10 @@
         @include button($bg, $fg);
 
         min-height: 22px;
-        min-width: 18px;
+        min-width: 20px;
 
         &.image-button {
-            min-width: 22px;
+            min-width: 24px;
             padding-left: $spacing;
             padding-right: $spacing;
         }
@@ -143,7 +143,7 @@
         border-radius: $roundness $roundness 0 0;
         color: mix($titlebar_fg_color, $titlebar_bg_color, .1);
         padding: 0 $spacing;
-        min-height: 46px;
+        min-height: 42px;
 
         &:backdrop {
             @include linear-gradient($titlebar_bg_color);
