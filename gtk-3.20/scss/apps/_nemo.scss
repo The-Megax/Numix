@@ -34,10 +34,6 @@
                 -GtkWidget-window-dragging: true;
             }
 
-            &.primary-toolbar button {
-                padding: 5px 6px;
-            }
-            
             /* Path Bar */
             toolitem stack {
                 margin-left: 15px;
@@ -53,7 +49,7 @@
         grid {
             > widget:last-child {
                 button {
-                    min-height: 15px;
+                    min-height: 16px;
                     min-width: 20px;
                 }
 
@@ -148,7 +144,6 @@
 
                     color: $fg;
                     box-shadow: 0 1px 2px -1px alpha($dark_shadow, .12 + $shadow_strength);
-                    padding: 5px 6px;
                 }
             } // END Nemo Query Editor
         } // END .sidebar

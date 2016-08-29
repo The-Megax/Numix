@@ -31,11 +31,11 @@
     combobox button {
         @include button($bg, $fg);
 
-        min-height: 22px;
-        min-width: 20px;
+        min-height: 24px;
+        min-width: 16px;
 
         &.image-button {
-            min-width: 24px;
+            min-width: 16px;
             padding-left: $spacing;
             padding-right: $spacing;
         }
