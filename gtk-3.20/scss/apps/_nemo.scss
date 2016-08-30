@@ -45,8 +45,6 @@
 
                 widget button {
                     @include linked_button($toolbar_bg_color);
-
-                    padding: 0;
                     -NemoPathbarButton-border-radius: $roundness;
                 }
             }
