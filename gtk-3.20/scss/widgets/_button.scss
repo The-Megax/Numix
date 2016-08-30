@@ -45,7 +45,7 @@
     %button {
         min-height: 16px;
         min-width: 16px;
-        padding: ($spacing + 1px) $spacing;
+        padding: $spacing ($spacing + 2px);
         border-width: 1px;
         border-style: solid;
         border-radius: $roundness;
@@ -343,27 +343,6 @@
         }
     }
 
-    &.image-button {
-        min-width: 16px;
-        padding-left: $spacing;
-        padding-right: $spacing;
-    }
-
-    &.text-button {
-        padding-left: $spacing * 2;
-        padding-right: $spacing * 2;
-    }
-
-    &.text-button.image-button {
-        padding-left: $spacing;
-        padding-right: $spacing;
-
-        label {
-            padding-left: $spacing;
-            padding-right: $spacing;
-        }
-    }
-
     &.separator, .separator {
         border: 1px solid currentColor;
         color: shade($bg, ($contrast + .1));
@@ -374,8 +353,6 @@
 
 @include exports("button") {
     %close_button {
-        min-height: 16px;
-        min-width: 16px;
         border: 1px solid transparent;
         background-color: transparent;
         background-image: none;
@@ -404,15 +381,7 @@
 
         .linked.vertical > & { @include linked_vertical_button(shade($bg_color, 1.2)); }
 
-        &.osd {
-            @include button($osd_bg, $osd_fg);
-
-            &.image-button {
-                padding: 0;
-                min-height: 36px;
-                min-width: 36px;
-            }
-        }
+        &.osd { @include button($osd_bg, $osd_fg); }
 
         &.circular,
         &.circular-button { // FIXME: aggregate to buttons
@@ -423,33 +392,6 @@
             -gtk-outline-radius: 9999px;
 
             label { padding: 0; }
-        }
-    }
-
-    .path-bar button {
-        &.text-button, &.image-button, & {
-            padding-left: $spacing;
-            padding-right: $spacing;
-        }
-
-        &.text-button.image-button label {
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        &.text-button.image-button, & {
-            label:last-child { padding-right: $spacing * 2; }
-            label:first-child { padding-left: $spacing * 2; }
-        }
-
-        image {
-            padding-left: $spacing;
-            padding-right: $spacing;
-        }
-
-        &.slider-button {
-            padding-left: 0;
-            padding-right: 0;
         }
     }
 
@@ -570,8 +512,8 @@
         &.vertical {
             button, entry {
                 min-width: 0;
-                padding-left: $spacing - 1px;
-                padding-right: $spacing - 1px;
+                padding-left: $spacing - 2px;
+                padding-right: $spacing - 2px;
             }
 
             entry {
@@ -620,7 +562,7 @@
 
         box button, box entry {
             @extend %linked_button;
-            padding: ($spacing + 1px) $spacing;
+            padding: $spacing ($spacing + 2px);
         }
 
         .linked:not(.vertical) > & > box > button.combo {
