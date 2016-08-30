@@ -31,11 +31,11 @@
     combobox button {
         @include button($bg, $fg);
 
-        min-height: 22px;
-        min-width: 18px;
+        min-height: 16px;
+        min-width: 16px;
 
         &.image-button {
-            min-width: 22px;
+            min-width: 16px;
             padding-left: $spacing;
             padding-right: $spacing;
         }
@@ -72,7 +72,7 @@
     toolbar {
         @include toolbar($toolbar_bg_color, $toolbar_fg_color);
 
-        padding: $spacing;
+        padding: $spacing - 1px;
         border-style: none;
 
         // stand-alone OSD toolbars
@@ -143,7 +143,7 @@
         border-radius: $roundness $roundness 0 0;
         color: mix($titlebar_fg_color, $titlebar_bg_color, .1);
         padding: 0 $spacing;
-        min-height: 46px;
+        min-height: 42px;
 
         &:backdrop {
             @include linear-gradient($titlebar_bg_color);

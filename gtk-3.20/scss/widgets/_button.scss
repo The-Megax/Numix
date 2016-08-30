@@ -43,6 +43,8 @@
     }
 
     %button {
+        min-height: 16px;
+        min-width: 16px;
         padding: $spacing ($spacing + 2px);
         border-width: 1px;
         border-style: solid;
@@ -372,8 +374,6 @@
     }
 
     button {
-        min-height: 22px;
-        min-width: 24px;
         @include button(shade($bg_color, 1.2), $fg_color);
 
         .inline-toolbar &,
@@ -381,7 +381,13 @@
 
         .linked.vertical > & { @include linked_vertical_button(shade($bg_color, 1.2)); }
 
-        &.circular { // FIXME: aggregate to buttons
+        &.osd { @include button($osd_bg, $osd_fg); }
+
+        &.circular,
+        &.circular-button { // FIXME: aggregate to buttons
+            padding: 0;
+            min-width: 28px;
+            min-height: 28px;
             border-radius: 9999px; // Fixed: https://github.com/GNOME/gtk/commit/a6409458f0d50d673a4dc370b9251993b7835b6b
             -gtk-outline-radius: 9999px;
 
@@ -504,6 +510,12 @@
         }
 
         &.vertical {
+            button, entry {
+                min-width: 0;
+                padding-left: $spacing - 2px;
+                padding-right: $spacing - 2px;
+            }
+
             entry {
                 // reset all the other props since the spinbutton node is styled here
                 border-radius: 0;
@@ -523,7 +535,7 @@
         }
 
         // OSD vertical
-        .osd &.vertical {
+        .osd &.vertical button:first-child {
             @include button($osd_bg, $osd_fg);
         }
     }
@@ -550,7 +562,7 @@
 
         box button, box entry {
             @extend %linked_button;
-            padding: ($spacing - 2px) ($spacing + 1px);
+            padding: $spacing ($spacing + 2px);
         }
 
         .linked:not(.vertical) > & > box > button.combo {

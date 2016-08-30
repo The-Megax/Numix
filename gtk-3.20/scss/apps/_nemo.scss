@@ -35,15 +35,18 @@
             }
 
             &.primary-toolbar button {
-                padding: 5px 6px;
+                min-width: 28px;
+                padding: 3px;
             }
-            
+
             /* Path Bar */
             toolitem stack {
                 margin-left: 15px;
 
                 widget button {
                     @include linked_button($toolbar_bg_color);
+
+                    padding: 0;
                     -NemoPathbarButton-border-radius: $roundness;
                 }
             }
@@ -53,8 +56,9 @@
         grid {
             > widget:last-child {
                 button {
-                    min-height: 15px;
-                    min-width: 20px;
+                    min-height: 16px;
+                    min-width: 16px;
+                    padding: ($spacing - 1px);
                 }
 
                 button:first-child {

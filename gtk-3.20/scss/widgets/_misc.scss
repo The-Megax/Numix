@@ -256,7 +256,7 @@
     // shortcut window keys
     .keycap {
         min-width: 20px;
-        min-height: 25px;
+        min-height: 24px;
         margin-top: 2px;
         padding-bottom: $spacing / 2;
         padding-left: $spacing;
@@ -285,11 +285,11 @@
 
 @include exports("stackswitcher") {
     stackswitcher button {
-        &.text-button { min-width: 90px; } // FIXME aggregate with buttons
+        &.text-button { min-width: 80px; } // FIXME aggregate with buttons
 
         &.circular {  // FIXME aggregate with buttons
-            min-width: 32px;
-            min-height: 32px;
+            min-width: 28px;
+            min-height: 28px;
             padding: 0;
         }
     }
@@ -312,7 +312,7 @@
             &:disabled { color: mix($selected_fg_color, $selected_bg_color, .5); }
 
             &:backdrop {
-                background-color: $selected_bg_color; // Fixed Issue #430
+                background-color: $backdrop_selected_bg_color; // Fixed Issue #430
                 color: $backdrop_selected_fg_color;
 
                 &:disabled { color: mix($backdrop_selected_fg_color, $selected_bg_color, .3); }
