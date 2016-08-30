@@ -27,36 +27,17 @@
         padding: 0 ($spacing * 2);
     }
 
-    button,
-    combobox button {
-        @include button($bg, $fg);
-
-        min-height: 16px;
-        min-width: 16px;
-
-        &.image-button {
-            min-width: 16px;
-            padding-left: $spacing;
-            padding-right: $spacing;
-        }
-
-        &.text-button {
-            padding-left: $spacing * 2;
-            padding-right: $spacing * 2;
-        }
-
-        &.text-button.image-button {
-            padding-left: $spacing;
-            padding-right: $spacing;
-
-            label {
-                padding-left: $spacing;
-                padding-right: $spacing;
-            }
-        }
-    }
+    button { @include button($bg, $fg); }
 
     .linked > button { @include linked_button($bg); }
+
+    combobox, button {
+        padding: $spacing;
+
+        &.text-button { padding: $spacing; }
+
+        &.image-button { padding: ($spacing + 1px) ($spacing - 1px) ($spacing + 1px) $spacing; }
+    }
 
     separator, separator:disabled {
         color: shade($bg, ($contrast - .2));
@@ -170,11 +151,11 @@
 
         .title { font-weight: bold; }
 
-        separator.titlebutton { margin-left: $spacing * 2; }
+        separator.titlebutton { margin-left: $spacing; }
 
         button.titlebutton + separator.titlebutton {
             margin-left: 0;
-            margin-right: $spacing * 2;
+            margin-right: $spacing;
         }
 
         button.titlebutton {

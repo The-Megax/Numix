@@ -550,8 +550,8 @@
         button.combo {
             // otherwise the arrow placement is not symmetric
             min-width: 0;
-            padding-left: 8px;
-            padding-right: 8px;
+            padding-left: $spacing + 2px;
+            padding-right: $spacing + 2px;
         }
 
         arrow {
