@@ -56,25 +56,6 @@
         padding: $spacing - 1px;
         border-style: none;
 
-        // stand-alone OSD toolbars
-        &.osd {
-            -GtkToolbar-button-relief: normal;
-
-            padding: $spacing;
-            border: 1px solid border_normal($osd_bg);
-            border-radius: $roundness;
-            background-color: $osd_bg;
-            background-image: none;
-            color: $osd_fg;
-
-            separator { color: shade($osd_bg, ($contrast + .1)); }
-
-            &.left,
-            &.right,
-            &.top,
-            &.bottom { border-radius: 0; } // positional classes for `attached` osd toolbars
-        }
-
         // toolbar separators
         &.horizontal separator { margin: 0 ($spacing + 2px) 1px ($spacing + 2px); }
 
