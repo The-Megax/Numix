@@ -63,6 +63,8 @@
         transition: 200ms ease-out;
     }
 
+    button { @include button(shade($bg_color, 1.2), $fg_color); } /* Megax fix. */
+
     toolbutton,
     toolbutton:backdrop {
         > button.flat { @extend %linked_middle; }
