@@ -24,7 +24,7 @@ $suffix: if($variant == "dark", "-dark", "");
     }
 
     menuitem &, modelbutton & {
-        -gtk-icon-source: if($type == "radio", none, url("../assets/menuitem-#{$type}-unchecked.svg"));
+        -gtk-icon-source: if($type == "radio", none, url("../assets/menuitem-#{$type}-unchecked.svg")); /* Megax fix. */
 
         &:disabled { -gtk-icon-source: none; }
 
@@ -77,7 +77,7 @@ $suffix: if($variant == "dark", "-dark", "");
                   (':backdrop:checked', '-checked') {
         .view.content-view.check#{$s}:not(list) {
             -gtk-icon-shadow: none;
-            -gtk-icon-source: url("../assets/grid-selection#{$as}#{$suffix}.svg"); /* Megax fix. */
+            -gtk-icon-source: url("../assets/grid-selection#{$as}#{$suffix}.svg");
             background-color: transparent;
         }
     }
