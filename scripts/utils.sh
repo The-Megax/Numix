@@ -18,7 +18,7 @@ do_install() {
 		mkdir -p "${_DIR}"
 
 		cp -rt "${INSTALL_DIR}" \
-			gtk-2.0 metacity-1 openbox-3 xfce-notify-4.0 xfwm4 unity
+			gtk-2.0 metacity-1 openbox-3 xfce-notify-4.0 xfwm4 unity cinnamon # Megax fix
 
 		cp -t "${_DIR}" \
 			"${GTKVER}/gtk.css" \
