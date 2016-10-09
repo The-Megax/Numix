@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /***********
  ! Cinnamon
  ***********/
@@ -415,6 +416,7 @@ StScrollBar StButton#hhandle:focus {
   font-size: 9pt;
 }
 .popup-menu-boxpointer {
+  /* Ha törlésre kerül a cinnamon-ból és rossz lesz anélkül a téma akkor csak simán el kell helyezni a popup-menu részbe */
   -arrow-border-radius: 2px;
   -arrow-background-color: rgba(0, 0, 0, 0.9);
   -arrow-border-width: 1px;

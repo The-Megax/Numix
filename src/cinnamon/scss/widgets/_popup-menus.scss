@@ -6,7 +6,7 @@
     color: $white;
     font-size: $font-size;
 
-    &-boxpointer {
+    &-boxpointer { /* Ha törlésre kerül a cinnamon-ból és rossz lesz anélkül a téma akkor csak simán el kell helyezni a popup-menu részbe */
         -arrow-border-radius: $roundness;
         -arrow-background-color: alpha($black, .90);
         -arrow-border-width: 1px;
