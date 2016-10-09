@@ -7,27 +7,43 @@ do_install() {
 	GTK320DIR="${INSTALL_DIR}/gtk-3.20"
 
 	install -dm755 "${INSTALL_DIR}"
+
+	cd src
+
 	cp index.theme "${INSTALL_DIR}"
 
 	for _DIR in "${GTKDIR}" "${GTK320DIR}"
 	do
 		GTKVER="${_DIR##*/}"
 
-		cd src
+		mkdir "${_DIR}"
 
-		mkdir -p "${_DIR}"
+		cp --preserve=links -rt "${INSTALL_DIR}" \
+			assets gtk-2.0 metacity-1 openbox-3 xfce-notify-4.0 xfwm4 unity
 
-		cp -rt "${INSTALL_DIR}" \
-			gtk-2.0 metacity-1 openbox-3 xfce-notify-4.0 xfwm4 unity
-
-		cp -t "${_DIR}" \
+		cp --preserve=links -t "${_DIR}" \
 			"${GTKVER}/gtk.css" \
 			"${GTKVER}/gtk-dark.css" \
 			"${GTKVER}/gtk.gresource" \
 			"${GTKVER}/thumbnail.png"
 
+		cd "${_DIR}"
+		ln -sr ../assets assets
 		cd -
 	done
+}
+
+
+output_changes_file_version_marker() {
+
+	line() {
+		dashes="$(printf '%0.s-' $(seq 1 13))"
+		echo "${dashes}>>>> $1 <<<<${dashes}"
+	}
+
+	tag_line="$(line $1)"
+
+	echo "-${tag_line}${tag_line}${tag_line}-"
 }
 
 
@@ -37,15 +53,18 @@ update_changes_file() {
 
 	[[ -f CHANGES ]] && mv CHANGES CHANGES.old
 
+	output_changes_file_version_marker "${LATEST_STABLE_RELEASE}" > CHANGES
+
 	{ git log \
 		--pretty=format:"[%ai] %<(69,trunc) %s %><(15) %aN {%h}" \
-		--cherry-pick "${LATEST_STABLE_RELEASE}...HEAD"; } > CHANGES
+		--cherry-pick "${LATEST_STABLE_RELEASE}...HEAD"; } >> CHANGES
 
-	[[ -f CHANGES.old ]] && cat CHANGES.old >> CHANGES && rm CHANGES.old
 
-	git add CHANGES
-	git commit -m 'RELEASE PREP :: Update CHANGES file.'
-	git push
+	[[ -f CHANGES.old ]] && echo "" >> CHANGES && cat CHANGES.old >> CHANGES && rm CHANGES.old
+
+	#git add CHANGES
+	#git commit -m 'RELEASE PREP :: Update CHANGES file.'
+	#git push
 }
 
 
