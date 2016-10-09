@@ -38,6 +38,9 @@ install: all
 uninstall:
 	rm -rf $(INSTALL_DIR)
 
+# Megax fix
+reinstall: uninstall install
+
 changes:
 	$(UTILS) changes
 
@@ -49,6 +52,7 @@ changes:
 .PHONY: clean
 .PHONY: install
 .PHONY: uninstall
+.PHONY: reinstall
 .PHONY: changes
 
 .DEFAULT_GOAL := all

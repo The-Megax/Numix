@@ -6,12 +6,14 @@
     .sidebar {
         border-style: none;
 
-        &, .view { /* Megax fix. */
+        &, .view { /* Megax fix. */ /* Backdrop bugot okoz de nem érdekes annyira mert cska saját kódnál. */
             background-color: mix($bg_color, $base_color, .5);
 
             &:backdrop {
                 background-color: $backdrop_sidebar_bg_color;
                 border-color: $backdrop_borders_color;
+
+                &:selected { &:focus, & { background-color: $backdrop_selected_bg_color; } } // Fixed Issue #430 és egyedi fix az egyedi megvalósítás miatt. De a #430-ast javítja ez is.
             }
         }
 
