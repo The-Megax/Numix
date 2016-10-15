@@ -52,6 +52,7 @@ changes:
 .PHONY: clean
 .PHONY: install
 .PHONY: uninstall
+# Megax fix
 .PHONY: reinstall
 .PHONY: changes
 

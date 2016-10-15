@@ -173,7 +173,7 @@
         }
     }
 
-    .context-menu { font: initial; }
+    .context-menu { font: initial; } // Decouple the font of context menus from their entry/textview
 
     menuitem {
         accelerator {
