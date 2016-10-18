@@ -30,6 +30,7 @@ $suffix: if($variant == "dark", "-dark", "");
     }
 
     menuitem &, modelbutton & {
+        /* Megax fix. */
         -gtk-icon-source: if($type == "radio", none, -gtk-scaled(url("../assets/menuitem-#{$type}-checked-insensitive.png"),
                                                                  url("../assets/menuitem-#{$type}-checked-insensitive@2.png")));
 
