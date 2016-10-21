@@ -46,7 +46,7 @@
     .context-menu {
         border: 0;
         border-radius: 0;
-        padding: ($spacing - 2px) 0;
+        padding: ($spacing - 2px) 0; /* Megax fix. */
         background-color: $menu_bg_color;
         color: $menu_fg_color;
 
