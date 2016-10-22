@@ -291,15 +291,10 @@
 
     &, &.flat {
         &:focus, &:hover {
-            @if (lightness($button_bg) > 50) {
-                @include linear-gradient(shade($button_bg, .95));
-            } @else {
-                @include linear-gradient(shade($button_bg, 1.2));
-            }
+            @include linear-gradient(shade($button_bg, 1.2));
 
             @include border(rgba(0, 0, 0, .3 + $border_strength)); /* Megax fix. */
 
-            -gtk-icon-effect: highlight;
             box-shadow: 0 1px 2px -1px alpha($dark_shadow, .42 + $shadow_strength); /* Megax fix. */
         }
 
