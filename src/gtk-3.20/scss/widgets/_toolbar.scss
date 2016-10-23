@@ -18,12 +18,12 @@
     }
 
     .title {
-        font: bold;
+        font-weight: bold;
         padding: 0 ($spacing * 2);
     }
 
     .subtitle {
-        font: smaller;
+        font-size: smaller;
         padding: 0 ($spacing * 2);
     }
 
@@ -96,7 +96,6 @@
         entry,
         spinbutton,
         separator,
-        switch,
         button { // Size height
             margin-top: $spacing + 3px;
             margin-bottom: $spacing + 3px;
@@ -218,6 +217,17 @@
         &:backdrop, & {
             border-top-left-radius: $roundness;
             border-top-right-radius: $roundness;
+        }
+    }
+
+    // Fixed: https://github.com/numixproject/numix-gtk-theme/issues/585
+    // workaround for ugly Ubuntu-related CSD patches
+    .background:not(.csd):not(.ssd):not(.solid-csd) headerbar {
+        &, &:backdrop {
+            &, &:not(:last-child) {
+                border-radius: 0;
+                border-top-color: transparent;
+            }
         }
     }
 }
