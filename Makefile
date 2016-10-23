@@ -48,8 +48,8 @@ changes:
 
 zip: all
 	mkdir $(ROOT_DIR)/dist
-	$(UTILS) install $(ROOT_DIR)/dist/Numix
-	cd $(ROOT_DIR)/dist && zip --symlinks -rq Numix Numix
+	$(UTILS) install $(ROOT_DIR)/dist/$$(basename $(INSTALL_DIR))
+	cd $(ROOT_DIR)/dist && zip --symlinks -rq $$(basename $(INSTALL_DIR)) $$(basename $(INSTALL_DIR))
 
 
 .PHONY: all
