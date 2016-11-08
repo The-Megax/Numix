@@ -2,6 +2,35 @@
  ! Menu
  *******/
 
+.menu {
+    border: 1px solid alpha($white, .1);
+    border-radius: $roundness;
+    background-color: alpha($black, .90);
+    color: $white;
+    font-size: $font-size;
+    min-width: 100px;
+
+    &.top {
+        border-radius: 0 0 $roundness $roundness;
+        border-top-width: 0;
+    }
+
+    &.bottom {
+        border-radius: $roundness $roundness 0 0;
+        border-bottom-width: 0;
+    }
+
+    &.left {
+        border-radius: 0 $roundness $roundness 0;
+        border-left-width: 0;
+    }
+
+    &.right {
+        border-radius: $roundness 0 0 $roundness;
+        border-right-width: 0;
+    }
+}
+
 /* Main menu title */
 .menu-favorites-box {  
     background-gradient-direction: vertical;

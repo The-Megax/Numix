@@ -10,14 +10,15 @@
 
 .workspace-button {
     width: 24px;
+    height: 14px;
     font-weight: bold;
 
-    &:hover {
-        border-image: url("panel-assets/panel-top-item-hover.svg") 4;
-    }
-
-    &:outlined {
-        border-image: url("panel-assets/panel-top-item.svg") 4;
+    &.vertical {
+        height: 14px;
+        width: 24px;
+        padding: 0;
+        padding-top: 1px;
+        padding-bottom: 1px;
     }
 }
 
@@ -28,7 +29,7 @@
 }
 
 /* Different images/paddings used in top & bottom panels. */
-@each $v in panel-top, panel-bottom {
+@each $v in panel-top, panel-bottom, panel-left, panel-right {
     .#{$v} .workspace {
         border-image: url("panel-assets/#{$v}-item-hover.svg") 4;
         padding: if($v == panel-top, 0 0 3px 0, 1px 0 3px 0);
@@ -36,6 +37,16 @@
         .windows {
             -inactive-window-background: rgba(120, 120, 120, .9);
             -inactive-window-border: rgba(0, 0, 0, .7);
+        }
+    }
+
+    .#{$v} .workspace-button {
+        &:hover {
+            border-image: url("panel-assets/#{$v}-item-hover.svg") 4;
+        }
+
+        &:outlined {
+            border-image: url("panel-assets/#{$v}-item.svg") 4;
         }
     }
 

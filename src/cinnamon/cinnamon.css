@@ -204,8 +204,16 @@ StScrollBar StButton#hhandle:focus {
  ! Window list
  **************/
 .window-list-box {
+  font-weight: bold;
   spacing: 1px;
+  padding-left: 5px;
+  padding-top: 0;
+}
+.window-list-box.vertical {
   padding-left: 0;
+  padding-right: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .window-list-item-label {
@@ -264,6 +272,50 @@ StScrollBar StButton#hhandle:focus {
   border-image: url("panel-assets/panel-bottom-item-attention-hover.svg") 4;
 }
 
+.panel-left .window-list-item-box:hover {
+  border-image: url("panel-assets/panel-left-item-hover.svg") 4;
+  color: #fff;
+}
+.panel-left .window-list-item-box:active,
+.panel-left .window-list-item-box:checked,
+.panel-left .window-list-item-box:focus {
+  border-image: url("panel-assets/panel-left-item.svg") 4;
+  color: #fff;
+}
+.panel-left .window-list-item-box:checked:hover,
+.panel-left .window-list-item-box:focus:hover,
+.panel-left .window-list-item-box:active:hover {
+  border-image: url("panel-assets/panel-left-item-hover.svg") 4;
+}
+.panel-left .window-list-item-demands-attention {
+  border-image: url("panel-assets/panel-left-item-attention.svg") 4;
+}
+.panel-left .window-list-item-demands-attention:hover {
+  border-image: url("panel-assets/panel-left-item-attention-hover.svg") 4;
+}
+
+.panel-right .window-list-item-box:hover {
+  border-image: url("panel-assets/panel-right-item-hover.svg") 4;
+  color: #fff;
+}
+.panel-right .window-list-item-box:active,
+.panel-right .window-list-item-box:checked,
+.panel-right .window-list-item-box:focus {
+  border-image: url("panel-assets/panel-right-item.svg") 4;
+  color: #fff;
+}
+.panel-right .window-list-item-box:checked:hover,
+.panel-right .window-list-item-box:focus:hover,
+.panel-right .window-list-item-box:active:hover {
+  border-image: url("panel-assets/panel-right-item-hover.svg") 4;
+}
+.panel-right .window-list-item-demands-attention {
+  border-image: url("panel-assets/panel-right-item-attention.svg") 4;
+}
+.panel-right .window-list-item-demands-attention:hover {
+  border-image: url("panel-assets/panel-right-item-attention-hover.svg") 4;
+}
+
 /* This styles the window-list preview and window name
    in "cover" and "timeline" alt-tab modes */
 .switcher-list {
@@ -296,6 +348,31 @@ StScrollBar StButton#hhandle:focus {
 /*******
  ! Menu
  *******/
+.menu {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  font-size: 9pt;
+  min-width: 100px;
+}
+.menu.top {
+  border-radius: 0 0 2px 2px;
+  border-top-width: 0;
+}
+.menu.bottom {
+  border-radius: 2px 2px 0 0;
+  border-bottom-width: 0;
+}
+.menu.left {
+  border-radius: 0 2px 2px 0;
+  border-left-width: 0;
+}
+.menu.right {
+  border-radius: 2px 0 0 2px;
+  border-right-width: 0;
+}
+
 /* Main menu title */
 .menu-favorites-box {
   background-gradient-direction: vertical;
@@ -414,6 +491,8 @@ StScrollBar StButton#hhandle:focus {
 .popup-menu {
   color: #fff;
   font-size: 9pt;
+  /* .popup-menu-boxpointer and .popup-menu are kept for compatibility
+     with cinnamon version under 3.2. Use .menu in version 3.2 and above */
 }
 .popup-menu-boxpointer {
   /* Ha törlésre kerül a cinnamon-ból és rossz lesz anélkül a téma akkor csak simán el kell helyezni a popup-menu részbe */
@@ -541,6 +620,7 @@ StScrollBar StButton#hhandle:focus {
   background-gradient-end: rgba(0, 0, 0, 0.3);
   background-gradient-start: rgba(0, 0, 0, 0.5);
   height: 25px;
+  width: 32px;
   color: #fff;
   font-weight: normal;
   font-size: 9pt;
@@ -551,10 +631,16 @@ StScrollBar StButton#hhandle:focus {
 #panel.panel-bottom {
   box-shadow: 0 -1px rgba(255, 255, 255, 0.2);
 }
+#panel.panel-left {
+  box-shadow: 1px 0 rgba(255, 255, 255, 0.2);
+}
+#panel.panel-right {
+  box-shadow: -1px 0 rgba(255, 255, 255, 0.2);
+}
 #panelLeft {
   spacing: 0;
 }
-#panelLeft:dnd {
+#panelLeft:dnd, #panelLeft.vertical:dnd {
   background-gradient-direction: vertical;
   background-gradient-start: rgba(255, 0, 0, 0.05);
   background-gradient-end: rgba(255, 0, 0, 0.2);
@@ -565,18 +651,28 @@ StScrollBar StButton#hhandle:focus {
 #panelLeft:rtl {
   padding-left: 4px;
 }
+#panelLeft.vertical:ltr {
+  padding-right: 0;
+}
+#panelLeft.vertical:rtl {
+  padding-left: 0;
+}
 #panelCenter {
   spacing: 0;
 }
-#panelCenter:dnd {
+#panelCenter:dnd, #panelCenter.vertical:dnd {
   background-gradient-direction: vertical;
   background-gradient-start: rgba(0, 255, 0, 0.05);
   background-gradient-end: rgba(0, 255, 0, 0.2);
 }
+#panelCenter.vertical {
+  padding-right: 0;
+  padding-left: 0;
+}
 #panelRight {
   spacing: 0;
 }
-#panelRight:dnd {
+#panelRight:dnd, #panelRight.vertical:dnd {
   background-gradient-direction: vertical;
   background-gradient-start: rgba(0, 0, 255, 0.05);
   background-gradient-end: rgba(0, 0, 255, 0.2);
@@ -586,6 +682,19 @@ StScrollBar StButton#hhandle:focus {
 }
 #panelRight:rtl {
   padding-right: 0;
+}
+#panelRight.vertical:ltr {
+  padding-left: 0;
+}
+#panelRight.vertical:rtl {
+  padding-right: 0;
+}
+
+.panel-launchers .launcher {
+ /*padding-left: 1px;
+ padding-right: 1px;
+ border: 0 solid transparent;
+border-bottom-width: 1px;*/
 }
 
 .panel-button,
@@ -599,14 +708,6 @@ StScrollBar StButton#hhandle:focus {
   transition-duration: 200;
 }
 
-.panel-top .panel-status-button:hover {
-  border-image: url("panel-assets/panel-top-item-hover.svg") 4;
-}
-
-.panel-bottom .panel-status-button:hover {
-  border-image: url("panel-assets/panel-bottom-item-hover.svg") 4;
-}
-
 .panel-menu {
   -boxpointer-gap: 4px;
 }
@@ -618,17 +719,44 @@ StScrollBar StButton#hhandle:focus {
 /*************************
  ! Panel Launchers Applet
  *************************/
-.panel-launcher {
-  margin: 0;
-  padding: 0 5px;
+.panel-launchers {
+  spacing: 2px;
+}
+
+.panel-launchers.vertical {
+  spacing: 2px;
 }
 
 .panel-top .panel-launcher:hover {
   border-image: url("panel-assets/panel-top-item-hover.svg") 4;
 }
 
+.panel-top .panel-status-button:hover {
+  border-image: url("panel-assets/panel-top-item-hover.svg") 4;
+}
+
 .panel-bottom .panel-launcher:hover {
   border-image: url("panel-assets/panel-bottom-item-hover.svg") 4;
+}
+
+.panel-bottom .panel-status-button:hover {
+  border-image: url("panel-assets/panel-bottom-item-hover.svg") 4;
+}
+
+.panel-left .panel-launcher:hover {
+  border-image: url("panel-assets/panel-left-item-hover.svg") 4;
+}
+
+.panel-left .panel-status-button:hover {
+  border-image: url("panel-assets/panel-left-item-hover.svg") 4;
+}
+
+.panel-right .panel-launcher:hover {
+  border-image: url("panel-assets/panel-right-item-hover.svg") 4;
+}
+
+.panel-right .panel-status-button:hover {
+  border-image: url("panel-assets/panel-right-item-hover.svg") 4;
 }
 
 /**************
@@ -767,13 +895,27 @@ StScrollBar StButton#hhandle:focus {
   border-bottom: 0;
   transition-duration: 200;
 }
-.applet-box:hover {
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-top: 0;
-  border-bottom: 0;
-  background-gradient-direction: vertical;
-  background-gradient-end: rgba(255, 255, 255, 0.3);
-  background-gradient-start: rgba(255, 255, 255, 0.2);
+.applet-box.vertical {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.panel-top .applet-box:hover {
+  border-image: url("panel-assets/panel-top-item-hover.svg") 4;
+}
+
+.panel-bottom .applet-box:hover {
+  border-image: url("panel-assets/panel-bottom-item-hover.svg") 4;
+}
+
+.panel-left .applet-box:hover {
+  border-image: url("panel-assets/panel-left-item-hover.svg") 4;
+}
+
+.panel-right .applet-box:hover {
+  border-image: url("panel-assets/panel-right-item-hover.svg") 4;
 }
 
 .applet-label {
@@ -783,6 +925,7 @@ StScrollBar StButton#hhandle:focus {
 
 .applet-icon {
   color: #fff;
+  icon-size: 16px;
 }
 
 /****************
@@ -1248,13 +1391,15 @@ StScrollBar StButton#hhandle:focus {
 
 .workspace-button {
   width: 24px;
+  height: 14px;
   font-weight: bold;
 }
-.workspace-button:hover {
-  border-image: url("panel-assets/panel-top-item-hover.svg") 4;
-}
-.workspace-button:outlined {
-  border-image: url("panel-assets/panel-top-item.svg") 4;
+.workspace-button.vertical {
+  height: 14px;
+  width: 24px;
+  padding: 0;
+  padding-top: 1px;
+  padding-bottom: 1px;
 }
 
 /* Controls the style when using the "Visual representation" option */
@@ -1271,6 +1416,13 @@ StScrollBar StButton#hhandle:focus {
 .panel-top .workspace .windows {
   -inactive-window-background: rgba(120, 120, 120, 0.9);
   -inactive-window-border: rgba(0, 0, 0, 0.7);
+}
+
+.panel-top .workspace-button:hover {
+  border-image: url("panel-assets/panel-top-item-hover.svg") 4;
+}
+.panel-top .workspace-button:outlined {
+  border-image: url("panel-assets/panel-top-item.svg") 4;
 }
 
 .panel-top .workspace:active {
@@ -1292,10 +1444,69 @@ StScrollBar StButton#hhandle:focus {
   -inactive-window-border: rgba(0, 0, 0, 0.7);
 }
 
+.panel-bottom .workspace-button:hover {
+  border-image: url("panel-assets/panel-bottom-item-hover.svg") 4;
+}
+.panel-bottom .workspace-button:outlined {
+  border-image: url("panel-assets/panel-bottom-item.svg") 4;
+}
+
 .panel-bottom .workspace:active {
   border-image: url("panel-assets/panel-bottom-item.svg") 4;
 }
 .panel-bottom .workspace:active .windows {
+  -active-window-background: rgba(210, 210, 210, 0.9);
+  -active-window-border: rgba(0, 0, 0, 0.85);
+  -inactive-window-background: rgba(150, 150, 150, 0.9);
+  -inactive-window-border: rgba(0, 0, 0, 0.85);
+}
+
+.panel-left .workspace {
+  border-image: url("panel-assets/panel-left-item-hover.svg") 4;
+  padding: 1px 0 3px 0;
+}
+.panel-left .workspace .windows {
+  -inactive-window-background: rgba(120, 120, 120, 0.9);
+  -inactive-window-border: rgba(0, 0, 0, 0.7);
+}
+
+.panel-left .workspace-button:hover {
+  border-image: url("panel-assets/panel-left-item-hover.svg") 4;
+}
+.panel-left .workspace-button:outlined {
+  border-image: url("panel-assets/panel-left-item.svg") 4;
+}
+
+.panel-left .workspace:active {
+  border-image: url("panel-assets/panel-left-item.svg") 4;
+}
+.panel-left .workspace:active .windows {
+  -active-window-background: rgba(210, 210, 210, 0.9);
+  -active-window-border: rgba(0, 0, 0, 0.85);
+  -inactive-window-background: rgba(150, 150, 150, 0.9);
+  -inactive-window-border: rgba(0, 0, 0, 0.85);
+}
+
+.panel-right .workspace {
+  border-image: url("panel-assets/panel-right-item-hover.svg") 4;
+  padding: 1px 0 3px 0;
+}
+.panel-right .workspace .windows {
+  -inactive-window-background: rgba(120, 120, 120, 0.9);
+  -inactive-window-border: rgba(0, 0, 0, 0.7);
+}
+
+.panel-right .workspace-button:hover {
+  border-image: url("panel-assets/panel-right-item-hover.svg") 4;
+}
+.panel-right .workspace-button:outlined {
+  border-image: url("panel-assets/panel-right-item.svg") 4;
+}
+
+.panel-right .workspace:active {
+  border-image: url("panel-assets/panel-right-item.svg") 4;
+}
+.panel-right .workspace:active .windows {
   -active-window-background: rgba(210, 210, 210, 0.9);
   -active-window-border: rgba(0, 0, 0, 0.85);
   -inactive-window-background: rgba(150, 150, 150, 0.9);

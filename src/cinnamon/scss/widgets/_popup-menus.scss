@@ -6,6 +6,8 @@
     color: $white;
     font-size: $font-size;
 
+    /* .popup-menu-boxpointer and .popup-menu are kept for compatibility
+       with cinnamon version under 3.2. Use .menu in version 3.2 and above */
     &-boxpointer { /* Ha törlésre kerül a cinnamon-ból és rossz lesz anélkül a téma akkor csak simán el kell helyezni a popup-menu részbe */
         -arrow-border-radius: $roundness;
         -arrow-background-color: alpha($black, .90);

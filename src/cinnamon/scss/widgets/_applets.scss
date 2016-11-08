@@ -12,13 +12,21 @@
     border-bottom: 0;
     transition-duration: 200;
 
-    &:hover {
-        border: 1px solid alpha($white, .4);
-        border-top: 0;
-        border-bottom: 0;
-        background-gradient-direction: vertical;
-        background-gradient-end: alpha($white, .3);
-        background-gradient-start: alpha($white, .2);
+    &:highlight {
+        //background-color: #aa5555;
+    }
+
+    &.vertical {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: $spacing - 2px;
+        padding-bottom: $spacing - 2px;
+    }
+}
+
+@each $v in panel-top, panel-bottom, panel-left, panel-right {
+    .#{$v} .applet-box:hover {
+        border-image: url("panel-assets/#{$v}-item-hover.svg") 4;
     }
 }
 
@@ -29,4 +37,5 @@
 
 .applet-icon {
     color: $white;
+    icon-size: 16px;
 }

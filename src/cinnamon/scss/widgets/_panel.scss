@@ -7,6 +7,7 @@
     background-gradient-end: alpha($black, .3);
     background-gradient-start: alpha($black, .5);
     height: 25px;
+    width: 32px;
     color: $white;
     font-weight: normal;
     font-size: $font-size;
@@ -19,12 +20,20 @@
         box-shadow: 0 -1px alpha($white, .2);
     }
 
+    &.panel-left {
+        box-shadow: 1px 0 alpha($white, .2);
+    }
+
+    &.panel-right {
+        box-shadow: -1px 0 alpha($white, .2);
+    }
+
     &:highlight { }
 
     &Left {
         spacing: 0;
 
-        &:dnd {
+        &:dnd, &.vertical:dnd {
             background-gradient-direction: vertical;
             background-gradient-start: rgba(255, 0, 0, .05);
             background-gradient-end: rgba(255, 0, 0, .2);
@@ -37,22 +46,37 @@
         &:rtl {
             padding-left: 4px;
         }
+
+        &.vertical {
+            &:ltr {
+                padding-right: 0;
+            }
+
+            &:rtl {
+                padding-left: 0;
+            }
+        }
     }
 
     &Center {
         spacing: 0;
 
-        &:dnd {
+        &:dnd, &.vertical:dnd {
             background-gradient-direction: vertical;
             background-gradient-start: rgba(0, 255, 0, .05);
             background-gradient-end: rgba(0, 255, 0, .2);
+        }
+
+        &.vertical {
+            padding-right: 0;
+            padding-left: 0;
         }
     }
 
     &Right {
         spacing: 0;
 
-        &:dnd {
+        &:dnd, &.vertical:dnd {
             background-gradient-direction: vertical;
             background-gradient-start: rgba(0, 0, 255, .05);
             background-gradient-end: rgba(0, 0, 255, .2);
@@ -65,10 +89,27 @@
         &:rtl {
             padding-right: 0;
         }
+
+        &.vertical {
+            &:ltr {
+                padding-left: 0;
+            }
+
+            &:rtl {
+                padding-right: 0;
+            }
+        }
     }
 
     // Panel Launchers Applet
     &-launchers-box { }
+}
+
+.panel-launchers .launcher {
+     /*padding-left: 1px;
+     padding-right: 1px;
+     border: 0 solid transparent;
+    border-bottom-width: 1px;*/
 }
 
 .panel-button,
@@ -80,14 +121,6 @@
     border-top: 0;
     border-bottom: 0;
     transition-duration: 200;
-}
-
-.panel-top .panel-status-button:hover {
-    border-image: url("panel-assets/panel-top-item-hover.svg") 4;
-}
-
-.panel-bottom .panel-status-button:hover {
-    border-image: url("panel-assets/panel-bottom-item-hover.svg") 4;
 }
 
 .panel-menu {
@@ -102,13 +135,26 @@
  ! Panel Launchers Applet
  *************************/
 
-.panel-launcher {
-    margin: 0;
-    padding: 0 $spacing;
+.panel-launchers {
+    //margin: 0;
+    //padding: 0 $spacing;
+    spacing: 2px;
+
+    &.vertical {
+        //padding-top: 2px;
+        //padding-bottom: 2px;
+        //padding-left: 0px;
+        //padding-right: 0px;
+        spacing: 2px;
+    }
 }
 
-@each $v in panel-top, panel-bottom {
+@each $v in panel-top, panel-bottom, panel-left, panel-right {
     .#{$v} .panel-launcher:hover {
+        border-image: url("panel-assets/#{$v}-item-hover.svg") 4;
+    }
+
+    .#{$v} .panel-status-button:hover {
         border-image: url("panel-assets/#{$v}-item-hover.svg") 4;
     }
 }
