@@ -120,10 +120,11 @@ StScrollBar StButton#hhandle:focus {
  ! Tooltips
  ***********/
 #Tooltip {
-  padding: 4px 6px;
   background-color: #2d2d2d;
-  border: 1px solid #444444;
   color: #dcdcdc;
+  border: 1px solid #242424;
+  border-radius: 2px;
+  padding: 4px 6px;
   font-size: 9pt;
   font-weight: normal;
   text-align: center;
@@ -722,7 +723,6 @@ border-bottom-width: 1px;*/
 .panel-launchers {
   spacing: 2px;
 }
-
 .panel-launchers.vertical {
   spacing: 2px;
 }

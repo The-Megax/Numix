@@ -3,10 +3,11 @@
  ***********/
 
 #Tooltip {
-    padding: 4px 6px;
     background-color: $tooltip_bg_color;
-    border: 1px solid $border_color;
-    color: $dark_fg_color;
+    color: $tooltip_fg_color;
+    border: 1px solid border_normal($tooltip_bg_color);
+    border-radius: $roundness;
+    padding: 4px 6px;
     font-size: $font-size;
     font-weight: normal;    
     text-align: center;
