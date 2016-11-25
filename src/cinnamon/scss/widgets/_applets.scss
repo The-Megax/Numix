@@ -25,7 +25,8 @@
 }
 
 @each $v in panel-top, panel-bottom, panel-left, panel-right {
-    .#{$v} .applet-box:hover {
+    .#{$v} .applet-box:hover,
+    .#{$v} .applet-box:checked {
         border-image: url("panel-assets/#{$v}-item-hover.svg") 4;
     }
 }

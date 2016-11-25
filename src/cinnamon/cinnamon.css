@@ -902,19 +902,23 @@ border-bottom-width: 1px;*/
   padding-bottom: 3px;
 }
 
-.panel-top .applet-box:hover {
+.panel-top .applet-box:hover,
+.panel-top .applet-box:checked {
   border-image: url("panel-assets/panel-top-item-hover.svg") 4;
 }
 
-.panel-bottom .applet-box:hover {
+.panel-bottom .applet-box:hover,
+.panel-bottom .applet-box:checked {
   border-image: url("panel-assets/panel-bottom-item-hover.svg") 4;
 }
 
-.panel-left .applet-box:hover {
+.panel-left .applet-box:hover,
+.panel-left .applet-box:checked {
   border-image: url("panel-assets/panel-left-item-hover.svg") 4;
 }
 
-.panel-right .applet-box:hover {
+.panel-right .applet-box:hover,
+.panel-right .applet-box:checked {
   border-image: url("panel-assets/panel-right-item-hover.svg") 4;
 }
 
