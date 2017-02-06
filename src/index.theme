@@ -5,8 +5,15 @@ Comment=A modern flat theme
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
+<<<<<<< HEAD
 GtkTheme=Numix-Megax
 MetacityTheme=Numix-Megax
 IconTheme=fs-icons-ubuntu
 CursorTheme=DMZ-White
 ButtonLayout=:close,minimize,maximize
+=======
+GtkTheme=Numix
+IconTheme=Numix
+MetacityTheme=Numix
+ButtonLayout=:minimize,maximize,close
+>>>>>>> upstream/master

@@ -273,14 +273,19 @@
     $border_strength: if(lightness($bg) > 50, 0, .1);
     $shadow_strength: if(lightness($bg) > 50, 0, .1);
 
-    $button_bg: if(hue($bg) == 0deg, shade($bg, 1.2), $bg);
+    $button_bg: if(lightness($bg) > 50, $bg, shade($bg, 1.2));
 
     @extend %button;
-    @include linear-gradient($button_bg);
-    @include border(rgba(0, 0, 0, .22 + $border_strength)); /* Megax fix. */
 
+    @if (lightness($button_bg) > 50) {
+        border-color: border_normal($button_bg);
+        @include linear-gradient(shade($button_bg, 1.08));
+    } @else {
+        @include linear-gradient($button_bg);
+        @include border(rgba(0, 0, 0, .12 + $border_strength));  
+    }
+    
     color: $fg;
-    box-shadow: 0 1px 2px -1px alpha($dark_shadow, .22 + $shadow_strength); /* Megax fix. */
 
     &.flat {
         border-color: alpha($button_bg, 0);
@@ -291,24 +296,30 @@
 
     &, &.flat {
         &:focus, &:hover {
-            @include linear-gradient(shade($button_bg, 1.2));
-            @include border(rgba(0, 0, 0, .35 + $border_strength)); /* Megax fix. */
-
-            box-shadow: 0 1px 2px -1px alpha($dark_shadow, .42 + $shadow_strength); /* Megax fix. */
+            @if (lightness($button_bg) > 50) {
+                border-color: border_active($button_bg);
+                @include linear-gradient(shade($button_bg, 1.11));
+            } @else {
+                @include linear-gradient(shade($button_bg, 1.2));
+                @include border(rgba(0, 0, 0, .2 + $border_strength));
+            }
         }
+            
 
         &:checked, &:active {
-            @include linear-gradient(shade($button_bg, .7), to top);
-
+            @if (lightness($button_bg) > 50) {
+                @include linear-gradient(shade($button_bg, .8), to top);
+            } @else {
+                @include linear-gradient(shade($button_bg, .7), to top);
+            }
             color: $white;
-            box-shadow: inset 1px 0 alpha($dark_shadow, .06),
-            inset 0 1px alpha($dark_shadow, .07),
-            inset -1px 0 alpha($dark_shadow, .06),
-            inset 0 -1px alpha($dark_shadow, .05);
 
             &:focus, &:hover {
-                @include linear-gradient(shade($button_bg, .65), to top);
-
+		@if (lightness($button_bg) > 50) {
+                    @include linear-gradient(shade($button_bg, .75), to top);
+                } @else {
+		    @include linear-gradient(shade($button_bg, .65), to top);
+                }
                 color: $white;
             }
         }
@@ -379,12 +390,12 @@
     }
 
     button {
-        @include button(shade($bg_color, 1.2), $fg_color);
+        @include button($bg_color, $fg_color);
 
         .inline-toolbar &,
-        .linked > & { @include linked_button(shade($bg_color, 1.2)); }
+        .linked > & { @include linked_button($bg_color); }
 
-        .linked.vertical > & { @include linked_vertical_button(shade($bg_color, 1.2)); }
+        .linked.vertical > & { @include linked_vertical_button($bg_color); }
 
         &.circular,
         &.circular-button { // FIXME: aggregate to buttons
@@ -412,9 +423,16 @@
         }
 
         &:not(.vertical) {
-            @extend %entry;
-            @include linear-gradient($base_color, to top);
-            @include border($base_color);
+            @if (lightness($bg_color) > 50) {
+                border: 1px solid border_normal($bg_color);
+                background-color: transparent;
+                background-image: none;
+                box-shadow: inset 1px 0 shade($base_color, .9);
+            } @else {
+                @extend %entry;
+                @include linear-gradient($base_color, to top);
+                @include border($base_color);
+            }
 
             padding: 0;
 
@@ -425,7 +443,6 @@
 
             &:disabled {
                 @include linear-gradient(shade($base_color, .9), to top);
-
                 color: mix($base_color, $text_color, .5);
             }
 
@@ -443,6 +460,16 @@
                 background-image: none;
                 box-shadow: none;
 
+                @if (lightness($bg_color) > 50) {
+                    background-color: shade($bg_color, 1.08);
+                }
+
+                &:hover { 
+                    @if (lightness($bg_color) > 50) {
+                        background-color: shade($bg_color, 1.11);
+                    } 
+                }
+
                 &:dir(rtl) { border-style: none solid none none; }
 
                 &:active { box-shadow: inset 0 2px 3px -1px transparentize($black, .8); }
@@ -451,7 +478,6 @@
 
                 &:backdrop:disabled {
                     border-style: none none none solid; // It is needed or it gets overridden
-
                     &:dir(rtl) { border-style: none solid none none; }
                 }
 

@@ -10,6 +10,19 @@
 
     colorchooser .popover.osd { border-radius: $roundness; }
 
+    button.color {
+        .osd colorswatch:only-child { box-shadow: none; }
+
+        @if $variant == 'light' {
+            .osd & {
+                &:disabled,
+                &:backdrop,
+                &:active,
+                &:checked { colorswatch:only-child { box-shadow: none; } }
+            }
+        }
+    }
+
     button.osd,
     #XfceNotifyWindow button {
         @include button($osd_bg, $osd_fg);
@@ -80,9 +93,15 @@
         entry { @include entry($osd_base, $osd_text_color, $osd_borders_color); }
 
         /* used by gnome-settings-daemon's media-keys OSD */
-        trough { background-color: shade($osd_bg, .8); }
+        trough,
+        &.trough {
+            background-color: alpha($osd_fg, .3);
+        }
 
-        progressbar { background-color: $osd_fg; }
+        progressbar,
+        &.progressbar {
+            background-color: $osd_fg;
+        }
 
         // Old GTK 3.0 code
         scale {
