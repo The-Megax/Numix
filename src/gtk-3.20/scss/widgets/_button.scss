@@ -85,48 +85,24 @@
     }
 
     %linked_button {
-        border-width: 1px;
-        border-style: solid;
-        border-radius: 0;
-        border-right-style: none;
-        border-left-style: none;
+  border-radius: 0;
+  border-right-style: none;
 
-        &:first-child {
-            border-width: 1px;
-            border-radius: $roundness;
-            border-left-style: solid;
-            border-right-style: none;
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
+  &:first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
 
-            &:dir(rtl) {
-                border-left-style: none;
-                border-right-style: solid;
-            }
-        }
+  &:last-child {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-right-style: solid;
+  }
 
-        &:last-child {
-            border-width: 1px;
-            border-radius: $roundness;
-            border-left-style: none;
-            border-right-style: solid;
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-
-            &:dir(rtl) {
-                border-left-style: solid;
-                border-right-style: none;
-            }
-        }
-
-        &:only-child, &:first-child:only-child {
-            border-width: 1px;
-            border-style: solid;
-        }
-
-        &:only-child {
-            border-radius: $roundness;
-        }
+  &:only-child {
+    border-radius: 3px;
+    border-style: solid;
+  }
     }
 
     %linked_vertical_button {
@@ -181,45 +157,38 @@
 
     @extend %linked_button;
 
-    box-shadow: inset -1px 0 border_normal(rgba(0, 0, 0, .22 + $border_strength)), /* Megax fix. */
-    0 1px 2px -1px alpha($dark_shadow, .22 + $shadow_strength); /* Megax fix. */
+    border-color: border_normal(rgba(0, 0, 0, .22 + $border_strength)); /* Megax fix. */
 
     &:focus, &:hover {
-        box-shadow: inset -1px 0 border_focus(rgba(0, 0, 0, .22 + $border_strength)), /* Megax fix. */
-        0 1px 2px -1px alpha($dark_shadow, .42 + $shadow_strength); /* Megax fix. */
+        border-color: border_focus(rgba(0, 0, 0, .22 + $border_strength)); /* Megax fix. */
     }
 
     &:active, &:active:hover,
     &:active:focus, &:active:hover:focus,
     &:checked, &:checked:hover,
     &:checked:focus, &:checked:hover:focus {
-        box-shadow: inset -1px 0 border_active(rgba(0, 0, 0, .12 + $border_strength)),
-        inset 0 1px alpha($dark_shadow, .07),
-        inset 0 -1px alpha($dark_shadow, .05);
+        border-color: border_active(rgba(0, 0, 0, .22 + $border_strength));
     }
 
-    &:disabled { box-shadow: inset -1px 0 shade($bg, .8); }
+    &:disabled { border-color: shade($bg, .8); }
 
-    &:last-child, &:only-child { box-shadow: 0 1px 2px -1px alpha($dark_shadow, .12 + $shadow_strength); }
+    &:last-child, &:only-child { border-color: alpha($dark_shadow, .22 + $shadow_strength); }
 
-    &:last-child:hover, &:only-child:hover { box-shadow: 0 1px 2px -1px alpha($dark_shadow, .32 + $shadow_strength); }
+    &:last-child:hover, &:only-child:hover { border-color: alpha($dark_shadow, .32 + $shadow_strength); }
 
-    &:disabled:last-child, &:disabled:only-child,
+    /*&:disabled:last-child, &:disabled:only-child,
     &:active:disabled:last-child, &:active:disabled:only-child,
-    &:checked:disabled:last-child, &:checked:disabled:only-child { box-shadow: none; }
+    &:checked:disabled:last-child, &:checked:disabled:only-child { border-color: none; }
 
     &:active:last-child, &:active:last-child:focus, &:active:last-child:hover, &:active:last-child:hover:focus,
     &:checked:last-child, &:checked:last-child:focus, &:checked:last-child:hover, &:checked:last-child:hover:focus {
-        box-shadow: inset 0 1px alpha($dark_shadow, .07),
-        inset -1px 0 alpha($dark_shadow, .06);
+        border-color: alpha($dark_shadow, .07);
     }
 
     &:active:only-child, &:active:only-child:focus, &:active:only-child:hover, &:active:only-child:hover:focus,
     &:checked:only-child, &:checked:only-child:focus, &:checked:only-child:hover, &:checked:only-child:hover:focus {
-        box-shadow: inset 1px 0 alpha($dark_shadow, .06),
-        inset 0 1px alpha($dark_shadow, .07),
-        inset -1px 0 alpha($dark_shadow, .06);
-    }
+        border-color: alpha($dark_shadow, .06);
+    }*/
 }
 
 @mixin linked_vertical_button($bg) {
@@ -312,6 +281,7 @@
             } @else {
                 @include linear-gradient(shade($button_bg, .7), to top);
             }
+
             color: $white;
 
             &:focus, &:hover {
@@ -392,9 +362,13 @@
     button {
         @include button($bg_color, $fg_color);
 
-        .inline-toolbar &,
-        .linked > & { @include linked_button($bg_color); }
+        .inline-toolbar & {
+            border-width: 1px;
 
+            @include linked_button($bg_color);
+        }
+
+        .linked > & { @include linked_button($bg_color); }
         .linked.vertical > & { @include linked_vertical_button($bg_color); }
 
         &.circular,
