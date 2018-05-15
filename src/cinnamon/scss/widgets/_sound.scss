@@ -8,7 +8,7 @@
     }
 
     > StBoxLayout {
-        padding: $spacing;
+        padding: 0 $spacing $spacing;
     }
 
     StButton {
@@ -29,10 +29,9 @@
     StButton:small {
         width: 16px;
         height: 8px;
-        padding: 1px;
 
         StIcon {
-            icon-size: 1em;
+            icon-size: 1.2em;
         }
     }
 

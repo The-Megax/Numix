@@ -11,7 +11,9 @@
     color: $white;
     font-weight: normal;
     font-size: $font-size;
+}
 
+.panel {
     &.panel-top {
         box-shadow: 0 1px alpha($white, .2);
     }
